@@ -38,6 +38,9 @@ public class Bacteria : MonoBehaviour
     // The date and time this bacteria dies of age
     public DateTime deadTime;
 
+    // We can only die once
+    protected bool bacteriaDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,26 +68,46 @@ public class Bacteria : MonoBehaviour
         float deadTimeFloat = UnityEngine.Random.Range(maxAgeMinutes - (maxAgeMinutes * 0.2f), maxAgeMinutes + (maxAgeMinutes * 0.2f));
         int minutes = Mathf.FloorToInt(deadTimeFloat);
         int seconds = Mathf.FloorToInt((deadTimeFloat - minutes) * 100);
-        Debug.Log("Lifetime = " + minutes + " minutes and " + seconds + " seconds");
         deadTime = bornTime.Add(new System.TimeSpan(0,0,minutes, seconds));
+
+        // Use this method in derived classes for overriding stuff
+        MyStart();
+    }
+
+    // Use this method in derived classes for overriding stuff in Start() method
+    protected virtual void MyStart(){
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DateTime.Now > deadTime) {
-            // Bacteria is dead of age
+        if (DateTime.Now > deadTime && bacteriaDead == false) {
+            die("Dead");
+        }
+
+        move();
+    }
+
+    protected void die(string deadName) {
+            // This code must only run once
+            bacteriaDead = true;
+
+            // Update UI
+            fishTankSceneManager.BacteriaDies(gameObject);
+
+            // Bacteria is dead
             bacteriaRenderer.material = deadMaterial;
             bacteriaRigidbody.mass = 0.1f;
             bacteriaRigidbody.drag = 20;
             bacteriaRigidbody.useGravity = true;
-            gameObject.name = "Dead";
+            gameObject.name = deadName;
+
+            fishTankSceneManager.UpdateBacteriaInfo(deadName);
 
             // Disolve bacteria after some time
             StartCoroutine(DisolveBacteria());
-        } else {
-            move();
-        }
+
     }
 
     void OnTriggerExit(Collider other) {
@@ -116,6 +139,10 @@ public class Bacteria : MonoBehaviour
     }
 
     protected virtual void move() {
+
+        if (bacteriaDead == true) {
+            return;
+        }
 
         Deaccelerate();
 
@@ -165,12 +192,15 @@ public class Bacteria : MonoBehaviour
     }
 
     protected IEnumerator DisolveBacteria() {
-
         // Wait a bit because it looks nice
-        float waitPeriod = UnityEngine.Random.Range(300f, 600f);
+//        float waitPeriod = UnityEngine.Random.Range(300f, 600f);
+        float waitPeriod = UnityEngine.Random.Range(15f, 30f);
         yield return new WaitForSeconds(waitPeriod);
 
         // maybe later add toxic stuff to environment because of decay
+
+        // Update UI
+        fishTankSceneManager.BacteriaDies(gameObject);
 
         // Destroy me
         Destroy(gameObject);

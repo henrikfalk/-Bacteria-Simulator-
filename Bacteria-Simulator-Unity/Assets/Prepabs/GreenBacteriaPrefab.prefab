@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishTankSceneManager: {fileID: 0}
   environment: {fileID: 0}
-  maxVelocity: 2
+  maxVelocity: 1
   temperatureOptimal: 0
   temperatureRange: 0
   deadMaterial: {fileID: 2100000, guid: d4d43449e355a8b33a08c3ef99f65cdf, type: 2}

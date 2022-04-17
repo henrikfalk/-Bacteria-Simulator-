@@ -34,6 +34,9 @@ Press 'f' for adding food
 ## Unity concepts
 - Prefab variants
 - "Glass" material
+- Mouse selection using RaycastHit and child gameobject
+- GameObject highligt when mouseover
+- Use of StartCoroutine()
 - TMPro package (TextMeshPro)
 
 ## Development environment
@@ -50,6 +53,8 @@ This is my first prototype to test if I could make bacteria:
 My second prototype that controls the bacteria amount to add:
 <img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/Bacteria-Simulator-Prototype-2.png" width="600" >
 
-My third prototype have a status UI element and an "Add Food" feature:
+Prototype 3: Status UI element and an "Add Food" feature:
 <img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/Bacteria-Simulator-Prototype-3.png" width="600" >
 
+Prototype 4: Bacteria selection and info UI element:
+<img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/Bacteria-Simulator-Prototype-4.png" width="600" >
