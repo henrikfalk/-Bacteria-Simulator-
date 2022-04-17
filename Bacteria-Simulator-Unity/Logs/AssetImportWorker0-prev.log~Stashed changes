@@ -378,6 +378,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< Updated upstream:Bacteria-Simulator-Unity/Logs/AssetImportWorker0.log
   Time since last request: 58,480967 seconds.
   path: Assets/Scripts/UI/ButtonHoverColor.cs
   artifactKey: Guid(040fcf17f821d7a08bbfba53d263c14e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -1564,4 +1565,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+=======
+  path: Assets/Scripts/Bacteria/BacteriaSelectionHandler.cs
+  artifactKey: Guid(e49fb049abf21add7b68b37e547ff582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Bacteria/BacteriaSelectionHandler.cs using Guid(e49fb049abf21add7b68b37e547ff582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85c9fff3ddcd29ac2006d61eecd6ef2a') in 0,003757 seconds 
+>>>>>>> Stashed changes:Bacteria-Simulator-Unity/Logs/AssetImportWorker0-prev.log
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
