@@ -17,25 +17,34 @@ Regards Henrik
 ## Status
 In development.
 
-- There is only one "FishtankScene" at the moment
+- There is a "FishtankScene" that is runnable
 - You can start a new simulation by pressing 'n' on keyboard
+- You can select a bacteria using left-click
+- If you press 'l' when a bacteria is selected you can follow the bacteria. Pressing 'l' is also a toogle between following a selected bacteria and not following it
+- If you press WASD in main camera mode you can move the camera
+- You can use the mouse scroll-wheel to zoom-in and out in main camera mode
 - You can add food to the fishtank (but has no effect yet) by pressing 'f' on keyboard
 - The bacteria have a approximate lifespan. Then they die, turn black and falls to the bottom of the fishtank. After a period they dissolves in the water
-- The status UI element is just a UI mockup
+- If you right-click with the mouse on a bacteria it dies
+- The status UI element is just a UI mockup. Needs refactoring
+- There is a "Menu" scene that is runnable and can start the "FishtankScene" but have no other functionality yet
 
 
 ## The game
 The game simulates the life of different bacteria types in a fishtank.
 
-Keyboard:
+Keys in the game:
 Press 'n' for new simulation
 Press 'f' for adding food
+Press 'l' for "look" at selected bacteria
+Press WASD to move camera or mouse scroll-wheel to zoom in and out in main camera mode
 
 ## Unity concepts
 - Prefab variants
 - "Glass" material
 - Mouse selection using RaycastHit and child gameobject
 - GameObject highligt when mouseover
+- Datapersistence between scenes
 - Use of StartCoroutine()
 - TMPro package (TextMeshPro)
 
