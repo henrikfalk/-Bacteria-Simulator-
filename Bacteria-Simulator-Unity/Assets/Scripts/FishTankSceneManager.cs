@@ -18,7 +18,7 @@ public class FishTankSceneManager : MonoBehaviour
 
     public GameObject bacteriaInfoPanel;
     private BacteriaInfoPanelManager bacteriaInfoPanelManager;
-    private GameObject selectedBacteria;
+    public GameObject selectedBacteria { get; private set; }
  
     public GameObject greenBacteriaPrefab;
     public GameObject redBacteriaPrefab;
@@ -29,6 +29,16 @@ public class FishTankSceneManager : MonoBehaviour
 
     private int initialNumberGreenBacteria;
     private int initialNumberRedBacteria;
+
+    private bool simulationRunning = false;
+
+    // Cameras
+    public Camera defaultCamera { get; private set; }
+    public Camera lockCamera { get; private set; }
+
+    private Ray ray;
+    private RaycastHit hitData;
+
 
     void Start() {
         
@@ -43,11 +53,41 @@ public class FishTankSceneManager : MonoBehaviour
 
         statusPanelManager = statusPanel.GetComponent<StatusPanelManager>();
 
+        defaultCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        defaultCamera.gameObject.SetActive(true);
+
+        lockCamera = GameObject.Find("Lock Camera").GetComponent<Camera>();
+        lockCamera.gameObject.SetActive(false);
+
 
     }
 
     void Update()
     {
+        
+        if (Input.GetMouseButtonDown(0) == true && simulationRunning == true && addFoodPopup.activeSelf == false) {
+
+            if (defaultCamera.gameObject.activeSelf == true) {
+                ray = defaultCamera.ScreenPointToRay(Input.mousePosition);
+            } else {
+                ray = lockCamera.ScreenPointToRay(Input.mousePosition);
+            }
+            if (Physics.Raycast(ray, out hitData) == true) {
+                selectedBacteria = hitData.collider.gameObject;
+                lockCamera.GetComponent<LockCameraController>().selectedObject = selectedBacteria;
+                ShowBacteriaInfo(selectedBacteria);
+            } else {
+                selectedBacteria = null;
+                if (lockCamera.gameObject.activeSelf == true) {
+                    lockCamera.gameObject.SetActive(false);
+                    defaultCamera.gameObject.SetActive(true);
+                }
+                lockCamera.GetComponent<LockCameraController>().selectedObject = selectedBacteria;
+                ShowBacteriaInfo(false);
+            }
+        }
+
+
         // If we press the 'n' key then show "NewSimulationPopup"
         if (Input.GetKeyDown(KeyCode.N) == true) {
 
@@ -73,8 +113,24 @@ public class FishTankSceneManager : MonoBehaviour
 
         }
 
+                // If 'l' pressed then lock cinemachineVirtualCamera on selected bacteria
+        if (Input.GetKeyDown(KeyCode.L) == true) {
+        
+            if (selectedBacteria != null) {
+                if (defaultCamera.gameObject.activeSelf == true) {
+                    // Show lockCamera
+                    defaultCamera.gameObject.SetActive(false);
+                    lockCamera.gameObject.SetActive(true);
+                } else {
+                    // show mainCamera
+                    lockCamera.gameObject.SetActive(false);
+                    defaultCamera.gameObject.SetActive(true);
+                }
+            }
+        }
+
         if (selectedBacteria != null) {
-            bacteriaInfoPanelManager.tempDynamicBNumberText.text = environment.GetEnvironmentTemperature(selectedBacteria.transform.position).ToString("0.00");
+            bacteriaInfoPanelManager.tempDynamicBNumberText.text = environment.GetEnvironmentTemperature(selectedBacteria.transform.position).ToString("0.0");
         }
     }
 
@@ -100,6 +156,9 @@ public class FishTankSceneManager : MonoBehaviour
         statusPanelManager.temperatureBNumberText.text = environment.GetMiddleTemperature() + " ºC";
         statusPanelManager.deadBNumberText.text = "0";
         statusPanelManager.toxicityBNumberText.text = "0";
+
+        // The simulation is running
+        simulationRunning = true;
 
         // Create new simulation
         StartCoroutine(InstantiateNewSimulation());
@@ -347,7 +406,7 @@ public class FishTankSceneManager : MonoBehaviour
         bacteriaInfoPanelManager.typeBNameText.text = type;
         bacteriaInfoPanelManager.nameBNameText.text = selectedBacteria.name;
 
-        bacteriaInfoPanelManager.tempDynamicBNumberText.text = environment.GetEnvironmentTemperature(selectedBacteria.transform.position).ToString("0.00");
+        bacteriaInfoPanelManager.tempDynamicBNumberText.text = environment.GetEnvironmentTemperature(selectedBacteria.transform.position).ToString("0.0");
 
         bacteriaInfoPanel.SetActive(true);
     }

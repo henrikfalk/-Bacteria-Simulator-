@@ -37,7 +37,12 @@ public class GreenBacteria : Bacteria
 
         // If right mouse button pressed then die
         if (Input.GetMouseButtonDown(1) == true) {
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (fishTankSceneManager.defaultCamera.gameObject.activeSelf == true) {
+                ray = fishTankSceneManager.defaultCamera.ScreenPointToRay(Input.mousePosition);
+            } else {
+                ray = fishTankSceneManager.lockCamera.ScreenPointToRay(Input.mousePosition);
+            }
+
             if (Physics.Raycast(ray, out hitData) == true) {
 
                 if (hitData.collider.name.Equals(gameObject.name) == true && bacteriaDead == false) {

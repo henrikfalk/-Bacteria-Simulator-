@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     // Singleton
     public static GameManager Instance { get; private set; }
 
-
     // Playerlist
 //    private List<PlayerInfo> playerList = new List<PlayerInfo>();
 

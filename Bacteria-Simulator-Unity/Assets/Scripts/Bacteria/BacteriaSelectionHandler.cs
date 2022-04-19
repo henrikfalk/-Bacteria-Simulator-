@@ -14,9 +14,10 @@ public class BacteriaSelectionHandler : MonoBehaviour
     private int greenColor;
     private int blueColor;
 
-    private Ray ray;
-    private RaycastHit hitData;
 
+//    private static GameObject selectedGameObject;
+//    public GameObject selectedBacteria;
+    
     void Start() {
 
         oldColor = GetComponent<Renderer>().material.color;
@@ -28,26 +29,14 @@ public class BacteriaSelectionHandler : MonoBehaviour
 
     void Update()
     {
-        // If left mouse button pressed
-        if (Input.GetMouseButtonDown(0) == true) {
 
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hitData) == true) {
-
-                if (hitData.collider.name.Equals(gameObject.name) == true) {
-
-                    fishTankSceneManager.ShowBacteriaInfo(gameObject);
-                    gameObject.transform.GetChild(0).gameObject.SetActive(true);
-
-                    return;
-                }
-            } else {
-                fishTankSceneManager.ShowBacteriaInfo(false);
-                gameObject.transform.GetChild(0).gameObject.SetActive(false);
-            }
+        if (fishTankSceneManager.selectedBacteria == gameObject) {
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        } else {
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
-
     }
+
 
     void OnMouseEnter() {
         GetComponent<Renderer>().material.color = mouseOverColor;
