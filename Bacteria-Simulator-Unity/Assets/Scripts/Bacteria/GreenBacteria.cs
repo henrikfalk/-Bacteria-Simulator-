@@ -6,20 +6,23 @@ using UnityEngine;
 public class GreenBacteria : Bacteria
 {
 
-    private Ray ray;
-    private RaycastHit hitData;
+    //public int pregnacyTimeBacteria;
 
-    public int pregnacyTime;
-
-    public float fertilityPercent;
+    public float fertilityPercentBacteria;
 
     // How much energy we have
-    private float energi;
+    public float energiBacteria;
+
+    // How much energy we have
+    public float healthBacteria;
 
     private int greenCollisions;
 
+    private Ray ray;
+    private RaycastHit hitData;
+
     // MyStart is called before the first frame update
-    protected override void MyStart()
+    protected override void BacteriaStart()
     {
         // We like to be in the middle of the fishtank
         temperatureOptimal = 21f;
@@ -69,7 +72,7 @@ public class GreenBacteria : Bacteria
 
         // Check fertility percent
         float fertilitySucces = UnityEngine.Random.Range(0, 100);
-        if (fertilityPercent > fertilitySucces) {
+        if (fertilityPercentBacteria > fertilitySucces) {
             yield return null;
         }
 
@@ -83,7 +86,7 @@ public class GreenBacteria : Bacteria
 
         // Pregnacy time with a bit of uncertainty
         float waitPeriod = UnityEngine.Random.Range(0.97f, 1.03f);
-        yield return new WaitForSeconds(pregnacyTime * waitPeriod);
+//        yield return new WaitForSeconds(pregnacyTimeBacteria * waitPeriod);
 
         // Ok, then make birth to a new bacteris
         fishTankSceneManager.MakeSiblingBacteria(parent);

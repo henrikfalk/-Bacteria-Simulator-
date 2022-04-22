@@ -34,15 +34,16 @@ In development.
 The game simulates the life of different bacteria types in a fishtank.
 
 Keys in the game:
-Press 'n' for new simulation
-Press 'f' for adding food
-Press 'l' for "look" at selected bacteria
-Press WASD to move camera or mouse scroll-wheel to zoom in and out in main camera mode
+- Press 'n' for new simulation
+- Press 'f' for adding food
+- Press 'l' for "look" at selected bacteria
+- Press WASD to move camera or mouse scroll-wheel to zoom in and out in main camera mode
 
 ## Unity concepts
 - Prefab variants
 - "Glass" material
 - Mouse selection using RaycastHit and child gameobject
+- Two cameras
 - GameObject highligt when mouseover
 - Datapersistence between scenes
 - Use of StartCoroutine()

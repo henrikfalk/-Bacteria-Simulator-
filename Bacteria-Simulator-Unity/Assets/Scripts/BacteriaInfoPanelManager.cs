@@ -17,4 +17,56 @@ public class BacteriaInfoPanelManager : MonoBehaviour
 
     public TextMeshProUGUI healthBNumberText;
 
+    private FishTankSceneManager fishTankSceneManager;
+
+    public GameObject bacteria { private get; set; }
+
+    void Start() {
+        GameObject obj1 = GameObject.Find("FishTankSceneManager");
+        fishTankSceneManager = obj1.GetComponent<FishTankSceneManager>();
+        bacteria = fishTankSceneManager.selectedBacteria;
+    }
+
+    void Update() {
+        if (bacteria == null) {
+
+            // We are dead
+            gameObject.SetActive(false);
+
+            return;
+        }
+
+        // Update bacteria type
+        string type = bacteria.name;
+        if (type.StartsWith("Green") == true) {
+            type = "Green";
+        }
+        if (type.StartsWith("Red") == true) {
+            type = "Red";
+        }
+        if (type.StartsWith("Purple") == true) {
+            type = "Purple";
+        }
+        if (type.StartsWith("Dead") == true) {
+            type = "Dead";
+        }
+
+        typeBNameText.text = type;
+
+        // Update name
+        nameBNameText.text = bacteria.name;
+
+        // Update fertility
+        fertilityBNumberText.text = "---";
+
+        // Update temperature
+        tempDynamicBNumberText.text = fishTankSceneManager.environment.GetEnvironmentTemperature(bacteria.transform.position).ToString("0.0");
+
+        // Update energy
+        energyBNumberText.text = "---";
+
+        // Update health
+        healthBNumberText.text = "---";
+
+    }
 }

@@ -6,10 +6,20 @@ using UnityEngine;
 public class RedBacteria : Bacteria
 {
 
+    public int pregnacyTimeBacteria;
+
+    public float fertilityPercentBacteria;
+
+    // How much energy we have
+    public float energiBacteria;
+
+    // How much energy we have
+    public float healthBacteria;
+
     private Ray ray;
     private RaycastHit hitData;
 
-    protected override void MyStart()
+    protected override void BacteriaStart()
     {
 
         // We like to be in the middle of the fishtank

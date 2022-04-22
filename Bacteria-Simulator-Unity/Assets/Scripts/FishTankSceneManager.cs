@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,10 +9,10 @@ public class FishTankSceneManager : MonoBehaviour
     public EnvironmentManager environment;
 
     public GameObject newSimulationPopup;
-    private TwoSliderPopupManager newSimulationPopupManager;
+//    private TwoSliderPopupManager newSimulationPopupManager;
 
     public GameObject addFoodPopup;
-    private TwoSliderPopupManager addFoodPopupManager;
+//    private TwoSliderPopupManager addFoodPopupManager;
 
     public GameObject statusPanel;
     private StatusPanelManager statusPanelManager;
@@ -32,6 +33,10 @@ public class FishTankSceneManager : MonoBehaviour
 
     private bool simulationRunning = false;
 
+    // How long has this simulation been running?
+    public DateTime simulationStartTime;
+    private TimeSpan elapsedSimulationTime;
+
     // Cameras
     public Camera defaultCamera { get; private set; }
     public Camera lockCamera { get; private set; }
@@ -42,10 +47,10 @@ public class FishTankSceneManager : MonoBehaviour
 
     void Start() {
         
-        newSimulationPopupManager = newSimulationPopup.GetComponent<TwoSliderPopupManager>();
+//        newSimulationPopupManager = newSimulationPopup.GetComponent<TwoSliderPopupManager>();
         newSimulationPopup.SetActive(false);
 
-        addFoodPopupManager = addFoodPopup.GetComponent<TwoSliderPopupManager>();
+//        addFoodPopupManager = addFoodPopup.GetComponent<TwoSliderPopupManager>();
         addFoodPopup.SetActive(false);
 
         bacteriaInfoPanelManager = bacteriaInfoPanel.GetComponent<BacteriaInfoPanelManager>();
@@ -75,7 +80,7 @@ public class FishTankSceneManager : MonoBehaviour
             if (Physics.Raycast(ray, out hitData) == true) {
                 selectedBacteria = hitData.collider.gameObject;
                 lockCamera.GetComponent<LockCameraController>().selectedObject = selectedBacteria;
-                ShowBacteriaInfo(selectedBacteria);
+                ShowBacteriaInfo(true);
             } else {
                 selectedBacteria = null;
                 if (lockCamera.gameObject.activeSelf == true) {
@@ -129,15 +134,19 @@ public class FishTankSceneManager : MonoBehaviour
             }
         }
 
-        if (selectedBacteria != null) {
-            bacteriaInfoPanelManager.tempDynamicBNumberText.text = environment.GetEnvironmentTemperature(selectedBacteria.transform.position).ToString("0.0");
+        // Update statusPanel
+        if (simulationRunning == true) {
+            elapsedSimulationTime = DateTime.Now - simulationStartTime;
+            statusPanelManager.UpdateStatus(elapsedSimulationTime);
         }
+
+
     }
 
     public void NewSimulation() {
 
-        initialNumberGreenBacteria = newSimulationPopupManager.GetSlider1Number();
-        initialNumberRedBacteria = newSimulationPopupManager.GetSlider2Number();
+        initialNumberGreenBacteria = 50;
+        initialNumberRedBacteria = 50;
 
         // Empty fishtank for bacteria
         GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
@@ -160,6 +169,9 @@ public class FishTankSceneManager : MonoBehaviour
         // The simulation is running
         simulationRunning = true;
 
+        // Start timer
+        simulationStartTime = DateTime.Now;
+
         // Create new simulation
         StartCoroutine(InstantiateNewSimulation());
 
@@ -173,12 +185,12 @@ public class FishTankSceneManager : MonoBehaviour
         for (int i = 0; i < initialNumberGreenBacteria; i++) {
 
             // Generate random spawnposition and rotation above fishtank
-            float posX = Random.Range(-3f, 3f);
-            float posY = Random.Range(10.5f, 12.5f);
-            float posZ = Random.Range(-1.5f, -0.5f);
-            float rotX = Random.Range(-90f, 90f);
-            float rotY = Random.Range(-90f, 90f);
-            float rotZ = Random.Range(-90f, 90f);
+            float posX = UnityEngine.Random.Range(-3f, 3f);
+            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
+            float rotX = UnityEngine.Random.Range(-90f, 90f);
+            float rotY = UnityEngine.Random.Range(-90f, 90f);
+            float rotZ = UnityEngine.Random.Range(-90f, 90f);
 
             GameObject obj = Instantiate(greenBacteriaPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
             obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
@@ -192,12 +204,12 @@ public class FishTankSceneManager : MonoBehaviour
         for (int i = 0; i < initialNumberRedBacteria; i++) {
 
             // Generate random spawnposition and rotation above fishtank
-            float posX = Random.Range(-3f, 3f);
-            float posY = Random.Range(10.5f, 12.5f);
-            float posZ = Random.Range(-1.5f, -0.5f);
-            float rotX = Random.Range(-90f, 90f);
-            float rotY = Random.Range(-90f, 90f);
-            float rotZ = Random.Range(-90f, 90f);
+            float posX = UnityEngine.Random.Range(-3f, 3f);
+            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
+            float rotX = UnityEngine.Random.Range(-90f, 90f);
+            float rotY = UnityEngine.Random.Range(-90f, 90f);
+            float rotZ = UnityEngine.Random.Range(-90f, 90f);
 
             GameObject obj = Instantiate(redBacteriaPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
             obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
@@ -226,7 +238,7 @@ public class FishTankSceneManager : MonoBehaviour
             }
 
             // Wait a bit because it looks nice
-            float waitPeriod = Random.Range(0.07f, 0.14f);
+            float waitPeriod = UnityEngine.Random.Range(0.07f, 0.14f);
             yield return new WaitForSeconds(waitPeriod);
 
         }
@@ -268,8 +280,8 @@ public class FishTankSceneManager : MonoBehaviour
 
     public void AddFoodToSimulation() {
 
-        int food = addFoodPopupManager.GetSlider1Number();
-        int superFood = addFoodPopupManager.GetSlider2Number();
+        int food = 5; //addFoodPopupManager.GetSlider1Number();
+        int superFood = 0; //addFoodPopupManager.GetSlider2Number();
 
         addFoodPopup.SetActive(false);
 
@@ -284,19 +296,19 @@ public class FishTankSceneManager : MonoBehaviour
         for (int i = 0; i < food; i++) {
 
             // Generate random spawnposition and rotation above fishtank
-            float posX = Random.Range(-3f, 3f);
-            float posY = Random.Range(10.5f, 12.5f);
-            float posZ = Random.Range(-1.5f, -0.5f);
-            float rotX = Random.Range(-90f, 90f);
-            float rotY = Random.Range(-90f, 90f);
-            float rotZ = Random.Range(-90f, 90f);
+            float posX = UnityEngine.Random.Range(-3f, 3f);
+            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
+            float rotX = UnityEngine.Random.Range(-90f, 90f);
+            float rotY = UnityEngine.Random.Range(-90f, 90f);
+            float rotZ = UnityEngine.Random.Range(-90f, 90f);
 
             GameObject obj = Instantiate(foodPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
             obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
             obj.name = "Food" + (i+1).ToString();
 
             // Wait a bit because it looks nice
-            float waitPeriod = Random.Range(0.1f, 0.2f);
+            float waitPeriod = UnityEngine.Random.Range(0.1f, 0.2f);
             yield return new WaitForSeconds(waitPeriod);
         }
 
@@ -304,25 +316,25 @@ public class FishTankSceneManager : MonoBehaviour
         for (int i = 0; i < superFood; i++) {
 
             // Generate random spawnposition and rotation above fishtank
-            float posX = Random.Range(-3f, 3f);
-            float posY = Random.Range(10.5f, 12.5f);
-            float posZ = Random.Range(-1.5f, -0.5f);
-            float rotX = Random.Range(-90f, 90f);
-            float rotY = Random.Range(-90f, 90f);
-            float rotZ = Random.Range(-90f, 90f);
+            float posX = UnityEngine.Random.Range(-3f, 3f);
+            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
+            float rotX = UnityEngine.Random.Range(-90f, 90f);
+            float rotY = UnityEngine.Random.Range(-90f, 90f);
+            float rotZ = UnityEngine.Random.Range(-90f, 90f);
 
             GameObject obj = Instantiate(superFoodPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
             obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
             obj.name = "SuperFood" + (i+1).ToString();
 
             // Wait a bit because it looks nice
-            float waitPeriod = Random.Range(0.1f, 0.2f);
+            float waitPeriod = UnityEngine.Random.Range(0.1f, 0.2f);
             yield return new WaitForSeconds(waitPeriod);
         }
 
 
     }
-
+/*
     public void BacteriaDies(GameObject bacteria) {
 
         string type = bacteria.name;
@@ -382,11 +394,14 @@ public class FishTankSceneManager : MonoBehaviour
 
         }
     }
-
+*/
     public void ShowBacteriaInfo(bool showInfo) {
+
+        bacteriaInfoPanelManager.bacteria = selectedBacteria;
+
         bacteriaInfoPanel.SetActive(showInfo);
     }
-
+/*
     public void ShowBacteriaInfo(GameObject obj) {
         selectedBacteria = obj;
         string type = selectedBacteria.name;
@@ -410,5 +425,5 @@ public class FishTankSceneManager : MonoBehaviour
 
         bacteriaInfoPanel.SetActive(true);
     }
-
+*/
 }

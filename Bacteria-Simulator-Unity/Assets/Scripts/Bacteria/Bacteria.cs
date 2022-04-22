@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bacteria : MonoBehaviour
 {
 
-    public FishTankSceneManager fishTankSceneManager;
+    protected FishTankSceneManager fishTankSceneManager;
     public EnvironmentManager environment;
 
     protected Rigidbody bacteriaRigidbody;
@@ -71,11 +71,11 @@ public class Bacteria : MonoBehaviour
         deadTime = bornTime.Add(new System.TimeSpan(0,0,minutes, seconds));
 
         // Use this method in derived classes for overriding stuff
-        MyStart();
+        BacteriaStart();
     }
 
     // Use this method in derived classes for overriding stuff in Start() method
-    protected virtual void MyStart(){
+    protected virtual void BacteriaStart(){
 
     }
 
@@ -94,7 +94,7 @@ public class Bacteria : MonoBehaviour
             bacteriaDead = true;
 
             // Update UI
-            fishTankSceneManager.BacteriaDies(gameObject);
+//            fishTankSceneManager.BacteriaDies(gameObject);
 
             // Bacteria is dead
             bacteriaRenderer.material = deadMaterial;
@@ -103,7 +103,7 @@ public class Bacteria : MonoBehaviour
             bacteriaRigidbody.useGravity = true;
             gameObject.name = deadName;
 
-            fishTankSceneManager.UpdateBacteriaInfo(deadName);
+            //fishTankSceneManager.UpdateBacteriaInfo(deadName);
 
             // Disolve bacteria after some time
             StartCoroutine(DisolveBacteria());
@@ -200,7 +200,7 @@ public class Bacteria : MonoBehaviour
         // maybe later add toxic stuff to environment because of decay
 
         // Update UI
-        fishTankSceneManager.BacteriaDies(gameObject);
+//        fishTankSceneManager.BacteriaDies(gameObject);
 
         // Destroy me
         Destroy(gameObject);
