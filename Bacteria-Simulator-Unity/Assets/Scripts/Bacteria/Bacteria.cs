@@ -14,6 +14,14 @@ public class Bacteria : MonoBehaviour
 
     public float maxVelocity;
 
+    public float fertilityPercent;
+
+    // How much energy we have
+    public float energiBacteria;
+
+    // How much energy we have
+    public float healthBacteria;
+
     // Most optimal temperature for this bacteria
     public float temperatureOptimal;
 

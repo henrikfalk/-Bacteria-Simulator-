@@ -10,9 +10,9 @@ public class BacteriaSelectionHandler : MonoBehaviour
     private Color32 oldColor;
     private Color32 mouseOverColor;
 
-    private int redColor;
-    private int greenColor;
-    private int blueColor;
+    private int redColor = 255;
+    private int greenColor = 255;
+    private int blueColor = 0;
 
 
 //    private static GameObject selectedGameObject;
@@ -20,7 +20,6 @@ public class BacteriaSelectionHandler : MonoBehaviour
     
     void Start() {
 
-        oldColor = GetComponent<Renderer>().material.color;
         mouseOverColor = new Color32((byte)redColor, (byte)greenColor, (byte)blueColor, 255);
 
         GameObject obj1 = GameObject.Find("FishTankSceneManager");
@@ -39,6 +38,7 @@ public class BacteriaSelectionHandler : MonoBehaviour
 
 
     void OnMouseEnter() {
+        oldColor = GetComponent<Renderer>().material.color;
         GetComponent<Renderer>().material.color = mouseOverColor;
     }
 

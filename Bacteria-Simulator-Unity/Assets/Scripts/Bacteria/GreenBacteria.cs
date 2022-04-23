@@ -8,14 +8,6 @@ public class GreenBacteria : Bacteria
 
     //public int pregnacyTimeBacteria;
 
-    public float fertilityPercentBacteria;
-
-    // How much energy we have
-    public float energiBacteria;
-
-    // How much energy we have
-    public float healthBacteria;
-
     private int greenCollisions;
 
     private Ray ray;
@@ -24,11 +16,23 @@ public class GreenBacteria : Bacteria
     // MyStart is called before the first frame update
     protected override void BacteriaStart()
     {
-        // We like to be in the middle of the fishtank
-        temperatureOptimal = 21f;
 
-        // 
-        temperatureRange = 2f;
+        if (GameManager.Instance != null) {
+            LaboratoryInfo info = GameManager.Instance.getCurrentLaboratoryInfo();
+
+            maxVelocity = info.maxVelocityGreen;
+            temperatureOptimal = info.temperatureOptimalBacteriaGreen;
+            temperatureRange = info.temperatureRangeBacteriaGreen;
+            maxAgeMinutes = info.maxAgeMinutesBacteriaGreen;
+            fertilityPercent = info.fertilityPercentBacteriaGreen;
+        } else {
+            // We run from "FishtankScene"
+            maxVelocity = 1;
+            temperatureOptimal = 20f;
+            temperatureRange = 11f;
+            maxAgeMinutes = 2;
+            fertilityPercent = 75;
+        }
     }
 
     // Update is called once per frame
@@ -72,7 +76,7 @@ public class GreenBacteria : Bacteria
 
         // Check fertility percent
         float fertilitySucces = UnityEngine.Random.Range(0, 100);
-        if (fertilityPercentBacteria > fertilitySucces) {
+        if (fertilityPercent > fertilitySucces) {
             yield return null;
         }
 

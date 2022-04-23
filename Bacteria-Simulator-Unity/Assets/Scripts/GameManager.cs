@@ -14,8 +14,25 @@ public class GameManager : MonoBehaviour
     // Singleton
     public static GameManager Instance { get; private set; }
 
-    // Playerlist
-//    private List<PlayerInfo> playerList = new List<PlayerInfo>();
+    // Standard laboratory settings
+    private LaboratoryInfo standardLaboratoryInfo = new LaboratoryInfo {
+        middleTemperatureInfo = 30,
+        toxicityInfo = 0,
+        maxVelocityGreen = 1,
+        temperatureOptimalBacteriaGreen = 20,
+        temperatureRangeBacteriaGreen = 11,
+        maxAgeMinutesBacteriaGreen = 2,
+        fertilityPercentBacteriaGreen = 75,
+        maxVelocityRed = 2,
+        temperatureOptimalBacteriaRed = 40,
+        temperatureRangeBacteriaRed = 10,
+        maxAgeMinutesBacteriaRed = 3,
+        fertilityPercentBacteriaRed = 50
+
+    };
+
+    // Current laboratory settings
+    private LaboratoryInfo currentLaboratoryInfo;
 
     // Awake is called when the script instance is being loaded
     private void Awake() {
@@ -29,10 +46,14 @@ public class GameManager : MonoBehaviour
         // Do not destroy this Object when loading a new Scene
         DontDestroyOnLoad(gameObject);
 
+        // Make reference to self
         Instance = this;
 
+        // Take the current laboratory values from the standard values
+        currentLaboratoryInfo = (LaboratoryInfo)standardLaboratoryInfo.Clone();
+
         // Load saved stuff
-        Load();
+        LoadLab();
 
     }
 
@@ -45,8 +66,8 @@ public class GameManager : MonoBehaviour
     // Quit game from native Linux build
     public void QuitGame() {
 
-        // Save if exit game
-        Save();
+        // I will properly not save in final vesion
+//        Save();
 
          // original code to quit Unity player
         #if UNITY_EDITOR
@@ -56,6 +77,10 @@ public class GameManager : MonoBehaviour
         #endif
     }
 
+
+    public LaboratoryInfo getCurrentLaboratoryInfo() {
+        return currentLaboratoryInfo;
+    }
 
     // Load and save code between sessions
     [System.Serializable]
@@ -70,20 +95,20 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void Save() {
-        SaveData data = new SaveData();
+    public void SaveLab() {
+//        SaveData data = new SaveData();
 //        data.playerNameSave = playerName;
 
-        string json = JsonUtility.ToJson(data);
+        string json = JsonUtility.ToJson(currentLaboratoryInfo);
   
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        File.WriteAllText(Application.persistentDataPath + "/labSaveFile.json", json);
     }
 
-    public void Load() {
-        string path = Application.persistentDataPath + "/savefile.json";
+    public void LoadLab() {
+        string path = Application.persistentDataPath + "/labSaveFile.json";
         if (File.Exists(path)) {
             string json = File.ReadAllText(path);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
+            currentLaboratoryInfo = JsonUtility.FromJson<LaboratoryInfo>(json);
 
             // Load last playername
   //          playerName = data.playerNameSave;

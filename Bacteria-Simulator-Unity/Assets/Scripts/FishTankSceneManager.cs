@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FishTankSceneManager : MonoBehaviour
 {
@@ -63,7 +64,6 @@ public class FishTankSceneManager : MonoBehaviour
 
         lockCamera = GameObject.Find("Lock Camera").GetComponent<Camera>();
         lockCamera.gameObject.SetActive(false);
-
 
     }
 
@@ -145,8 +145,8 @@ public class FishTankSceneManager : MonoBehaviour
 
     public void NewSimulation() {
 
-        initialNumberGreenBacteria = 50;
-        initialNumberRedBacteria = 50;
+        initialNumberGreenBacteria = Int32.Parse(GameObject.Find("GreenBacteriaNumberText").GetComponent<TextMeshProUGUI>().text);
+        initialNumberRedBacteria = Int32.Parse(GameObject.Find("RedBacteriaNumberText").GetComponent<TextMeshProUGUI>().text);
 
         // Empty fishtank for bacteria
         GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
@@ -159,12 +159,7 @@ public class FishTankSceneManager : MonoBehaviour
         newSimulationPopup.SetActive(false);
 
         // reset status UI
-        statusPanelManager.greenBNumberText.text = "0";
-        statusPanelManager.redBNumberText.text = "0";
-        statusPanelManager.purpleBNumberText.text = "0";
-        statusPanelManager.temperatureBNumberText.text = environment.GetMiddleTemperature() + " ºC";
-        statusPanelManager.deadBNumberText.text = "0";
-        statusPanelManager.toxicityBNumberText.text = "0";
+        statusPanelManager.UpdateStatus(new TimeSpan(0));
 
         // The simulation is running
         simulationRunning = true;
@@ -221,21 +216,9 @@ public class FishTankSceneManager : MonoBehaviour
 
         sourceList = ShuffleArrayList(sourceList);
 
-        int greenCount = 1;
-        int redCount = 1;
         foreach (GameObject obj in sourceList) {
 
-            if (obj.name.StartsWith("Green") == true) {
-                obj.SetActive(true);
-                statusPanelManager.greenBNumberText.text = greenCount.ToString();    
-                greenCount++;
-            }
-
-            if (obj.name.StartsWith("Red") == true) {
-                obj.SetActive(true);
-                statusPanelManager.redBNumberText.text = redCount.ToString();    
-                redCount++;
-            }
+            obj.SetActive(true);
 
             // Wait a bit because it looks nice
             float waitPeriod = UnityEngine.Random.Range(0.07f, 0.14f);
@@ -280,8 +263,8 @@ public class FishTankSceneManager : MonoBehaviour
 
     public void AddFoodToSimulation() {
 
-        int food = 5; //addFoodPopupManager.GetSlider1Number();
-        int superFood = 0; //addFoodPopupManager.GetSlider2Number();
+        int food = Int32.Parse(GameObject.Find("FoodNumberText").GetComponent<TextMeshProUGUI>().text);
+        int superFood = Int32.Parse(GameObject.Find("SuperFoodNumberText").GetComponent<TextMeshProUGUI>().text);
 
         addFoodPopup.SetActive(false);
 
@@ -334,96 +317,11 @@ public class FishTankSceneManager : MonoBehaviour
 
 
     }
-/*
-    public void BacteriaDies(GameObject bacteria) {
 
-        string type = bacteria.name;
-
-        if (type.StartsWith("Green") == true) {
-            int number = System.Convert.ToInt32(statusPanelManager.greenBNumberText.text);
-            number--;
-            statusPanelManager.greenBNumberText.text = number.ToString();
-            number = System.Convert.ToInt32(statusPanelManager.deadBNumberText.text);
-            number++;
-            statusPanelManager.deadBNumberText.text = number.ToString();
-        }
-        if (type.StartsWith("Red") == true) {
-            int number = System.Convert.ToInt32(statusPanelManager.redBNumberText.text);
-            number--;
-            statusPanelManager.redBNumberText.text = number.ToString();
-            number = System.Convert.ToInt32(statusPanelManager.deadBNumberText.text);
-            number++;
-            statusPanelManager.deadBNumberText.text = number.ToString();
-        }
-        if (type.StartsWith("Dead") == true) {
-            int number = System.Convert.ToInt32(statusPanelManager.deadBNumberText.text);
-            number--;
-            statusPanelManager.deadBNumberText.text = number.ToString();
-            number = System.Convert.ToInt32(statusPanelManager.toxicityBNumberText.text);
-            number++;
-            statusPanelManager.toxicityBNumberText.text = number.ToString();
-
-            // If BacteriaInfo panel for this bacteria is shown then close it
-            if (bacteriaInfoPanel.activeSelf == true) {
-                if (bacteria.name.Contains(bacteriaInfoPanelManager.nameBNameText.text) == true) {
-                    ShowBacteriaInfo(false);    
-                }
-            }
-        }
-    }
-
-    public void UpdateBacteriaInfo(string typeAndName) {
-
-        string type = "Unknown";
-        if (bacteriaInfoPanel.activeSelf == true) {
-            if (typeAndName.Contains("Green") == true) {
-                type = "Green";
-            }
-            if (typeAndName.Contains("Red") == true) {
-                type = "Red";
-            }
-            if (typeAndName.Contains("Purple") == true) {
-                type = "Purple";
-            }
-            if (typeAndName.StartsWith("Dead") == true) {
-                type = "Dead";
-            }
-
-            bacteriaInfoPanelManager.typeBNameText.text = type;
-            bacteriaInfoPanelManager.nameBNameText.text = typeAndName;
-
-        }
-    }
-*/
     public void ShowBacteriaInfo(bool showInfo) {
 
         bacteriaInfoPanelManager.bacteria = selectedBacteria;
 
         bacteriaInfoPanel.SetActive(showInfo);
     }
-/*
-    public void ShowBacteriaInfo(GameObject obj) {
-        selectedBacteria = obj;
-        string type = selectedBacteria.name;
-        if (type.StartsWith("Green") == true) {
-            type = "Green";
-        }
-        if (type.StartsWith("Red") == true) {
-            type = "Red";
-        }
-        if (type.StartsWith("Purple") == true) {
-            type = "Purple";
-        }
-        if (type.StartsWith("Dead") == true) {
-            type = "Dead";
-        }
-
-        bacteriaInfoPanelManager.typeBNameText.text = type;
-        bacteriaInfoPanelManager.nameBNameText.text = selectedBacteria.name;
-
-        bacteriaInfoPanelManager.tempDynamicBNumberText.text = environment.GetEnvironmentTemperature(selectedBacteria.transform.position).ToString("0.0");
-
-        bacteriaInfoPanel.SetActive(true);
-    }
-*/
 }
