@@ -57,16 +57,16 @@ public class BacteriaInfoPanelManager : MonoBehaviour
         nameBNameText.text = bacteria.name;
 
         // Update fertility
-        fertilityBNumberText.text = "---";
+        fertilityBNumberText.text = bacteria.GetComponent<Bacteria>().fertilityPercent.ToString("0.00");
 
         // Update temperature
         tempDynamicBNumberText.text = fishTankSceneManager.environment.GetEnvironmentTemperature(bacteria.transform.position).ToString("0.0");
 
         // Update energy
-        energyBNumberText.text = "---";
+        energyBNumberText.text = bacteria.GetComponent<Bacteria>().energiBacteria.ToString("0.0");
 
         // Update health
-        healthBNumberText.text = "---";
+        healthBNumberText.text = bacteria.GetComponent<Bacteria>().healthBacteria.ToString("0.0");
 
     }
 }

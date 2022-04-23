@@ -1,61 +1,58 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaboratoryInfo : MonoBehaviour
+[System.Serializable]
+public class LaboratoryInfo : ICloneable
 {
 
-    // the middletemperature of the water
-    public float middleTemperatureInfo;
+    // the middletemperature of the water optimal 25 degrees +/- maximum 20
+    public float middleTemperatureInfo { get; set; }
 
-    // The toxicity of the environment    
-    private int toxicityInfo;
+    // The toxicity of the environment (0 - 100)
+    public int toxicityInfo { get; set; }
 
     /*
     * Green bacteria
     */
 
-    public float maxVelocityGreen;
+    public float maxVelocityGreen { get; set; }
 
-    // Most optimal temperature for this bacteria
-    public float temperatureOptimalBacteriaGreen;
+    // Most optimal temperature in degrees for this bacteria -
+    public float temperatureOptimalBacteriaGreen { get; set; }
 
-    // The temperature range +/- that the bacteria can live within
-    public float temperatureRangeBacteriaGreen;
+    // The temperature range +/- in degrees that the bacteria can live within
+    public float temperatureRangeBacteriaGreen { get; set; }
 
     // The max age of the bacteria in minutes
-    public int maxAgeMinutesBacteriaGreen;
+    public int maxAgeMinutesBacteriaGreen { get; set; }
 
     // The fertility percent
-    public float fertilityPercentBacteriaGreen;
+    public float fertilityPercentBacteriaGreen { get; set; }
 
     /*
     * Red bacteria
     */
 
-    public float maxVelocityRed;
+    public float maxVelocityRed { get; set; }
 
     // Most optimal temperature for this bacteria
-    public float temperatureOptimalBacteriaRed;
+    public float temperatureOptimalBacteriaRed { get; set; }
 
     // The temperature range +/- that the bacteria can live within
-    public float temperatureRangeBacteriaRed;
+    public float temperatureRangeBacteriaRed { get; set; }
 
     // The max age of the bacteria in minutes
-    public int maxAgeMinutesBacteriaRed;
+    public int maxAgeMinutesBacteriaRed { get; set; }
 
     // The fertility percent
-    public float fertilityPercentBacteriaRed;
+    public float fertilityPercentBacteriaRed { get; set; }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    // Implement ICloneable interface
+    public System.Object Clone() {
+        return this.MemberwiseClone();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

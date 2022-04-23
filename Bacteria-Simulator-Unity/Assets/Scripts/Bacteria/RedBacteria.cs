@@ -8,25 +8,27 @@ public class RedBacteria : Bacteria
 
     public int pregnacyTimeBacteria;
 
-    public float fertilityPercentBacteria;
-
-    // How much energy we have
-    public float energiBacteria;
-
-    // How much energy we have
-    public float healthBacteria;
-
     private Ray ray;
     private RaycastHit hitData;
 
     protected override void BacteriaStart()
     {
+        if (GameManager.Instance != null) {
+            LaboratoryInfo info = GameManager.Instance.getCurrentLaboratoryInfo();
 
-        // We like to be in the middle of the fishtank
-        temperatureOptimal = 25;
-
-        // 
-        temperatureRange = 3f;
+            maxVelocity = info.maxVelocityGreen;
+            temperatureOptimal = info.temperatureOptimalBacteriaGreen;
+            temperatureRange = info.temperatureRangeBacteriaGreen;
+            maxAgeMinutes = info.maxAgeMinutesBacteriaGreen;
+            fertilityPercent = info.fertilityPercentBacteriaGreen;
+        } else {
+            // We run from "FishtankScene"
+            maxVelocity = 2;
+            temperatureOptimal = 40f;
+            temperatureRange = 10f;
+            maxAgeMinutes = 3;
+            fertilityPercent = 50;
+        }
 
     }
 
