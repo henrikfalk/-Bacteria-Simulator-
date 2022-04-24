@@ -7,8 +7,10 @@ using TMPro;
 public class SliderToTextUpdater : MonoBehaviour
 {
 
-    public TextMeshProUGUI sliderNumberText;
     public Slider sliderNumberSlider;
+    public TextMeshProUGUI sliderNumberText;
+    public string prefix;
+    public string suffix;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +18,13 @@ public class SliderToTextUpdater : MonoBehaviour
         // Keep this if we want to persist/remember the last values used
 
         // Update if slider value is set in Unity Editor
-        sliderNumberText.text = sliderNumberSlider.value.ToString();
+        sliderNumberText.text = prefix + sliderNumberSlider.value.ToString() + suffix;
 
         sliderNumberSlider.onValueChanged.AddListener(UpdateSliderNumberText);
     }
 
     public void UpdateSliderNumberText(float value) {
-        sliderNumberText.text = value.ToString();
+        sliderNumberText.text =  prefix + value.ToString() + suffix;;
     }
 
     public int GetSliderNumber() {

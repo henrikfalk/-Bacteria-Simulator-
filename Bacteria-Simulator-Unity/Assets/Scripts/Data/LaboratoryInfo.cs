@@ -7,6 +7,10 @@ using UnityEngine;
 public class LaboratoryInfo : ICloneable
 {
 
+    /*
+    * Environment
+    */
+
     // the middletemperature of the water optimal 25 degrees +/- maximum 20
     public float middleTemperatureInfo { get; set; }
 
