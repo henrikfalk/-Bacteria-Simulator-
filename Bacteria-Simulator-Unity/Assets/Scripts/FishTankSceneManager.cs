@@ -16,7 +16,7 @@ public class FishTankSceneManager : MonoBehaviour
 //    private TwoSliderPopupManager addFoodPopupManager;
 
     public GameObject statusPanel;
-    private StatusPanelManager statusPanelManager;
+    private StatusPanelController statusPanelController;
 
     public GameObject bacteriaInfoPanel;
     private BacteriaInfoPanelManager bacteriaInfoPanelManager;
@@ -57,7 +57,7 @@ public class FishTankSceneManager : MonoBehaviour
         bacteriaInfoPanelManager = bacteriaInfoPanel.GetComponent<BacteriaInfoPanelManager>();
         bacteriaInfoPanel.SetActive(false);
 
-        statusPanelManager = statusPanel.GetComponent<StatusPanelManager>();
+        statusPanelController = statusPanel.GetComponent<StatusPanelController>();
 
         defaultCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         defaultCamera.gameObject.SetActive(true);
@@ -137,7 +137,7 @@ public class FishTankSceneManager : MonoBehaviour
         // Update statusPanel
         if (simulationRunning == true) {
             elapsedSimulationTime = DateTime.Now - simulationStartTime;
-            statusPanelManager.UpdateStatus(elapsedSimulationTime);
+            statusPanelController.UpdateStatus(elapsedSimulationTime);
         }
 
 
@@ -159,7 +159,7 @@ public class FishTankSceneManager : MonoBehaviour
         newSimulationPopup.SetActive(false);
 
         // reset status UI
-        statusPanelManager.UpdateStatus(new TimeSpan(0));
+        statusPanelController.UpdateStatus(new TimeSpan(0));
 
         // The simulation is running
         simulationRunning = true;

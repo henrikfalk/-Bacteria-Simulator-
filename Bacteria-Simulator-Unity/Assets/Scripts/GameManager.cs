@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     // Standard laboratory settings
-    private LaboratoryInfo standardLaboratoryInfo = new LaboratoryInfo {
+    private LaboratoryInfo defaultLaboratoryInfo = new LaboratoryInfo {
         middleTemperatureInfo = 30,
         toxicityInfo = 0,
         maxVelocityGreen = 1,
@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
         temperatureRangeBacteriaRed = 10,
         maxAgeMinutesBacteriaRed = 3,
         fertilityPercentBacteriaRed = 50
-
     };
 
     // Current laboratory settings
@@ -50,7 +49,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         // Take the current laboratory values from the standard values
-        currentLaboratoryInfo = (LaboratoryInfo)standardLaboratoryInfo.Clone();
+        currentLaboratoryInfo = (LaboratoryInfo)defaultLaboratoryInfo.Clone();
 
         // Load saved stuff
         LoadLab();
@@ -66,9 +65,6 @@ public class GameManager : MonoBehaviour
     // Quit game from native Linux build
     public void QuitGame() {
 
-        // I will properly not save in final vesion
-//        Save();
-
          // original code to quit Unity player
         #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
@@ -78,28 +74,36 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public LaboratoryInfo getCurrentLaboratoryInfo() {
+    public LaboratoryInfo GetCurrentLaboratoryInfo() {
         return currentLaboratoryInfo;
+    }
+
+    public void SetCurrentLaboratoryInfo(LaboratoryInfo info) {
+
+        currentLaboratoryInfo = (LaboratoryInfo)info.Clone();
+
+        // Save
+        SaveLab();
+    }
+
+    public LaboratoryInfo GetDefaultLaboratoryInfo() {
+        return defaultLaboratoryInfo;
     }
 
     // Load and save code between sessions
     [System.Serializable]
     class SaveData {
 
-         // Name of last/current player
-//        public string playerNameSave;
-
-
-        // List of players
-//        public List<PlayerInfo> playerListSave = new List<PlayerInfo>();
+        public LaboratoryInfo saveCurrentLaboratoryInfo;
 
     }
 
     public void SaveLab() {
-//        SaveData data = new SaveData();
-//        data.playerNameSave = playerName;
+        SaveData data = new SaveData();
 
-        string json = JsonUtility.ToJson(currentLaboratoryInfo);
+        data.saveCurrentLaboratoryInfo = currentLaboratoryInfo;
+
+        string json = JsonUtility.ToJson(data);
   
         File.WriteAllText(Application.persistentDataPath + "/labSaveFile.json", json);
     }
@@ -108,14 +112,11 @@ public class GameManager : MonoBehaviour
         string path = Application.persistentDataPath + "/labSaveFile.json";
         if (File.Exists(path)) {
             string json = File.ReadAllText(path);
-            currentLaboratoryInfo = JsonUtility.FromJson<LaboratoryInfo>(json);
+            SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            // Load last playername
-  //          playerName = data.playerNameSave;
-
-            // Load playerlist
-//            playerList = data.playerListSave;
-
+            if (currentLaboratoryInfo != null) {
+                currentLaboratoryInfo = (LaboratoryInfo)data.saveCurrentLaboratoryInfo.Clone();
+            }
         }
     }
 
