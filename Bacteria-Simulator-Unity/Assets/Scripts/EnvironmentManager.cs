@@ -31,7 +31,7 @@ public class EnvironmentManager : MonoBehaviour
     void Start()
     {
         if (GameManager.Instance != null) {
-            currentLaboratoryInfo = GameManager.Instance.getCurrentLaboratoryInfo();
+            currentLaboratoryInfo = GameManager.Instance.GetCurrentLaboratoryInfo();
         }
 
         middleTemperature = currentLaboratoryInfo.middleTemperatureInfo;

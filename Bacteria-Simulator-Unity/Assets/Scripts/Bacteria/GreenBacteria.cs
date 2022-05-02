@@ -18,7 +18,7 @@ public class GreenBacteria : Bacteria
     {
 
         if (GameManager.Instance != null) {
-            LaboratoryInfo info = GameManager.Instance.getCurrentLaboratoryInfo();
+            LaboratoryInfo info = GameManager.Instance.GetCurrentLaboratoryInfo();
 
             maxVelocity = info.maxVelocityGreen;
             temperatureOptimal = info.temperatureOptimalBacteriaGreen;

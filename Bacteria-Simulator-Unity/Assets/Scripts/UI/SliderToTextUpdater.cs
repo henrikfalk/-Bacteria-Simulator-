@@ -9,8 +9,10 @@ public class SliderToTextUpdater : MonoBehaviour
 
     public Slider sliderNumberSlider;
     public TextMeshProUGUI sliderNumberText;
+
     public string prefix;
     public string suffix;
+    public string precision;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,7 @@ public class SliderToTextUpdater : MonoBehaviour
     }
 
     public void UpdateSliderNumberText(float value) {
-        sliderNumberText.text =  prefix + value.ToString() + suffix;;
+        sliderNumberText.text =  prefix + value.ToString(precision) + suffix;
     }
 
     public int GetSliderNumber() {
