@@ -8,6 +8,7 @@ public class StatusPanelController : MonoBehaviour
 {
 
     public EnvironmentManager environment;
+    public FishTankSceneManager fishTankSceneManager;
 
     // 
     public TextMeshProUGUI simulationTimeText;
@@ -33,6 +34,10 @@ public class StatusPanelController : MonoBehaviour
         // Get a handle to the EnvironmentManager
         GameObject obj1 = GameObject.Find("EnvironmentManager");
         environment = obj1.GetComponent<EnvironmentManager>();
+
+        // Get a handle to the FishTankSceneManager
+        GameObject obj2 = GameObject.Find("FishTankSceneManager");
+        fishTankSceneManager = obj2.GetComponent<FishTankSceneManager>();
     }
 
     public void UpdateStatus(TimeSpan elapsedTime) {
@@ -41,22 +46,25 @@ public class StatusPanelController : MonoBehaviour
         temperatureBNumberText.text = environment.GetMiddleTemperature() + " ºC";
 
         // Update time
-        string timeString = "";
-        if (elapsedTime.Days > 0) {
-            timeString += timeString + elapsedTime.Days + " d ";
+        if (fishTankSceneManager.IsSimulationRunning() == true) {
+            string timeString = "";
+            if (elapsedTime.Days > 0) {
+                timeString += timeString + elapsedTime.Days + " d ";
+            }
+            if (elapsedTime.Hours > 0) {
+                timeString += elapsedTime.Hours.ToString() + ":";
+            }
+
+            timeString += elapsedTime.Minutes.ToString("00") + ":";
+
+            timeString += elapsedTime.Seconds.ToString("00");
+
+            simulationTimeText.text = timeString; // "d.hh:mm:ss"
         }
-        if (elapsedTime.Hours > 0) {
-            timeString += elapsedTime.Hours.ToString() + ":";
-        }
-
-        timeString += elapsedTime.Minutes.ToString("00") + ":";
-
-        timeString += elapsedTime.Seconds.ToString("00");
-
-        simulationTimeText.text = timeString; // "d.hh:mm:ss"
 
         // Update bacteria
         bacteriaList = GameObject.FindGameObjectsWithTag("Bacteria");
+
         green = 0;
         red = 0;
         purple = 0;

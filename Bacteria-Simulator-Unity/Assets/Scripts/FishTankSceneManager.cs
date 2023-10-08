@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
+
 public class FishTankSceneManager : MonoBehaviour
 {
 
@@ -15,11 +19,18 @@ public class FishTankSceneManager : MonoBehaviour
     public GameObject addFoodPopup;
 //    private TwoSliderPopupManager addFoodPopupManager;
 
+    public GameObject simulationEndedPopup;
+
     public GameObject statusPanel;
+
+    public GameObject helpPanel;
+
     private StatusPanelController statusPanelController;
 
     public GameObject bacteriaInfoPanel;
     private BacteriaInfoPanelManager bacteriaInfoPanelManager;
+
+    // ENCAPSULATION
     public GameObject selectedBacteria { get; private set; }
  
     public GameObject greenBacteriaPrefab;
@@ -53,6 +64,8 @@ public class FishTankSceneManager : MonoBehaviour
 
 //        addFoodPopupManager = addFoodPopup.GetComponent<TwoSliderPopupManager>();
         addFoodPopup.SetActive(false);
+
+        simulationEndedPopup.SetActive(false);
 
         bacteriaInfoPanelManager = bacteriaInfoPanel.GetComponent<BacteriaInfoPanelManager>();
         bacteriaInfoPanel.SetActive(false);
@@ -96,6 +109,10 @@ public class FishTankSceneManager : MonoBehaviour
         // If we press the 'n' key then show "NewSimulationPopup"
         if (Input.GetKeyDown(KeyCode.N) == true) {
 
+            if (simulationRunning == true) {
+                QuitSimulation();
+            }
+
             if (addFoodPopup.activeSelf == true) {
                 return;
             }
@@ -134,12 +151,50 @@ public class FishTankSceneManager : MonoBehaviour
             }
         }
 
+        // If we press the 'q' key then quit the simulation
+        if (Input.GetKeyDown(KeyCode.Q) == true) {
+            QuitSimulation();
+        }
+
+        // If we press the 'Escape' key then quit the simulation
+        if (Input.GetKeyDown(KeyCode.Escape) == true) {
+            QuitSimulation();
+        }
+
         // Update statusPanel
         if (simulationRunning == true) {
             elapsedSimulationTime = DateTime.Now - simulationStartTime;
             statusPanelController.UpdateStatus(elapsedSimulationTime);
+        } else {
+            // reset status UI
+            statusPanelController.UpdateStatus(new TimeSpan(0));
         }
 
+
+        // If all bacterias are dead then it is game over ie. the simulation has ended
+        if (simulationRunning == true) {
+
+            // Check for bacteria
+            GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
+
+            // All bacteria are dead?
+//            Boolean allDead = false;
+            for (int i = 0; i < bacteria.Length; i++) {
+                if (bacteria[i].GetComponent<Bacteria>().IsDead() == false) {
+                        return;
+                }
+            }
+
+            // End simulation
+
+            // Stop simulation timer
+//            elapsedSimulationTime = new TimeSpan(0);
+//            statusPanelController.UpdateStatus(elapsedSimulationTime);
+
+            // Show "Simulation ended" dialog
+            simulationEndedPopup.SetActive(true);
+
+        }
 
     }
 
@@ -169,6 +224,38 @@ public class FishTankSceneManager : MonoBehaviour
 
         // Create new simulation
         StartCoroutine(InstantiateNewSimulation());
+
+    }
+
+    public void QuitSimulation() {
+
+        if (simulationRunning == false) {
+
+            if (GameManager.Instance != null) {
+                GameManager.Instance.GotoScene("MenuScene");
+            } else {
+                #if UNITY_EDITOR
+                    EditorApplication.ExitPlaymode();
+                #endif
+            }
+        } else {
+
+            StopCoroutine(InstantiateNewSimulation());
+
+            simulationRunning = false;
+
+            // Empty fishtank for bacteria
+            GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
+        
+            // remove them
+            for (int i = 0; i < bacteria.Length; i++) {
+                Debug.Log("Destroying: " + bacteria[i].name);
+                Destroy(bacteria[i]);
+            }
+
+            simulationEndedPopup.SetActive(false);
+
+        }
 
     }
 
@@ -323,5 +410,9 @@ public class FishTankSceneManager : MonoBehaviour
         bacteriaInfoPanelManager.bacteria = selectedBacteria;
 
         bacteriaInfoPanel.SetActive(showInfo);
+    }
+
+    public Boolean IsSimulationRunning() {
+        return simulationRunning;
     }
 }

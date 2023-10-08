@@ -73,11 +73,12 @@ public class GameManager : MonoBehaviour
         #endif
     }
 
-
+    // ENCAPSULATION
     public LaboratoryInfo GetCurrentLaboratoryInfo() {
         return currentLaboratoryInfo;
     }
 
+    // ENCAPSULATION
     public void SetCurrentLaboratoryInfo(LaboratoryInfo info) {
 
         currentLaboratoryInfo = (LaboratoryInfo)info.Clone();

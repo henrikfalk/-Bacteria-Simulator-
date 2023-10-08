@@ -50,6 +50,7 @@ public class EnvironmentManager : MonoBehaviour
         return temperature;
     }
 
+// ENCAPSULATION
     public float GetMiddleTemperature() {
         return middleTemperature;
     }

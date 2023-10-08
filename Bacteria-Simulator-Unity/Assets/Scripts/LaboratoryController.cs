@@ -152,7 +152,7 @@ public class LaboratoryController : MonoBehaviour
         currentLaboratoryInfo = (LaboratoryInfo)defaultLaboratoryInfo.Clone();
 
         // Save default values
-        SaveLaboratory();
+        GameManager.Instance.SetCurrentLaboratoryInfo(currentLaboratoryInfo);
 
         // Update
         UpdateUI();

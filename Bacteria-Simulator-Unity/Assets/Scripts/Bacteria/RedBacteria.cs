@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public class RedBacteria : Bacteria
 {
 
@@ -34,6 +35,7 @@ public class RedBacteria : Bacteria
 
 
     // Update is called once per frame
+    // POLYMORPHISM
     void Update()
     {
         if (DateTime.Now > deadTime && bacteriaDead == false) {

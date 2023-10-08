@@ -30,11 +30,17 @@ In development.
 ## The game
 The game simulates the life of different bacteria types in a fishtank.
 
-Keys in the game "FishtankScene":
+Keys in the scene "FishtankScene":
 - Press 'n' for new simulation
 - Press 'f' for adding food
-- Press 'l' for "look" at selected bacteria
+- Press 'l' for "look" and follow a selected bacteria
+- Press 'Escape' or 'q' to stop current simulation. If no simulation is in progress then the game will return to the mainmenu.
 - Press WASD to move camera or mouse scroll-wheel to zoom in and out in main camera mode
+
+Mouse actions in the scene "FishtankScene":
+- Left Button : Select bacteria
+- Right Button: Kill a selected bateria
+- Scroll Wheel: Zoom in and out
 
 ## Unity concepts
 - Prefab variants
@@ -48,7 +54,8 @@ Keys in the game "FishtankScene":
 - TMPro package (TextMeshPro)
 
 ## Development environment
-Unity Editor v2020.3.32f1 running on Manjaro Linux.
+Startet development using Unity Editor v2020.3.32f1 running on Manjaro Linux.
+Updated the Unity Editor to v2022.3.5f1 at some point because v2020.3.32f1 didn't work anymore.
 
 I used "GitKraken" as Git client.
 

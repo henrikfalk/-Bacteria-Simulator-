@@ -97,6 +97,7 @@ public class Bacteria : MonoBehaviour
         move();
     }
 
+    // ABSTRACTION
     protected void die(string deadName) {
             // This code must only run once
             bacteriaDead = true;
@@ -215,4 +216,7 @@ public class Bacteria : MonoBehaviour
 
     }
 
+    public Boolean IsDead(){
+        return bacteriaDead;
+    }
 }
