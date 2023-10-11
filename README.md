@@ -26,6 +26,7 @@ In development.
 - You can add food to the fishtank (but has no effect yet) by pressing 'f' on keyboard
 - The bacteria have a approximate lifespan. Then they die, turn black and falls to the bottom of the fishtank. After a period they dissolves in the water creating a more toxic environment 
 - If you right-click with the mouse on a bacteria it dies
+- Added a Help panel in the Fishtankscene
 
 ## The game
 The game simulates the life of different bacteria types in a fishtank.
@@ -49,7 +50,7 @@ Mouse actions in the scene "FishtankScene":
 - Two cameras
 - GameObject highligt when mouseover
 - Datapersistence between scenes
-- Datapersistence between gamesessions (Game settings)
+- Datapersistence between gamesessions (Laboratory settings)
 - Use of StartCoroutine()
 - TMPro package (TextMeshPro)
 
