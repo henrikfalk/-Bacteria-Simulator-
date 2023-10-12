@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
@@ -54,13 +55,19 @@ PrefabInstance:
     - target: {fileID: 7965526917445020559, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0ced93ef35ffcd2d2823f8c38b253292, type: 2}
+      objectReference: {fileID: 2100000, guid: 0b65e5ccb2e07201aa7eee3ce955e818, type: 2}
     - target: {fileID: 7965526917445020657, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
       propertyPath: m_Name
       value: GreenBacteriaPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5385717855215588281, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7965526917445020657, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4010192905039680942}
   m_SourcePrefab: {fileID: 100100000, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
 --- !u!1 &7244358375356842862 stripped
 GameObject:
@@ -79,12 +86,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fd521e8691e04489457687734dfd5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishTankSceneManager: {fileID: 0}
   environment: {fileID: 0}
   maxVelocity: 1
+  fertilityPercent: 50
+  energiBacteria: 0
+  healthBacteria: 0
   temperatureOptimal: 0
   temperatureRange: 0
   deadMaterial: {fileID: 2100000, guid: d4d43449e355a8b33a08c3ef99f65cdf, type: 2}
   maxAgeMinutes: 2
-  pregnacyTime: 30
-  fertilityPercent: 50

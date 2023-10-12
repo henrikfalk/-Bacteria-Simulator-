@@ -60,6 +60,8 @@ public class StatusPanelController : MonoBehaviour
             timeString += elapsedTime.Seconds.ToString("00");
 
             simulationTimeText.text = timeString; // "d.hh:mm:ss"
+        } else {
+            simulationTimeText.text = "--:--";
         }
 
         // Update bacteria

@@ -44,6 +44,7 @@ public class FishTankSceneManager : MonoBehaviour
     private int initialNumberRedBacteria;
 
     private bool simulationRunning = false;
+    private bool simulationInitializing = false;
 
     // How long has this simulation been running?
     public DateTime simulationStartTime;
@@ -152,13 +153,13 @@ public class FishTankSceneManager : MonoBehaviour
         }
 
         // If we press the 'q' key then quit the simulation
-        if (Input.GetKeyDown(KeyCode.Q) == true) {
+        if (Input.GetKeyDown(KeyCode.Q) == true && simulationInitializing == false) {
             QuitSimulation();
         }
 
         // If we press the 'Escape' key then quit the simulation
         if (Input.GetKeyDown(KeyCode.Escape) == true) {
-            QuitSimulation();
+            ResetCamera();
         }
 
         // Update statusPanel
@@ -185,13 +186,8 @@ public class FishTankSceneManager : MonoBehaviour
                 }
             }
 
-            // End simulation
-
-            // Stop simulation timer
-//            elapsedSimulationTime = new TimeSpan(0);
-//            statusPanelController.UpdateStatus(elapsedSimulationTime);
-
             // Show "Simulation ended" dialog
+            QuitSimulation();
             simulationEndedPopup.SetActive(true);
 
         }
@@ -240,6 +236,8 @@ public class FishTankSceneManager : MonoBehaviour
             }
         } else {
 
+            ResetCamera();
+
             StopCoroutine(InstantiateNewSimulation());
 
             simulationRunning = false;
@@ -249,17 +247,21 @@ public class FishTankSceneManager : MonoBehaviour
         
             // remove them
             for (int i = 0; i < bacteria.Length; i++) {
-                Debug.Log("Destroying: " + bacteria[i].name);
                 Destroy(bacteria[i]);
             }
 
-            simulationEndedPopup.SetActive(false);
+            // reset status UI
+            statusPanelController.UpdateStatus(new TimeSpan(0));
+
+//            simulationEndedPopup.SetActive(false);
 
         }
 
     }
 
     private IEnumerator InstantiateNewSimulation() {
+
+        simulationInitializing = true;
 
         ArrayList sourceList = new ArrayList();
 
@@ -312,6 +314,9 @@ public class FishTankSceneManager : MonoBehaviour
             yield return new WaitForSeconds(waitPeriod);
 
         }
+
+        simulationInitializing = false;
+
     }
 
     // Not the most efficient code but it works
@@ -415,4 +420,15 @@ public class FishTankSceneManager : MonoBehaviour
     public Boolean IsSimulationRunning() {
         return simulationRunning;
     }
+
+    public void ResetCamera() {
+                // Reset camera
+            // show mainCamera
+            lockCamera.gameObject.SetActive(false);
+            defaultCamera.gameObject.SetActive(true);
+
+            // Reset 
+            defaultCamera.transform.position = new Vector3(0, 1, -15);
+    }
+
 }

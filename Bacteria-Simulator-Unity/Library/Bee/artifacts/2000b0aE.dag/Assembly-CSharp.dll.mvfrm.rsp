@@ -1,7 +1,13 @@
 Library/Bee/artifacts/mvdfrm/Unity.EditorCoroutines.Editor.ref.dll_63B9EB35A0645901.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Performance.Profile-Analyzer.Editor.ref.dll_C0422B8CE3C1BDD1.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.PlasticSCM.Editor.ref.dll_9B6D9940AFF80C3C.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.RenderPipelines.Core.Editor.ref.dll_DCDF94754BA77937.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.RenderPipelines.Core.Runtime.ref.dll_CF30EDBCD4D1A604.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.RenderPipelines.Core.ShaderLibrary.ref.dll_E399BB15452351D2.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll_8B66DE12A280B752.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Rider.Editor.ref.dll_BB682F4C994978A9.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.Searcher.Editor.ref.dll_0B020369C2B9D134.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.ShaderGraph.Editor.ref.dll_D9C390C28F91CC8A.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Sysroot.Linux_x86_64.ref.dll_37DB98B07DDE4079.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.SysrootPackage.Editor.ref.dll_9E0122523FBA1972.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll_A9B4CA1AA14E26F9.mvfrm

@@ -6,10 +6,12 @@ public class MainCameraController : MonoBehaviour
 {
 
     private float speed = 10f; //  meter pr. second
-    private float depthSpeed = 50f; //  meter pr. second
+    private float depthSpeed = 4000f; //  meter pr. second
     private float horizontalInput; // -5 -> 5
     private float verticalInput; // -5 -> 5
     private float depthInput; // -15 -> -4
+
+    public FishTankSceneManager fishTankSceneManager;
 
     void Start() {
         transform.position = new Vector3(0, 1, -15);
@@ -17,6 +19,8 @@ public class MainCameraController : MonoBehaviour
 
     void Update()
     {
+
+        if(fishTankSceneManager.IsSimulationRunning() == false) return;
 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");

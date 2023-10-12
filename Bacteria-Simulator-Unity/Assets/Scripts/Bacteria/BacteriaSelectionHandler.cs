@@ -38,11 +38,13 @@ public class BacteriaSelectionHandler : MonoBehaviour
 
 
     void OnMouseEnter() {
-        oldColor = GetComponent<Renderer>().material.color;
-        GetComponent<Renderer>().material.color = mouseOverColor;
+
+        oldColor = GetComponent<Renderer>().material.GetColor("_BacteriaColor");
+        GetComponent<Renderer>().material.SetColor("_BacteriaColor", mouseOverColor);
     }
 
     void OnMouseExit() {
-        GetComponent<Renderer>().material.color = oldColor;
+        GetComponent<Renderer>().material.SetColor("_BacteriaColor", oldColor);
+
     }
 }
