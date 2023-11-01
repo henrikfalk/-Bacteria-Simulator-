@@ -6,11 +6,11 @@ using UnityEngine;
 public class Bacteria : MonoBehaviour
 {
 
-    protected FishTankSceneManager fishTankSceneManager;
+    protected SimulationSceneManager simulationSceneManager;
     public EnvironmentManager environment;
 
     protected Rigidbody bacteriaRigidbody;
-    protected Renderer bacteriaRenderer;
+    protected MeshRenderer bacteriaRenderer;
 
     public float maxVelocity;
 
@@ -53,10 +53,15 @@ public class Bacteria : MonoBehaviour
     void Start()
     {
         bacteriaRigidbody = GetComponent<Rigidbody>();
-        bacteriaRenderer = GetComponent<Renderer>();
+        bacteriaRenderer = GetComponent<MeshRenderer>();
 
-        GameObject obj1 = GameObject.Find("FishTankSceneManager");
-        fishTankSceneManager = obj1.GetComponent<FishTankSceneManager>();
+//        bacteriaRenderer = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
+
+
+//        deadMaterial = Resources.Load<Material>("Dead-Bacteria-2a-Material-UV");
+
+        GameObject obj1 = GameObject.Find("SimulationSceneManager");
+        simulationSceneManager = obj1.GetComponent<SimulationSceneManager>();
 
         GameObject obj2 = GameObject.Find("EnvironmentManager");
         environment = obj2.GetComponent<EnvironmentManager>();
@@ -102,17 +107,15 @@ public class Bacteria : MonoBehaviour
             // This code must only run once
             bacteriaDead = true;
 
-            // Update UI
-//            fishTankSceneManager.BacteriaDies(gameObject);
-
             // Bacteria is dead
-            bacteriaRenderer.material = deadMaterial;
+            Material[] materials = bacteriaRenderer.materials;
+            materials[0] = deadMaterial;
+            bacteriaRenderer.materials = materials;
+
             bacteriaRigidbody.mass = 0.1f;
             bacteriaRigidbody.drag = 20;
             bacteriaRigidbody.useGravity = true;
             gameObject.name = deadName;
-
-            //fishTankSceneManager.UpdateBacteriaInfo(deadName);
 
             // Disolve bacteria after some time
             StartCoroutine(DisolveBacteria());
@@ -209,7 +212,7 @@ public class Bacteria : MonoBehaviour
         // maybe later add toxic stuff to environment because of decay
 
         // Update UI
-//        fishTankSceneManager.BacteriaDies(gameObject);
+//        simulationSceneManager.BacteriaDies(gameObject);
 
         // Destroy me
         Destroy(gameObject);

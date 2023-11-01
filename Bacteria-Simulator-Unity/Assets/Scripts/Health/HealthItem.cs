@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthItem : MonoBehaviour
 {
 
-    public FishTankSceneManager fishTankSceneManager;
+    public SimulationSceneManager simulationSceneManager;
     public EnvironmentManager environment;
 
     protected Rigidbody healthItemRigidbody;
@@ -18,8 +18,8 @@ public class HealthItem : MonoBehaviour
     {
         healthItemRigidbody = GetComponent<Rigidbody>();
 
-        GameObject obj1 = GameObject.Find("FishTankSceneManager");
-        fishTankSceneManager = obj1.GetComponent<FishTankSceneManager>();
+        GameObject obj1 = GameObject.Find("SimulationSceneManager");
+        simulationSceneManager = obj1.GetComponent<SimulationSceneManager>();
 
         GameObject obj2 = GameObject.Find("EnvironmentManager");
         environment = obj2.GetComponent<EnvironmentManager>();

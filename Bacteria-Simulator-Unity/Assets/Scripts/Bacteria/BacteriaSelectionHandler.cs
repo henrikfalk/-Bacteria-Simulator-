@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class BacteriaSelectionHandler : MonoBehaviour
 {
 
-    private FishTankSceneManager fishTankSceneManager;
+    private SimulationSceneManager simulationSceneManager;
 
     private Color32 oldColor;
     private Color32 mouseOverColor;
@@ -14,37 +15,36 @@ public class BacteriaSelectionHandler : MonoBehaviour
     private int greenColor = 255;
     private int blueColor = 0;
 
+    private Boolean inFocus = false;
 
-//    private static GameObject selectedGameObject;
-//    public GameObject selectedBacteria;
-    
     void Start() {
 
         mouseOverColor = new Color32((byte)redColor, (byte)greenColor, (byte)blueColor, 255);
 
-        GameObject obj1 = GameObject.Find("FishTankSceneManager");
-        fishTankSceneManager = obj1.GetComponent<FishTankSceneManager>();
+        GameObject obj1 = GameObject.Find("SimulationSceneManager");
+        simulationSceneManager = obj1.GetComponent<SimulationSceneManager>();
     }
 
     void Update()
     {
-
-        if (fishTankSceneManager.selectedBacteria == gameObject) {
+        // Calling "GetChild(1)" is not safe! Will be replaced!
+        if (gameObject == simulationSceneManager.selectedBacteria) {
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
         } else {
-            gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            if (inFocus == true) {
+                gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            } else {
+                gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            }
         }
     }
 
 
     void OnMouseEnter() {
-
-        oldColor = GetComponent<Renderer>().material.GetColor("_BacteriaColor");
-        GetComponent<Renderer>().material.SetColor("_BacteriaColor", mouseOverColor);
+        inFocus = true;
     }
 
     void OnMouseExit() {
-        GetComponent<Renderer>().material.SetColor("_BacteriaColor", oldColor);
-
+        inFocus = false;
     }
 }

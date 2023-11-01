@@ -11,7 +11,7 @@ public class MainCameraController : MonoBehaviour
     private float verticalInput; // -5 -> 5
     private float depthInput; // -15 -> -4
 
-    public FishTankSceneManager fishTankSceneManager;
+    public SimulationSceneManager simulationSceneManager;
 
     void Start() {
         transform.position = new Vector3(0, 1, -15);
@@ -20,7 +20,7 @@ public class MainCameraController : MonoBehaviour
     void Update()
     {
 
-        if(fishTankSceneManager.IsSimulationRunning() == false) return;
+        if(simulationSceneManager.IsSimulationRunning() == false) return;
 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");

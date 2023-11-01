@@ -15,9 +15,11 @@ Enjoy!
 Regards Henrik
 
 ## The game
-The game simulates the life of different bacteria types in a fishtank.
+The game simulates the life of different bacteria types in a aquarium. Totally unrealistic and just for fun.
 
-Maybe I should have chosen peaceful fish for the fishtank but I like the idea of something "out of control" is at bit more interesting for at game.
+Maybe I should have chosen peaceful fish for the aquarium but I like the idea of something "out of control" is at bit more interesting for at simulation.
+
+The game also explores different Unity features and concepts.
 
 ## Controls
 
@@ -35,22 +37,24 @@ Mouse actions in the scene "FishtankScene":
 - Scroll Wheel: Zoom in and out
 
 ## Unity concepts
-- Prefab variants
-- "Glass" material
 - Mouse selection using RaycastHit and child gameobject
 - Two cameras
+- "Glass" material
 - GameObject highligt when mouseover
-- Datapersistence between scenes
+- Switching scenes with (memory) datapersistence (Singleton)
 - Datapersistence between gamesessions (Laboratory settings)
 - Use of StartCoroutine()
 - TMPro package (TextMeshPro)
-- Shader Graph demonstrating custom shaders
+- Imported models and materials (UV mapped) from Blender
+- FSM (Finite State Machine) for the simulation with UI interactions
 
 ## Development environment
-Startet development using Unity Editor v2020.3.32f1 running on Manjaro Linux.
-Updated the Unity Editor to v2022.3.5f1 at some point because v2020.3.32f1 didn't work anymore.
+I started development by using Unity Editor v2020.3.32f1 running on Manjaro Linux.
+I updated the Unity Editor to v2022.3.5f1 at some point because v2020.3.32f1 didn't work anymore.
 
 I used "GitKraken" as Git client.
+
+I used Blender 3.6.4 for some of the models.
 
 ## Development status
 
@@ -66,11 +70,20 @@ I used "GitKraken" as Git client.
 - Added a Help panel in the Fishtankscene
 
 
-## Nice enhancements that could be implemented
+## In development
 
-- Statemachine for simulation states (Internal)
-- Add food feature
-- Add "medicine" feature
+- FSM (Finite State Machine) for the bacteria
+- Particlesystem for dying bacteria
+- Enhanced camera movement and control
+- UI elements for keyboard shortcuts
+
+## Roadmap
+
+- Internationalization
+- Food
+- Medicine (Removing toxic water)
+- Gamification of simulation
+- Core game settings like display resolution etc.
 
 ## Userguide
 

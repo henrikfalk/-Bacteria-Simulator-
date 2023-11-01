@@ -11,7 +11,7 @@ public class EnvironmentManager : MonoBehaviour
     // The toxicity of the environment    
     private int toxicity;
     
-    // Current laboratory settings - Use standard is we are running FishtankScene directly
+    // Current laboratory settings - Use standard is we are running the SimulationScene directly from Unity editor
     LaboratoryInfo currentLaboratoryInfo = new LaboratoryInfo {
         middleTemperatureInfo = 30,
         toxicityInfo = 0,

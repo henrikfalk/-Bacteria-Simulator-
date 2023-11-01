@@ -27,7 +27,7 @@ public class GreenBacteria : Bacteria
             maxAgeMinutes = info.maxAgeMinutesBacteriaGreen;
             fertilityPercent = info.fertilityPercentBacteriaGreen;
         } else {
-            // We run from "FishtankScene"
+            // We run from "SimulationScene"
             maxVelocity = 1;
             temperatureOptimal = 20f;
             temperatureRange = 11f;
@@ -46,16 +46,16 @@ public class GreenBacteria : Bacteria
 
         // If right mouse button pressed then die
         if (Input.GetMouseButtonDown(1) == true) {
-            if (fishTankSceneManager.defaultCamera.gameObject.activeSelf == true) {
-                ray = fishTankSceneManager.defaultCamera.ScreenPointToRay(Input.mousePosition);
+            
+            if (simulationSceneManager.defaultCamera.gameObject.activeSelf == true) {
+                ray = simulationSceneManager.defaultCamera.ScreenPointToRay(Input.mousePosition);
             } else {
-                ray = fishTankSceneManager.lockCamera.ScreenPointToRay(Input.mousePosition);
+                ray = simulationSceneManager.lockCamera.ScreenPointToRay(Input.mousePosition);
             }
 
             if (Physics.Raycast(ray, out hitData) == true) {
-
+                
                 if (hitData.collider.name.Equals(gameObject.name) == true && bacteriaDead == false) {
-
                     die("Dead " + gameObject.name);
                 }
             }
@@ -95,7 +95,7 @@ public class GreenBacteria : Bacteria
 //        yield return new WaitForSeconds(pregnacyTimeBacteria * waitPeriod);
 
         // Ok, then make birth to a new bacteris
-        fishTankSceneManager.MakeSiblingBacteria(parent);
+        simulationSceneManager.MakeSiblingBacteria(parent);
 
     }
 

@@ -12,7 +12,7 @@ public class MenuController : MonoBehaviour
 
 
     public void NewGame() {
-        GameManager.Instance.GotoScene("FishtankScene");
+        GameManager.Instance.GotoScene("SimulationScene");
     }
 
     public void GotoLaboratory() {

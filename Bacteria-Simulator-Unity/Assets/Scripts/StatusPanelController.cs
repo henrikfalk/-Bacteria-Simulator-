@@ -7,8 +7,10 @@ using TMPro;
 public class StatusPanelController : MonoBehaviour
 {
 
-    public EnvironmentManager environment;
-    public FishTankSceneManager fishTankSceneManager;
+//    public EnvironmentManager environment;
+    public SimulationSceneManager simulationSceneManager;
+
+    private SimulationController simulationController;
 
     // 
     public TextMeshProUGUI simulationTimeText;
@@ -31,41 +33,26 @@ public class StatusPanelController : MonoBehaviour
 
     public void Start() {
 
-        // Get a handle to the EnvironmentManager
-        GameObject obj1 = GameObject.Find("EnvironmentManager");
-        environment = obj1.GetComponent<EnvironmentManager>();
-
-        // Get a handle to the FishTankSceneManager
-        GameObject obj2 = GameObject.Find("FishTankSceneManager");
-        fishTankSceneManager = obj2.GetComponent<FishTankSceneManager>();
+        // Get a handle to the SimulationSceneManager
+        GameObject obj = GameObject.Find("SimulationSceneManager");
+        simulationSceneManager = obj.GetComponent<SimulationSceneManager>();
     }
 
-    public void UpdateStatus(TimeSpan elapsedTime) {
-
-        // Update middletemperature
-        temperatureBNumberText.text = environment.GetMiddleTemperature() + " ºC";
+    void Update()
+    {
+        simulationController = simulationSceneManager.GetSimulationController();
 
         // Update time
-        if (fishTankSceneManager.IsSimulationRunning() == true) {
-            string timeString = "";
-            if (elapsedTime.Days > 0) {
-                timeString += timeString + elapsedTime.Days + " d ";
-            }
-            if (elapsedTime.Hours > 0) {
-                timeString += elapsedTime.Hours.ToString() + ":";
-            }
+        simulationTimeText.text = simulationController.GetElapsedSimulationTimeAsString();
 
-            timeString += elapsedTime.Minutes.ToString("00") + ":";
+        // Update middletemperature
+        temperatureBNumberText.text = simulationController.GetMiddleTemperature() + " ºC";
 
-            timeString += elapsedTime.Seconds.ToString("00");
-
-            simulationTimeText.text = timeString; // "d.hh:mm:ss"
-        } else {
-            simulationTimeText.text = "--:--";
-        }
+        // Update toxicity
+        toxicityBNumberText.text = simulationController.GetToxicity().ToString();
 
         // Update bacteria
-        bacteriaList = GameObject.FindGameObjectsWithTag("Bacteria");
+        bacteriaList = simulationController.GetBacteriaList();
 
         green = 0;
         red = 0;
@@ -92,8 +79,6 @@ public class StatusPanelController : MonoBehaviour
         purpleBNumberText.text = purple.ToString();
         deadBNumberText.text = dead.ToString();
 
-        // Update toxicity
-        toxicityBNumberText.text = environment.GetToxicity().ToString();
     }
 
 }

@@ -17,14 +17,14 @@ public class BacteriaInfoPanelManager : MonoBehaviour
 
     public TextMeshProUGUI healthBNumberText;
 
-    private FishTankSceneManager fishTankSceneManager;
+    private SimulationSceneManager simulationSceneManager;
 
     public GameObject bacteria { private get; set; }
 
     void Start() {
-        GameObject obj1 = GameObject.Find("FishTankSceneManager");
-        fishTankSceneManager = obj1.GetComponent<FishTankSceneManager>();
-        bacteria = fishTankSceneManager.selectedBacteria;
+        GameObject obj1 = GameObject.Find("SimulationSceneManager");
+        simulationSceneManager = obj1.GetComponent<SimulationSceneManager>();
+        bacteria = simulationSceneManager.selectedBacteria;
     }
 
     void Update() {
@@ -60,7 +60,7 @@ public class BacteriaInfoPanelManager : MonoBehaviour
         fertilityBNumberText.text = bacteria.GetComponent<Bacteria>().fertilityPercent.ToString("0.00");
 
         // Update temperature
-        tempDynamicBNumberText.text = fishTankSceneManager.environment.GetEnvironmentTemperature(bacteria.transform.position).ToString("0.0");
+        tempDynamicBNumberText.text = simulationSceneManager.environment.GetEnvironmentTemperature(bacteria.transform.position).ToString("0.0");
 
         // Update energy
         energyBNumberText.text = bacteria.GetComponent<Bacteria>().energiBacteria.ToString("0.0");
