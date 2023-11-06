@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &15353291487680219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020557, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7965526917445020559, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e207d2de3f951751f9ccf5b392d80fb1, type: 2}
+    - target: {fileID: 7965526917445020657, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      propertyPath: m_Name
+      value: PurpleBacteriaPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -5385717855215588281, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+    - {fileID: -8976778184116446797, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7965526917445020657, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4727877909652903722}
+  m_SourcePrefab: {fileID: 100100000, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+--- !u!1 &7979735581055712554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7965526917445020657, guid: ed3df6c320349193d87d55630bb6f524, type: 3}
+  m_PrefabInstance: {fileID: 15353291487680219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4727877909652903722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7979735581055712554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64697a31efca085c0948d70cb66aa8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simulationSceneManager: {fileID: 0}
+  maxVelocity: 2
+  fertilityPercent: 0
+  energiBacteria: 0
+  healthBacteria: 0
+  temperatureOptimal: 0
+  temperatureRange: 0
+  deadMaterial: {fileID: 2100000, guid: d4d43449e355a8b33a08c3ef99f65cdf, type: 2}
+  maxAgeMinutes: 0

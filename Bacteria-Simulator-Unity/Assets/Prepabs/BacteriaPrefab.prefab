@@ -119,9 +119,7 @@ GameObject:
   - component: {fileID: 7965526917445020558}
   - component: {fileID: 7965526917445020559}
   - component: {fileID: 7965526917445020656}
-  - component: {fileID: -5385717855215588281}
   - component: {fileID: 4514043701508284315}
-  - component: {fileID: -8976778184116446797}
   m_Layer: 0
   m_Name: BacteriaPrefab
   m_TagString: Bacteria
@@ -218,27 +216,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5385717855215588281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7965526917445020657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38ac04b8e0839cc4a8de9a657b551fe4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  environment: {fileID: 0}
-  maxVelocity: 2
-  fertilityPercent: 0
-  energiBacteria: 0
-  healthBacteria: 0
-  temperatureOptimal: 0
-  temperatureRange: 0
-  deadMaterial: {fileID: 2100000, guid: 9fac1b78a191ee7dcb11ff9a548b4d42, type: 2}
-  maxAgeMinutes: 4
 --- !u!54 &4514043701508284315
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -266,15 +243,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-8976778184116446797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7965526917445020657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e49fb049abf21add7b68b37e547ff582, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

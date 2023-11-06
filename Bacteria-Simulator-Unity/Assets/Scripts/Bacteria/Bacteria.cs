@@ -6,10 +6,9 @@ using UnityEngine;
 public class Bacteria : MonoBehaviour
 {
 
-    protected SimulationSceneManager simulationSceneManager;
-    public EnvironmentManager environment;
+    public SimulationSceneManager simulationSceneManager;
 
-    protected Rigidbody bacteriaRigidbody;
+    public Rigidbody bacteriaRigidbody;
     protected MeshRenderer bacteriaRenderer;
 
     public float maxVelocity;
@@ -46,28 +45,20 @@ public class Bacteria : MonoBehaviour
     // The date and time this bacteria dies of age
     public DateTime deadTime;
 
-    // We can only die once
-    protected bool bacteriaDead = false;
-
+    // State
+    public BacteriaState currentState { get; protected set; }
     // Start is called before the first frame update
+
     void Start()
     {
         bacteriaRigidbody = GetComponent<Rigidbody>();
         bacteriaRenderer = GetComponent<MeshRenderer>();
 
-//        bacteriaRenderer = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
-
-
-//        deadMaterial = Resources.Load<Material>("Dead-Bacteria-2a-Material-UV");
-
         GameObject obj1 = GameObject.Find("SimulationSceneManager");
         simulationSceneManager = obj1.GetComponent<SimulationSceneManager>();
 
-        GameObject obj2 = GameObject.Find("EnvironmentManager");
-        environment = obj2.GetComponent<EnvironmentManager>();
-
         // We like to be in the middle of the fishtank
-        temperatureOptimal = environment.GetMiddleTemperature();
+        temperatureOptimal = 30;
 
         // 
         temperatureRange = 2;
@@ -85,28 +76,22 @@ public class Bacteria : MonoBehaviour
 
         // Use this method in derived classes for overriding stuff
         BacteriaStart();
+
     }
 
     // Use this method in derived classes for overriding stuff in Start() method
-    protected virtual void BacteriaStart(){
-
-    }
+    protected virtual void BacteriaStart(){}
 
     // Update is called once per frame
-    void Update()
-    {
-        if (DateTime.Now > deadTime && bacteriaDead == false) {
-            die("Dead");
-        }
+    void Update() {
 
-        move();
+        // FSM
+        if (currentState != null) {
+            currentState = currentState.Process();
+        }
     }
 
-    // ABSTRACTION
-    protected void die(string deadName) {
-            // This code must only run once
-            bacteriaDead = true;
-
+    public void die(string deadName) {
             // Bacteria is dead
             Material[] materials = bacteriaRenderer.materials;
             materials[0] = deadMaterial;
@@ -122,104 +107,57 @@ public class Bacteria : MonoBehaviour
 
     }
 
-    void OnTriggerExit(Collider other) {
-        if (other.tag.Equals("Air") == true) {
-            waterMaxTemperature = Mathf.Round(environment.GetEnvironmentTemperature(transform.position)) - 1;
-
-            // Make random rotation when hitting water
-            transform.Rotate(UnityEngine.Random.Range(-90f, 90f), UnityEngine.Random.Range(-90f, 90f), UnityEngine.Random.Range(-90f, 90f));
-
-            bacteriaRigidbody.useGravity = false;
-
-        } else {
-            // Use the environments temperature
-            waterMaxTemperature = environment.GetMiddleTemperature();
-        }
-    }
-
-    // Deaccelerate if we are to fast
-    private void Deaccelerate() {
-
-        var velocity = bacteriaRigidbody.velocity;
-        if (velocity.magnitude > maxVelocity) {
-        
-            //we deaccelerate
-            velocity -= velocity.normalized * 0.5f;
-            
-            bacteriaRigidbody.velocity = velocity;
-        }
-    }
-
-    protected virtual void move() {
-
-        if (bacteriaDead == true) {
-            return;
-        }
-
-        Deaccelerate();
-
-        float randomDirectionX;
-        float randomDirectionY;
-        float randomDirectionZ;
-        Vector3 forceDir;
-
-        // Get the environments temperature which is equals to ours
-        float temp = environment.GetEnvironmentTemperature(transform.position);
-        if ( temp > waterMaxTemperature) {
-            // we are not in the water so go downwards
-            randomDirectionX = UnityEngine.Random.Range(-1.0f, 1.0f);
-            randomDirectionZ = UnityEngine.Random.Range(-1.0f, 1.0f);
-            forceDir = new Vector3(randomDirectionX, -1,randomDirectionZ);
-            forceDir.Normalize();
-            bacteriaRigidbody.AddForce(forceDir * 0.09f, ForceMode.Impulse);
-
-        }
-
-        if (temp > temperatureOptimal + temperatureRange) {
-            // It is getting to hot - move downwards
-            randomDirectionX = UnityEngine.Random.Range(-1.0f, 1.0f);
-            randomDirectionZ = UnityEngine.Random.Range(-1.0f, 1.0f);
-            forceDir = new Vector3(randomDirectionX, -1,randomDirectionZ);
-            forceDir.Normalize();
-            bacteriaRigidbody.AddForce(forceDir * 0.09f, ForceMode.Impulse);
-            return;
-        }
-
-        if (temp < temperatureOptimal - temperatureRange) {
-            // It is getting to cold - move upwards
-            randomDirectionX = UnityEngine.Random.Range(-1.0f, 1.0f);
-            randomDirectionZ = UnityEngine.Random.Range(-1.0f, 1.0f);
-            forceDir = new Vector3(randomDirectionX, 1,randomDirectionZ);
-            forceDir.Normalize();
-            bacteriaRigidbody.AddForce(forceDir * 0.09f, ForceMode.Impulse);
-            return;
-        }
-            // Just move since our temperature inside the optimal range
-            randomDirectionX = UnityEngine.Random.Range(-1.0f, 1.0f);
-            randomDirectionY = UnityEngine.Random.Range(-1.0f, 1.0f);
-            randomDirectionZ = UnityEngine.Random.Range(-1.0f, 1.0f);
-            forceDir = new Vector3(randomDirectionX, randomDirectionY,randomDirectionZ);
-            forceDir.Normalize();
-            bacteriaRigidbody.AddForce(forceDir * 0.09f, ForceMode.Impulse);
-    }
-
     protected IEnumerator DisolveBacteria() {
+
+        // Create dying particlesystem effect
+        ParticleSystem particles = Instantiate(simulationSceneManager.dyingBacteriaParticles, transform.position, simulationSceneManager.dyingBacteriaParticles.transform.rotation);
+
+        // Add toxic stuff to environment because of decay
+        // Change this later to size of bacteria
+        float randomToxicityFactor = 100 + UnityEngine.Random.Range(-5, 5);
+
+        simulationSceneManager.simulationController.toxicity += (int)randomToxicityFactor;
+
         // Wait a bit because it looks nice
-//        float waitPeriod = UnityEngine.Random.Range(300f, 600f);
-        float waitPeriod = UnityEngine.Random.Range(15f, 30f);
+        float waitPeriod = UnityEngine.Random.Range(10f, 20f);
         yield return new WaitForSeconds(waitPeriod);
 
-        // maybe later add toxic stuff to environment because of decay
+        // Reset camera if following a bacteria
+        if (gameObject.transform.GetChild(0).gameObject.activeSelf == true) {
+            simulationSceneManager.ResetCamera();
+        }
 
-        // Update UI
-//        simulationSceneManager.BacteriaDies(gameObject);
-
-        // Destroy me
+        // Destroy partcles and bacteria
+        Destroy(particles.gameObject);
         Destroy(gameObject);
 
     }
 
     public Boolean IsDead(){
-        return bacteriaDead;
+
+        if (currentState == null) {
+            return false;
+        }
+
+        if (currentState.stateName == BacteriaState.STATE.ALIVE || currentState.stateName == BacteriaState.STATE.INIT) {
+            return false;
+        } else {
+            return true;
+        }
     }
+
+    public void StartFSM(BacteriaState.STATE _state) {
+
+        switch(_state) {
+            case BacteriaState.STATE.INIT:
+                    currentState = new BacteriaInitializingState(this);
+                break;
+
+            case BacteriaState.STATE.ALIVE:
+                    currentState = new BacteriaRunningState(this);
+                break;
+        }
+
+    }
+
 }

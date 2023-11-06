@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SimulationController : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class SimulationController : MonoBehaviour
     private float middleTemperature;
 
     // The toxicity of the environment    
-    private int toxicity;
+    public int toxicity;
     
     // Current laboratory settings - Use standard is we are running the SimulationScene directly from Unity editor
     LaboratoryInfo currentLaboratoryInfo = new LaboratoryInfo {
@@ -44,6 +45,8 @@ public class SimulationController : MonoBehaviour
     // How long has this simulation been running?
     public DateTime simulationStartTime;
     TimeSpan elapsedSimulationTime = new TimeSpan(0);
+
+    String originalElapsedTimeText;
 
     public int initialNumberGreenBacteria;
     public int initialNumberRedBacteria;
@@ -142,20 +145,29 @@ public class SimulationController : MonoBehaviour
     }
 
     private IEnumerator InstantiateNewSimulation() {
+
         ArrayList sourceList = new ArrayList();
+        float posX;
+        float posY;
+        float posZ;
+        float rotX;
+        float rotY;
+        float rotZ;
 
         // Instantiate Green bacteria 
         for (int i = 0; i < initialNumberGreenBacteria; i++) {
 
-            // Generate random spawnposition and rotation above fishtank
-            float posX = UnityEngine.Random.Range(-3f, 3f);
-            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
-            float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
-            float rotX = UnityEngine.Random.Range(-90f, 90f);
-            float rotY = UnityEngine.Random.Range(-90f, 90f);
-            float rotZ = UnityEngine.Random.Range(-90f, 90f);
+            // Generate random spawnposition and rotation above aquarium
+            posX = UnityEngine.Random.Range(-3f, 3f);
+            posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
+            rotX = UnityEngine.Random.Range(-90f, 90f);
+            rotY = UnityEngine.Random.Range(-90f, 90f);
+            rotZ = UnityEngine.Random.Range(-90f, 90f);
 
             GameObject obj = Instantiate(simulationSceneManager.greenBacteriaPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
+            obj.GetComponent<Bacteria>().StartFSM(BacteriaState.STATE.INIT);
+
             obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
             obj.name = "Green" + (i+1).ToString();
             obj.SetActive(false);
@@ -166,15 +178,17 @@ public class SimulationController : MonoBehaviour
         // Instantiate Red bacteria 
         for (int i = 0; i < initialNumberRedBacteria; i++) {
 
-            // Generate random spawnposition and rotation above fishtank
-            float posX = UnityEngine.Random.Range(-3f, 3f);
-            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
-            float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
-            float rotX = UnityEngine.Random.Range(-90f, 90f);
-            float rotY = UnityEngine.Random.Range(-90f, 90f);
-            float rotZ = UnityEngine.Random.Range(-90f, 90f);
+            // Generate random spawnposition and rotation above aquarium
+            posX = UnityEngine.Random.Range(-3f, 3f);
+            posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
+            rotX = UnityEngine.Random.Range(-90f, 90f);
+            rotY = UnityEngine.Random.Range(-90f, 90f);
+            rotZ = UnityEngine.Random.Range(-90f, 90f);
 
             GameObject obj = Instantiate(simulationSceneManager.redBacteriaPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
+            obj.GetComponent<Bacteria>().StartFSM(BacteriaState.STATE.INIT);
+
             obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
             obj.name = "Red" + (i+1).ToString();
             obj.SetActive(false);
@@ -218,13 +232,41 @@ public class SimulationController : MonoBehaviour
         // Empty fishtank for bacteria
         GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
         
-        // remove them
+        // remove bacteria if any
         for (int i = 0; i < bacteria.Length; i++) {
             Destroy(bacteria[i]);
         }
 
+        // Show SimulationEndedPopup
         simulationSceneManager.simulationEndedPopup.SetActive(true);
 
+        if (originalElapsedTimeText == null) {
+            // HFALK Could give problems after internationalization
+            GameObject objSimulationEndedElapsedTimeText = GameObject.Find("SimulationEndedElapsedTimeText");
+            TextMeshProUGUI tmp = objSimulationEndedElapsedTimeText.GetComponent<TextMeshProUGUI>();
+            originalElapsedTimeText = tmp.text;
+        }
+
+        // Show elapsed simulation time in SimulationEndedPopup
+        GameObject obj = GameObject.Find("SimulationEndedElapsedTimeText");
+        TextMeshProUGUI simulationEndedElapsedTimeText = obj.GetComponent<TextMeshProUGUI>();
+        simulationEndedElapsedTimeText.text = originalElapsedTimeText + GetElapsedSimulationTimeAsString();
+
+    }
+
+    public void SimulationFailed() {
+
+        simulationSceneManager.ResetCamera();
+
+        // Empty fishtank for bacteria
+        GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
+        
+        // remove bacteria if any
+        for (int i = 0; i < bacteria.Length; i++) {
+            Destroy(bacteria[i]);
+        }
+        // Show SimulationEndedPopup
+        simulationSceneManager.simulationFailedPopup.SetActive(true);
     }
 
 }

@@ -27,7 +27,7 @@ public class BacteriaSelectionHandler : MonoBehaviour
 
     void Update()
     {
-        // Calling "GetChild(1)" is not safe! Will be replaced!
+        // Calling "GetChild(0)" is not safe! Will be replaced!
         if (gameObject == simulationSceneManager.selectedBacteria) {
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
         } else {

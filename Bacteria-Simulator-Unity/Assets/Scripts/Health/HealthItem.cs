@@ -6,7 +6,6 @@ public class HealthItem : MonoBehaviour
 {
 
     public SimulationSceneManager simulationSceneManager;
-    public EnvironmentManager environment;
 
     protected Rigidbody healthItemRigidbody;
 
@@ -22,7 +21,6 @@ public class HealthItem : MonoBehaviour
         simulationSceneManager = obj1.GetComponent<SimulationSceneManager>();
 
         GameObject obj2 = GameObject.Find("EnvironmentManager");
-        environment = obj2.GetComponent<EnvironmentManager>();
         
     }
 
