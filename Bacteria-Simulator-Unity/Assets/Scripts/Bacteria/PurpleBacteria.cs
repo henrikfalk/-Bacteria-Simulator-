@@ -47,6 +47,11 @@ public class PurpleBacteria : Bacteria
         // we hit a green or red bacteria then eat them
         if (other.collider.tag.Equals("Bacteria") == true && (other.collider.name.StartsWith("Green") == true || other.collider.name.StartsWith("Red") == true)) {
 
+            // if we are looking at a selcted bacteria then reset camera
+            if (simulationSceneManager.selectedBacteria != null && simulationSceneManager.selectedBacteria.name == other.collider.name) {
+                simulationSceneManager.ResetCamera();
+            }
+
             Destroy(other.gameObject);
         }
 

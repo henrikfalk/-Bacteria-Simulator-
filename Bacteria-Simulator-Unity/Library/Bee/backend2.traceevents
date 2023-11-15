@@ -1,357 +1,187 @@
 { "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
-,{ "pid":12345, "tid":0, "ts":1699243147685407, "dur":21267, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699243147706680, "dur":73, "ph":"X", "name": "RemoveStaleOutputs",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699243147706792, "dur":158, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699243147706965, "dur":5582, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699243147712554, "dur":167846, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699243147880503, "dur":3490, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
-,{ "pid":12345, "tid":1, "ts":1699243147706877, "dur":5711, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147712590, "dur":182, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147713438, "dur":96, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699243147713705, "dur":267, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/BaseInput.cs" }}
-,{ "pid":12345, "tid":1, "ts":1699243147714207, "dur":50, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/LayoutElement.cs" }}
-,{ "pid":12345, "tid":1, "ts":1699243147713139, "dur":1478, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/UnityEngine.UI.dll (+2 others)" }}
-,{ "pid":12345, "tid":1, "ts":1699243147714659, "dur":230, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147714889, "dur":118, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147715007, "dur":191, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147715198, "dur":127, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147715325, "dur":151, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147715476, "dur":175, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147715652, "dur":223, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147715875, "dur":366, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147716284, "dur":74, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147716358, "dur":146, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147716504, "dur":147, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147716652, "dur":157, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147716809, "dur":188, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147716998, "dur":121, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147717119, "dur":58, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147717177, "dur":96, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147717273, "dur":169, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147717442, "dur":158, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147717601, "dur":116, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147717717, "dur":273, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147717990, "dur":162, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147718152, "dur":121, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147718273, "dur":197, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147718477, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.SysrootPackage.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":1, "ts":1699243147718528, "dur":425, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147718956, "dur":247, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.SysrootPackage.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":1, "ts":1699243147719203, "dur":221, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147719443, "dur":111, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.Sysroot.Linux_x86_64.dll.mvfrm" }}
-,{ "pid":12345, "tid":1, "ts":1699243147719628, "dur":130, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
-,{ "pid":12345, "tid":1, "ts":1699243147719563, "dur":295, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Sysroot.Linux_x86_64.dll (+2 others)" }}
-,{ "pid":12345, "tid":1, "ts":1699243147719926, "dur":124, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Toolchain.Linux-x86_64.dll (+2 others)" }}
-,{ "pid":12345, "tid":1, "ts":1699243147720051, "dur":310, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147720365, "dur":157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.EditorCoroutines.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":1, "ts":1699243147720522, "dur":191, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147720861, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147720959, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":1, "ts":1699243147721217, "dur":159218, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147706894, "dur":5703, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147712656, "dur":103, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699243147712656, "dur":104, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SubsystemsModule.dll_D7E2494997A7D0FF.mvfrm" }}
-,{ "pid":12345, "tid":2, "ts":1699243147713048, "dur":74, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll" }}
-,{ "pid":12345, "tid":2, "ts":1699243147713048, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ARModule.dll_6481B985757B5A0C.mvfrm" }}
-,{ "pid":12345, "tid":2, "ts":1699243147713486, "dur":71, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147713566, "dur":118, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147713684, "dur":310, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147713994, "dur":61, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147714055, "dur":159, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147714214, "dur":167, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147714382, "dur":147, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147714529, "dur":68, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147714597, "dur":288, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147714886, "dur":68, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147714954, "dur":84, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147715039, "dur":245, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147715284, "dur":141, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147715425, "dur":118, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147715543, "dur":159, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147715702, "dur":182, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147715885, "dur":439, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147716324, "dur":132, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147716499, "dur":81, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147716580, "dur":109, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147716689, "dur":187, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147716876, "dur":202, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147717078, "dur":138, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147717216, "dur":240, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147717456, "dur":225, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147717712, "dur":447, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147718159, "dur":260, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147718546, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.RenderPipelines.Core.Runtime.dll (+2 others)" }}
-,{ "pid":12345, "tid":2, "ts":1699243147718704, "dur":309, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147719026, "dur":128, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147719205, "dur":135, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.RenderPipelines.Core.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":2, "ts":1699243147719341, "dur":432, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147719865, "dur":233, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147720102, "dur":159, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VSCode.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":2, "ts":1699243147720261, "dur":273, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147720575, "dur":92, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.SettingsProvider.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":2, "ts":1699243147720667, "dur":198, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147720979, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147721042, "dur":63, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147721213, "dur":158967, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":2, "ts":1699243147880221, "dur":114, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Library/ScriptAssemblies/Assembly-CSharp.pdb" }}
-,{ "pid":12345, "tid":2, "ts":1699243147880337, "dur":113, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147706879, "dur":5713, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147712594, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TilemapModule.dll_7B522F51ECB54FC7.mvfrm" }}
-,{ "pid":12345, "tid":3, "ts":1699243147712726, "dur":58, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147712726, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VFXModule.dll_3DB726334E2BEC11.mvfrm" }}
-,{ "pid":12345, "tid":3, "ts":1699243147712793, "dur":64, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147712959, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.Graphs.dll_19EECBF998C5AC01.mvfrm" }}
-,{ "pid":12345, "tid":3, "ts":1699243147713170, "dur":59, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147713307, "dur":73, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147713716, "dur":201, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/NUnitExtensions/Attributes/UnityTearDownAttribute.cs" }}
-,{ "pid":12345, "tid":3, "ts":1699243147714257, "dur":53, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library/PackageCache/com.unity.test-framework@1.1.33/UnityEngine.TestRunner/TestRunner/Messages/IEditModeTestYieldInstruction.cs" }}
-,{ "pid":12345, "tid":3, "ts":1699243147713071, "dur":1615, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/UnityEngine.TestRunner.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147715253, "dur":66, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Net.Ping.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147715670, "dur":57, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Security.Cryptography.Primitives.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147715889, "dur":302, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Data.DataSetExtensions.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147716208, "dur":50, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Data.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147716290, "dur":53, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.Numerics.dll" }}
-,{ "pid":12345, "tid":3, "ts":1699243147716534, "dur":56, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library/PackageCache/com.unity.test-framework@1.1.33/UnityEditor.TestRunner/Api/ITestTreeRebuildCallbacks.cs" }}
-,{ "pid":12345, "tid":3, "ts":1699243147714764, "dur":2865, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147717673, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.dll.mvfrm" }}
-,{ "pid":12345, "tid":3, "ts":1699243147717731, "dur":558, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147718289, "dur":75, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147718371, "dur":94, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147718534, "dur":243, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147718777, "dur":197, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147719073, "dur":320, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147719393, "dur":80, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147719529, "dur":235, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147719766, "dur":273, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147720039, "dur":318, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147720377, "dur":135, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.RenderPipelines.Core.ShaderLibrary.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147720512, "dur":170, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":3, "ts":1699243147720685, "dur":196, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":3, "ts":1699243147721215, "dur":159231, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147706923, "dur":5678, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147712646, "dur":169, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147713095, "dur":56, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.rsp" }}
-,{ "pid":12345, "tid":4, "ts":1699243147713361, "dur":69, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147713551, "dur":135, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147713686, "dur":276, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147713962, "dur":227, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147714190, "dur":98, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147714288, "dur":94, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147714382, "dur":111, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147714493, "dur":90, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147714584, "dur":213, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147714826, "dur":173, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147714999, "dur":152, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147715151, "dur":166, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147715317, "dur":116, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147715434, "dur":105, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147715539, "dur":119, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147715658, "dur":113, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147715771, "dur":112, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147715884, "dur":397, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147716281, "dur":175, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147716456, "dur":122, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147716579, "dur":168, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147716747, "dur":192, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147716939, "dur":210, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147717150, "dur":150, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147717300, "dur":139, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147717439, "dur":299, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147717739, "dur":121, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147717860, "dur":175, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147718035, "dur":85, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147718121, "dur":188, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147718452, "dur":80, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147718561, "dur":237, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147718803, "dur":195, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.dll (+2 others)" }}
-,{ "pid":12345, "tid":4, "ts":1699243147718998, "dur":350, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147719382, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":4, "ts":1699243147719453, "dur":300, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.PlasticSCM.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":4, "ts":1699243147719754, "dur":128, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147719885, "dur":177, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Rider.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":4, "ts":1699243147720063, "dur":484, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147720551, "dur":110, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualStudio.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":4, "ts":1699243147720662, "dur":140, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147720859, "dur":76, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":4, "ts":1699243147720946, "dur":184, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.CollabProxy.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":4, "ts":1699243147721218, "dur":159188, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147706937, "dur":5675, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147712666, "dur":97, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll" }}
-,{ "pid":12345, "tid":5, "ts":1699243147712666, "dur":98, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.PerformanceReportingModule.dll_39263F1B11D62AB9.mvfrm" }}
-,{ "pid":12345, "tid":5, "ts":1699243147713558, "dur":136, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147713694, "dur":258, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147713953, "dur":84, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147714038, "dur":165, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147714203, "dur":192, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147714395, "dur":166, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147714561, "dur":139, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147714700, "dur":87, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147714787, "dur":196, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147714984, "dur":175, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147715159, "dur":178, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147715337, "dur":201, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147715538, "dur":145, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147715683, "dur":577, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147716260, "dur":119, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147716379, "dur":263, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147716643, "dur":167, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147716810, "dur":79, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147716890, "dur":75, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147716966, "dur":92, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147717059, "dur":145, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147717204, "dur":110, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147717314, "dur":208, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147717522, "dur":157, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147717691, "dur":283, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147717974, "dur":185, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147718159, "dur":142, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147718489, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll.mvfrm" }}
-,{ "pid":12345, "tid":5, "ts":1699243147718547, "dur":240, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147718791, "dur":158, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll (+2 others)" }}
-,{ "pid":12345, "tid":5, "ts":1699243147718949, "dur":125, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147719118, "dur":235, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147719357, "dur":227, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.ShaderGraph.Utilities.dll (+2 others)" }}
-,{ "pid":12345, "tid":5, "ts":1699243147719659, "dur":101, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147719866, "dur":110, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147719981, "dur":324, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Timeline.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":5, "ts":1699243147720305, "dur":369, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147720678, "dur":225, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Performance.Profile-Analyzer.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":5, "ts":1699243147720915, "dur":57, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Performance.Profile-Analyzer.Editor.ref.dll_C0422B8CE3C1BDD1.mvfrm" }}
-,{ "pid":12345, "tid":5, "ts":1699243147721017, "dur":115, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":5, "ts":1699243147721216, "dur":159202, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147706924, "dur":5684, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147712655, "dur":117, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147712800, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147713061, "dur":62, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.NVIDIAModule.dll_32CE831011C9F3A6.mvfrm" }}
-,{ "pid":12345, "tid":6, "ts":1699243147713144, "dur":50, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.UI.rsp" }}
-,{ "pid":12345, "tid":6, "ts":1699243147713575, "dur":409, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147713984, "dur":175, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147714159, "dur":59, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147714218, "dur":91, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147714309, "dur":188, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147714498, "dur":334, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147714832, "dur":262, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147715094, "dur":102, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147715196, "dur":130, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147715326, "dur":197, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147715523, "dur":131, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147715655, "dur":237, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147715892, "dur":526, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147716418, "dur":328, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147716746, "dur":103, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147716849, "dur":156, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147717005, "dur":171, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147717176, "dur":194, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147717370, "dur":124, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147717494, "dur":66, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147717560, "dur":286, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147717846, "dur":198, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147718044, "dur":419, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147718463, "dur":53, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147718516, "dur":286, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.dll.mvfrm" }}
-,{ "pid":12345, "tid":6, "ts":1699243147718807, "dur":187, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.dll (+2 others)" }}
-,{ "pid":12345, "tid":6, "ts":1699243147718994, "dur":65, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147719197, "dur":149, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Linq.Parallel.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699243147719120, "dur":626, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Core.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":6, "ts":1699243147719747, "dur":246, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147719999, "dur":72, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147720074, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":6, "ts":1699243147720134, "dur":210, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":6, "ts":1699243147720600, "dur":72, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Flow.Editor.ref.dll" }}
-,{ "pid":12345, "tid":6, "ts":1699243147720435, "dur":288, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.State.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":6, "ts":1699243147720723, "dur":197, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147720929, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":6, "ts":1699243147720988, "dur":56, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":6, "ts":1699243147721046, "dur":150, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.VisualScripting.Shared.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":6, "ts":1699243147721233, "dur":88, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.dll (+2 others)" }}
-,{ "pid":12345, "tid":6, "ts":1699243147721341, "dur":158494, "ph":"X", "name": "Csc",  "args": { "detail":"Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.dll (+2 others)" }}
-,{ "pid":12345, "tid":6, "ts":1699243147880194, "dur":144, "ph":"X", "name": "CopyFiles",  "args": { "detail":"Library/ScriptAssemblies/Assembly-CSharp.dll" }}
-,{ "pid":12345, "tid":7, "ts":1699243147706938, "dur":5678, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147712666, "dur":90, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147713051, "dur":67, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1699243147713051, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ClusterRendererModule.dll_B134DB6577B58CA6.mvfrm" }}
-,{ "pid":12345, "tid":7, "ts":1699243147713923, "dur":116, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/2000b0aE.dag/Assembly-CSharp.rsp" }}
-,{ "pid":12345, "tid":7, "ts":1699243147714040, "dur":214, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147714254, "dur":169, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147714423, "dur":337, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147714773, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147714853, "dur":119, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147714972, "dur":130, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147715103, "dur":169, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147715272, "dur":105, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147715377, "dur":102, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147715479, "dur":199, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147715678, "dur":133, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147715811, "dur":396, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147716207, "dur":194, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147716401, "dur":207, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147716608, "dur":191, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147716799, "dur":149, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147716948, "dur":110, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147717058, "dur":100, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147717158, "dur":146, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147717304, "dur":71, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147717375, "dur":143, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147717519, "dur":122, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147717641, "dur":325, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147717966, "dur":176, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147718142, "dur":58, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147718201, "dur":144, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147718479, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.Searcher.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":7, "ts":1699243147718535, "dur":248, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147718786, "dur":157, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Searcher.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":7, "ts":1699243147718943, "dur":433, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147719390, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.TextMeshPro.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":7, "ts":1699243147719598, "dur":77, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll.mvfrm" }}
-,{ "pid":12345, "tid":7, "ts":1699243147719675, "dur":161, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147719838, "dur":96, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll (+2 others)" }}
-,{ "pid":12345, "tid":7, "ts":1699243147719987, "dur":80, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll" }}
-,{ "pid":12345, "tid":7, "ts":1699243147719941, "dur":653, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.ShaderGraph.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":7, "ts":1699243147720594, "dur":298, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147721164, "dur":58, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":7, "ts":1699243147721222, "dur":159203, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147706953, "dur":5668, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147712730, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VRModule.dll_F954B935165F8667.mvfrm" }}
-,{ "pid":12345, "tid":8, "ts":1699243147712960, "dur":58, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147713089, "dur":85, "ph":"X", "name": "EmitNodeUpToDate",  "args": { "detail":"WriteText Library/Bee/artifacts/2000b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.txt" }}
-,{ "pid":12345, "tid":8, "ts":1699243147713436, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147713495, "dur":51, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147713562, "dur":112, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147713674, "dur":284, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147713959, "dur":331, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147714290, "dur":255, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147714545, "dur":71, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147714616, "dur":218, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147714834, "dur":206, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147715040, "dur":102, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147715142, "dur":92, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147715234, "dur":240, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147715474, "dur":104, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147715578, "dur":90, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147715668, "dur":184, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147715852, "dur":459, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147716311, "dur":212, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147716524, "dur":195, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147716719, "dur":136, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147716879, "dur":247, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147717126, "dur":270, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147717396, "dur":181, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147717577, "dur":122, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147717700, "dur":248, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147717949, "dur":167, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147718116, "dur":197, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147718479, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll.mvfrm" }}
-,{ "pid":12345, "tid":8, "ts":1699243147718549, "dur":243, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147718796, "dur":152, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll (+2 others)" }}
-,{ "pid":12345, "tid":8, "ts":1699243147718948, "dur":61, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147719012, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":8, "ts":1699243147719081, "dur":137, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.Settings.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":8, "ts":1699243147719218, "dur":864, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147720137, "dur":211, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.dll.mvfrm.rsp" }}
-,{ "pid":12345, "tid":8, "ts":1699243147720097, "dur":252, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"MovedFromExtractorCombine Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.dll.mvfrm" }}
-,{ "pid":12345, "tid":8, "ts":1699243147720349, "dur":328, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147720681, "dur":225, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Csc Library/Bee/artifacts/2000b0aE.dag/Unity.TestTools.CodeCoverage.Editor.dll (+2 others)" }}
-,{ "pid":12345, "tid":8, "ts":1699243147721006, "dur":50, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":8, "ts":1699243147721215, "dur":159225, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
-,{ "pid":12345, "tid":0, "ts":1699243147884872, "dur":139, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid":12345, "tid":0, "ts":1699977912167260, "dur":3151, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699977912170479, "dur":157, "ph":"X", "name": "BuildQueueInit",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699977912170827, "dur":130, "ph":"X", "name": "EmitFirstTimeEnqueue",  "args": { "detail":"CopyFiles /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":0, "ts":1699977912170648, "dur":1976, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699977912172627, "dur":114170, "ph":"X", "name": "WaitForBuildFinished", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699977912287023, "dur":4857, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1699977912170552, "dur":2080, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699977912172634, "dur":553, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1699977912173320, "dur":96, "ph":"X", "name": "WriteText",  "args": { "detail":"Library/Bee/artifacts/csharpactions/boot.config_tyr4.info" }}
+,{ "pid":12345, "tid":1, "ts":1699977912173491, "dur":148, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/Bee/PlayerScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699977912173639, "dur":183, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699977912173823, "dur":83, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699977912173906, "dur":121, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699977912174075, "dur":110, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":1, "ts":1699977912173418, "dur":834, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1699977912174486, "dur":111933, "ph":"X", "name": "AddBootConfigGUID",  "args": { "detail":"Library/Bee/artifacts/WinPlayerBuildProgram/boot.config" }}
+,{ "pid":12345, "tid":1, "ts":1699977912286690, "dur":78, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/boot.config" }}
+,{ "pid":12345, "tid":2, "ts":1699977912170585, "dur":2057, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699977912172643, "dur":218, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699977912172861, "dur":332, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699977912178373, "dur":86, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699977912180228, "dur":73, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1699977912178474, "dur":1835, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699977912180328, "dur":121, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699977912180476, "dur":33701, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":2, "ts":1699977912214183, "dur":72649, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699977912170597, "dur":2049, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699977912172648, "dur":182, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699977912172871, "dur":317, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1699977912178475, "dur":606, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":3, "ts":1699977912179106, "dur":50, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912179167, "dur":262, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912179440, "dur":638, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912180114, "dur":129, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912180259, "dur":116, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912180389, "dur":1905, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912182322, "dur":92, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912182459, "dur":1887, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912184360, "dur":72, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912184444, "dur":53, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912184512, "dur":65, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912184589, "dur":54, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912184654, "dur":1322, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912185989, "dur":62, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":3, "ts":1699977912186053, "dur":100821, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699977912170581, "dur":2057, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699977912172639, "dur":119, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699977912172758, "dur":142, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699977912172900, "dur":292, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699977912173480, "dur":101, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699977912173327, "dur":272, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.PropertiesModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912173610, "dur":52, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912173902, "dur":66, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1699977912173792, "dur":181, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912173983, "dur":103, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912174152, "dur":89, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912174288, "dur":141, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912174449, "dur":60, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912174524, "dur":292, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912174856, "dur":70, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912174940, "dur":209, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/resources.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699977912175218, "dur":94, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/level2" }}
+,{ "pid":12345, "tid":4, "ts":1699977912175322, "dur":109, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/level0.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699977912175466, "dur":176, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":4, "ts":1699977912175756, "dur":250, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":4, "ts":1699977912176016, "dur":65, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912176094, "dur":50, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ContentLoadModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912176155, "dur":55, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912176278, "dur":57, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912176344, "dur":7183, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":4, "ts":1699977912183585, "dur":263, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":4, "ts":1699977912183864, "dur":113, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184006, "dur":83, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184108, "dur":50, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184172, "dur":62, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184245, "dur":51, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184309, "dur":302, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184646, "dur":63, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184723, "dur":66, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912184799, "dur":720, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912185533, "dur":136, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912185687, "dur":209, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912185909, "dur":73, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":4, "ts":1699977912185983, "dur":100886, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699977912170627, "dur":2023, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699977912172651, "dur":216, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699977912172867, "dur":350, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1699977912178606, "dur":157, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":5, "ts":1699977912178782, "dur":52, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699977912178848, "dur":159, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699977912179031, "dur":6023, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":5, "ts":1699977912185069, "dur":232, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699977912185383, "dur":93, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699977912185501, "dur":289, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699977912185804, "dur":416, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":5, "ts":1699977912186222, "dur":100596, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699977912170654, "dur":2002, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699977912172658, "dur":210, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699977912172868, "dur":615, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1699977912173499, "dur":151, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912173716, "dur":134, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912173860, "dur":53, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912173947, "dur":61, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912174018, "dur":168, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912174337, "dur":402, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1699977912174780, "dur":265, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":6, "ts":1699977912175059, "dur":124, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/level2.resS" }}
+,{ "pid":12345, "tid":6, "ts":1699977912175228, "dur":121, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/level1" }}
+,{ "pid":12345, "tid":6, "ts":1699977912175358, "dur":1661, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/globalgamemanagers.assets.resS" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177043, "dur":146, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177205, "dur":139, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177357, "dur":54, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177433, "dur":70, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177517, "dur":50, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177578, "dur":77, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177675, "dur":55, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177733, "dur":205, "ph":"X", "name": "ComputeFileSignatureSha1",  "args": { "detail":"Temp/StagingArea/WindowsPlayer.exe" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177732, "dur":207, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator.exe" }}
+,{ "pid":12345, "tid":6, "ts":1699977912177947, "dur":406, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator.exe" }}
+,{ "pid":12345, "tid":6, "ts":1699977912178378, "dur":2921, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912181379, "dur":327, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1699977912181724, "dur":267, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":6, "ts":1699977912182005, "dur":402, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":6, "ts":1699977912182462, "dur":296, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1699977912182790, "dur":431, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":6, "ts":1699977912183241, "dur":309, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":6, "ts":1699977912183566, "dur":12621, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":6, "ts":1699977912196194, "dur":90601, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699977912170651, "dur":2002, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699977912172654, "dur":208, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699977912172862, "dur":328, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1699977912173354, "dur":70, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912173435, "dur":162, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/app.info" }}
+,{ "pid":12345, "tid":7, "ts":1699977912173609, "dur":112, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912173732, "dur":67, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912173810, "dur":69, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912173952, "dur":141, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912174180, "dur":52, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912174257, "dur":52, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912174335, "dur":99, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912174455, "dur":279, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1699977912174773, "dur":30690, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":7, "ts":1699977912205468, "dur":81358, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699977912170665, "dur":1996, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699977912172662, "dur":202, "ph":"X", "name": "EarlyStatNonGeneratedFile",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699977912172864, "dur":327, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699977912173425, "dur":67, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912173573, "dur":84, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912173687, "dur":1047, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912174803, "dur":82, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912174896, "dur":289, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":8, "ts":1699977912175234, "dur":84, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912175380, "dur":68, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912175458, "dur":164, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":8, "ts":1699977912175719, "dur":146, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/level1.resS" }}
+,{ "pid":12345, "tid":8, "ts":1699977912175948, "dur":51, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912176012, "dur":55, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912176160, "dur":800, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912176970, "dur":403, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":8, "ts":1699977912177389, "dur":121, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912177531, "dur":539, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":8, "ts":1699977912178087, "dur":2794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":8, "ts":1699977912180897, "dur":70, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912180983, "dur":169, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912181165, "dur":1049, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":8, "ts":1699977912182230, "dur":420, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":8, "ts":1699977912182676, "dur":379, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":8, "ts":1699977912183099, "dur":165, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":8, "ts":1699977912183276, "dur":116, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1699977912183530, "dur":588, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184131, "dur":74, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184222, "dur":51, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184289, "dur":63, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184363, "dur":78, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184458, "dur":74, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184544, "dur":64, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184699, "dur":311, "ph":"X", "name": "EmitNodeFinish",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1699977912184629, "dur":388, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912185035, "dur":127, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912185177, "dur":204, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912185396, "dur":118, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912185584, "dur":306, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912185905, "dur":335, "ph":"X", "name": "CopyFiles",  "args": { "detail":"/home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Windows/BacSim-Windows-v0.4.1/BacteriaSimulator.exe/Bacteria Simulator_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll" }}
+,{ "pid":12345, "tid":8, "ts":1699977912186242, "dur":100622, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1699977912292963, "dur":176, "ph":"X", "name": "ProfilerWriteOutput" }
 ,

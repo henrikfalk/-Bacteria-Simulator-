@@ -9,7 +9,8 @@ public class AquariumState
     public enum STATE {
         EMPTY,
         INITIALIZING,
-        RUNNING
+        RUNNING,
+        PAUSED
     };
 
     public enum EVENT {
@@ -22,6 +23,7 @@ public class AquariumState
         NONE,
         NEW_SIMULATION,
         QUIT_SIMULATION,
+        PAUSE_SIMULATION,
         EXIT_GAME
     };
 

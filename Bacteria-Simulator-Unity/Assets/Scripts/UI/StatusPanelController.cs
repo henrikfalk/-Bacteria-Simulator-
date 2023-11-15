@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+//using Unity.VisualScripting;
+//using Microsoft.Unity.VisualStudio.Editor;
 
 public class StatusPanelController : MonoBehaviour
 {
@@ -12,6 +15,11 @@ public class StatusPanelController : MonoBehaviour
     private SimulationController simulationController;
 
     // 
+    public GameObject simulationStateImage;
+    public Sprite greenStatusButton;
+    public Sprite yellowStatusButton;
+    public Sprite redStatusButton;
+
     public TextMeshProUGUI simulationTimeText;
 
     public TextMeshProUGUI greenBNumberText;
@@ -25,6 +33,7 @@ public class StatusPanelController : MonoBehaviour
     public TextMeshProUGUI deadBNumberText;
 
     public TextMeshProUGUI toxicityBNumberText;
+    public GameObject toxicityStateImage;
 
     private GameObject[] bacteriaList;
     private int green;
@@ -44,14 +53,55 @@ public class StatusPanelController : MonoBehaviour
     void Update()
     {
 
-        if (simulationSceneManager != null) {
+        // Failsafe
+        if (simulationSceneManager == null) {
+            GameObject obj = GameObject.Find("SimulationSceneManager");
+            simulationSceneManager = obj.GetComponent<SimulationSceneManager>();
+        }
+
+        if (simulationController == null) {
             simulationController = simulationSceneManager.GetSimulationController();
-        } else {
             return;
         }
-        
-        // Update time
-        simulationTimeText.text = simulationController.GetElapsedSimulationTimeAsString();
+
+        if (simulationController.currentState == null) {
+            return;
+        }
+
+        // Update SimulationStateImage
+        switch (simulationController.currentState.stateName) {
+
+            case AquariumState.STATE.INITIALIZING: 
+                    simulationStateImage.transform.GetComponent<Image>().sprite = yellowStatusButton;
+                    toxicityStateImage.transform.GetComponent<Image>().sprite = greenStatusButton;
+                break;
+            case AquariumState.STATE.RUNNING: 
+                    simulationStateImage.transform.GetComponent<Image>().sprite = greenStatusButton;
+    
+                    // Update time
+                    simulationTimeText.text = simulationController.GetElapsedSimulationTimeAsString();
+
+                    // update toxicityStateImage
+                    if (simulationController.GetToxicity() < 500) {
+                        toxicityStateImage.transform.GetComponent<Image>().sprite = greenStatusButton;
+                    } else if (simulationController.GetToxicity() < 1000) {
+                        toxicityStateImage.transform.GetComponent<Image>().sprite = yellowStatusButton;
+                    } else {
+                        toxicityStateImage.transform.GetComponent<Image>().sprite = redStatusButton;
+                    }
+                break;
+            case AquariumState.STATE.PAUSED: 
+                    simulationStateImage.transform.GetComponent<Image>().sprite = yellowStatusButton;
+                break;
+                default:
+                    simulationStateImage.transform.GetComponent<Image>().sprite = redStatusButton;
+                break;
+        }
+
+        // HFALK maybe another way?
+        if (simulationController.currentState.stateName == AquariumState.STATE.PAUSED) {
+            return;
+        }
 
         // Update middletemperature
         temperatureBNumberText.text = simulationController.GetMiddleTemperature() + " ºC";
@@ -87,7 +137,7 @@ public class StatusPanelController : MonoBehaviour
         purpleBNumberText.text = purple.ToString();
         deadBNumberText.text = dead.ToString();
 
-        totalBNumberText.text = bacteriaList.Length.ToString();
+        totalBNumberText.text = (bacteriaList.Length-dead).ToString();
     }
 
 }

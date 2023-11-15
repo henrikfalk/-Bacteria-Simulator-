@@ -20,24 +20,35 @@ public class ToolbarPanelController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start() {
+/*
         // Get a handle to the SimulationSceneManager
         GameObject obj = GameObject.Find("SimulationSceneManager");
         simulationSceneManager = obj.GetComponent<SimulationSceneManager>();
-        
 
+        simulationController = simulationSceneManager.GetSimulationController();
+*/
     }
 
     // Update is called once per frame
     void Update() {
 
-        if (simulationSceneManager == null && simulationController.currentState == null) {
+        // Failsafe
+        if (simulationSceneManager == null) {
+            GameObject obj = GameObject.Find("SimulationSceneManager");
+            simulationSceneManager = obj.GetComponent<SimulationSceneManager>();
+        }
+
+        if (simulationController == null) {
+            simulationController = simulationSceneManager.GetSimulationController();
             return;
         }
-        simulationController = simulationSceneManager.GetSimulationController();
 
-        // Update new simulation button
+        // HFALK Code can be optimized :)
+
+        // Update buttons
         if (simulationController.currentState.stateName == AquariumState.STATE.EMPTY) {
             newSimulationButton.interactable = true;
+            pauseSimulationButton.interactable = false;
             quitSimulationButton.interactable = false;
             exitGameButton.interactable = true;
         } else {
@@ -45,13 +56,17 @@ public class ToolbarPanelController : MonoBehaviour
             exitGameButton.interactable = false;
         }
 
-        // Update quit simulation button
+        // If we are initializing
+        if (simulationController.currentState.stateName == AquariumState.STATE.INITIALIZING) {
+            pauseSimulationButton.interactable = false;
+        }
+
+        // Update quit and pause buttons
         if (simulationController.currentState.stateName == AquariumState.STATE.RUNNING) {
             quitSimulationButton.interactable = true;
-//            pauseSimulationButton.interactable = true;
+            pauseSimulationButton.interactable = true;
         } else {
             quitSimulationButton.interactable = false;
-//            pauseSimulationButton.interactable = false;
         }
 
     }
@@ -59,6 +74,11 @@ public class ToolbarPanelController : MonoBehaviour
     public void NewSimulation() {
 
         simulationController.currentState.Signal(AquariumState.SIGNAL.NEW_SIMULATION);
+    }
+
+    public void PauseSimulation() {
+
+        simulationController.currentState.Signal(AquariumState.SIGNAL.PAUSE_SIMULATION);
     }
 
     public void QuitSimulation() {

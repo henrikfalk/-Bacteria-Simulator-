@@ -3,16 +3,16 @@ Branch:                  2022.3/release
 Build type:              Release
 Batch mode:              YES
 System name:             Linux
-Distro version:          #1 SMP PREEMPT_DYNAMIC Sat Sep 23 12:48:15 UTC 2023
-Kernel version:          6.5.5-1-MANJARO
+Distro version:          #1 SMP PREEMPT_DYNAMIC Thu Nov  9 04:27:49 UTC 2023
+Kernel version:          6.6.1-1-MANJARO
 Architecture:            x86_64
 Available memory:        32025 MB
 Using pre-set license
 Pro License: YES
 
-(Unity:8642): Gtk-CRITICAL **: 04:55:28.526: gtk_window_set_default_icon: assertion 'GDK_IS_PIXBUF (icon)' failed
+(Unity:25051): Gtk-CRITICAL **: 07:53:44.126: gtk_window_set_default_icon: assertion 'GDK_IS_PIXBUF (icon)' failed
 
-(Unity:8642): GLib-GObject-CRITICAL **: 04:55:28.526: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+(Unity:25051): GLib-GObject-CRITICAL **: 07:53:44.126: g_object_unref: assertion 'G_IS_OBJECT (object)' failed
 Desktop is 2560 x 1440 @ 60 Hz
 Initialize udev device monitor.
 
@@ -28,7 +28,7 @@ AssetImportWorker1
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-43243
+41237
 Successfully changed project path to: /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity
 /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -62,11 +62,11 @@ Successfully changed project path to: /home/henrik/Dokumenter/hfalk/prog/Unity L
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [139683710296832] Host "[IP] 10.37.1.129 [Port] 0 [Flags] 2 [Guid] 803090676 [EditorId] 803090676 [Version] 1048832 [Id] LinuxEditor(16,10.5.11.49) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [140469974381312] Host "[IP] 10.37.1.129 [Port] 0 [Flags] 2 [Guid] 1411527817 [EditorId] 1411527817 [Version] 1048832 [Id] LinuxEditor(16,10.23.11.33) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [139683710296832] Host "[IP] 10.37.1.129 [Port] 0 [Flags] 2 [Guid] 803090676 [EditorId] 803090676 [Version] 1048832 [Id] LinuxEditor(16,10.5.11.49) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [140469974381312] Host "[IP] 10.37.1.129 [Port] 0 [Flags] 2 [Guid] 1411527817 [EditorId] 1411527817 [Version] 1048832 [Id] LinuxEditor(16,10.23.11.33) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 3,53 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 3,62 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
 Initialize engine version: 2022.3.5f1 (9674261d40ee)
 [Subsystems] Discovering subsystems at path /home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Resources/UnitySubsystems
@@ -87,51 +87,53 @@ blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffe
 der_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_mesh_shader GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_representative_fragment_test GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_scissor_exclusive GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_shader_texture
 _footprint GL_NV_shading_rate_image GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_NV_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_uniform_buffer_std430_layout GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR
 _multiview2 GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -1304808136
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 1739958360
 Initialize mono
 Mono path[0] = '/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/Managed'
 Mono path[1] = '/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56642
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56051
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/henrik/Unity/Hub/Editor/2022.3.5f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0,006669 seconds.
-- Loaded All Assemblies, in  0,250 seconds
+Registered in 0,008497 seconds.
+- Loaded All Assemblies, in  0,306 seconds
 Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,236 seconds
-Domain Reload Profiling: 486ms
-	BeginReloadAssembly (50ms)
+- Finished resetting the current domain, in  0,278 seconds
+Domain Reload Profiling: 583ms
+	BeginReloadAssembly (62ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (51ms)
-	LoadAllAssembliesAndSetupDomain (114ms)
-		LoadAssemblies (48ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (137ms)
+		LoadAssemblies (61ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (110ms)
-			TypeCache.Refresh (110ms)
-				TypeCache.ScanAssembly (100ms)
+		AnalyzeDomain (133ms)
+			TypeCache.Refresh (132ms)
+				TypeCache.ScanAssembly (120ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (237ms)
+	FinalizeReload (278ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (182ms)
+		SetupLoadedEditorAssemblies (209ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (28ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (34ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (107ms)
-			ProcessInitializeOnLoadMethodAttributes (41ms)
+			ProcessInitializeOnLoadAttributes (119ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -141,116 +143,54 @@ Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,541 seconds
-Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
+- Loaded All Assemblies, in  1,078 seconds
+Refreshing native plugins compatible for Editor in 2,32 ms, found 0 plugins.
 Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,477 seconds
-Domain Reload Profiling: 1016ms
-	BeginReloadAssembly (92ms)
+- Finished resetting the current domain, in  0,647 seconds
+Domain Reload Profiling: 1720ms
+	BeginReloadAssembly (120ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (20ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (36ms)
-	LoadAllAssembliesAndSetupDomain (378ms)
-		LoadAssemblies (155ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (68ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (788ms)
+		LoadAssemblies (467ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (256ms)
-			TypeCache.Refresh (238ms)
-				TypeCache.ScanAssembly (227ms)
-			ScanForSourceGeneratedMonoScriptInfo (14ms)
+		AnalyzeDomain (365ms)
+			TypeCache.Refresh (344ms)
+				TypeCache.ScanAssembly (327ms)
+			ScanForSourceGeneratedMonoScriptInfo (16ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (477ms)
+	FinalizeReload (647ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (350ms)
+		SetupLoadedEditorAssemblies (486ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (23ms)
+			InitializePlatformSupportModulesInManaged (48ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (212ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
-Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2,22 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4207 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 41 unused Assets / (32,4 KB). Loaded Objects now: 4697.
-Memory consumption went from 160,4 MB to 160,4 MB.
-Total: 3,591984 ms (FindLiveObjects: 0,297108 ms CreateObjectMapping: 0,189089 ms MarkObjects: 2,963910 ms  DeleteObjects: 0,140724 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,527 seconds
-Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,583 seconds
-Domain Reload Profiling: 1108ms
-	BeginReloadAssembly (109ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (356ms)
-		LoadAssemblies (162ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (232ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (215ms)
-			ScanForSourceGeneratedMonoScriptInfo (3ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (584ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (317ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (23ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (183ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (5ms)
+			BeforeProcessingInitializeOnLoad (61ms)
+			ProcessInitializeOnLoadAttributes (298ms)
+			ProcessInitializeOnLoadMethodAttributes (71ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
+Refreshing native plugins compatible for Editor in 3,09 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4700.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 3,165866 ms (FindLiveObjects: 0,224917 ms CreateObjectMapping: 0,148934 ms MarkObjects: 2,726972 ms  DeleteObjects: 0,064162 ms)
+Unloading 4207 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 41 unused Assets / (355,4 KB). Loaded Objects now: 4697.
+Memory consumption went from 159,7 MB to 159,3 MB.
+Total: 6,756562 ms (FindLiveObjects: 0,364702 ms CreateObjectMapping: 0,411785 ms MarkObjects: 5,682162 ms  DeleteObjects: 0,295549 ms)
 
-Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -263,134 +203,56 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 524,437957 seconds.
-  path: Assets/Scripts/UI/BacteriaInfoPanelController.cs
-  artifactKey: Guid(3b8d45176178fe492bce32fe9b891966) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/BacteriaInfoPanelController.cs using Guid(3b8d45176178fe492bce32fe9b891966) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b8fff884a3b853ca299eecb73bc30e9') in 0,004466 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,528 seconds
-Refreshing native plugins compatible for Editor in 2,21 ms, found 0 plugins.
+- Loaded All Assemblies, in  0,542 seconds
+Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
 Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,597 seconds
-Domain Reload Profiling: 1123ms
-	BeginReloadAssembly (106ms)
+- Finished resetting the current domain, in  0,605 seconds
+Domain Reload Profiling: 1145ms
+	BeginReloadAssembly (111ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (33ms)
+		CreateAndSetChildDomain (35ms)
 	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (26ms)
-	LoadAllAssembliesAndSetupDomain (359ms)
-		LoadAssemblies (166ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (370ms)
+		LoadAssemblies (172ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (232ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (216ms)
+		AnalyzeDomain (237ms)
+			TypeCache.Refresh (230ms)
+				TypeCache.ScanAssembly (219ms)
 			ScanForSourceGeneratedMonoScriptInfo (3ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (597ms)
+	FinalizeReload (605ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (322ms)
+		SetupLoadedEditorAssemblies (330ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (23ms)
+			InitializePlatformSupportModulesInManaged (31ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (185ms)
+			ProcessInitializeOnLoadAttributes (186ms)
 			ProcessInitializeOnLoadMethodAttributes (54ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2,19 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2,29 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4174 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,7 KB). Loaded Objects now: 4703.
-Memory consumption went from 153,0 MB to 152,9 MB.
-Total: 3,205968 ms (FindLiveObjects: 0,239181 ms CreateObjectMapping: 0,165262 ms MarkObjects: 2,733753 ms  DeleteObjects: 0,066314 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 136,714526 seconds.
-  path: Assets/Scripts/UI/Scenes/SimulationSceneManager.cs
-  artifactKey: Guid(51fdd1a434fd81a9da40862e5559fe53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/UI/Scenes/SimulationSceneManager.cs using Guid(51fdd1a434fd81a9da40862e5559fe53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd25dcbd74afdda1f3c4040ce88a8674b') in 0,001161 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,559 seconds
-Refreshing native plugins compatible for Editor in 2,17 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1,022 seconds
-Domain Reload Profiling: 1580ms
-	BeginReloadAssembly (109ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (36ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (25ms)
-	LoadAllAssembliesAndSetupDomain (388ms)
-		LoadAssemblies (195ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (232ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (216ms)
-			ScanForSourceGeneratedMonoScriptInfo (3ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (1023ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (318ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (183ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
-Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4174 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4706.
-Memory consumption went from 153,0 MB to 152,9 MB.
-Total: 3,144563 ms (FindLiveObjects: 0,327162 ms CreateObjectMapping: 0,177163 ms MarkObjects: 2,567286 ms  DeleteObjects: 0,071732 ms)
+Unloading 4177 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (354,8 KB). Loaded Objects now: 4700.
+Memory consumption went from 152,8 MB to 152,5 MB.
+Total: 3,291983 ms (FindLiveObjects: 0,288151 ms CreateObjectMapping: 0,247383 ms MarkObjects: 2,644818 ms  DeleteObjects: 0,110710 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -410,139 +272,14 @@ Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
 - Loaded All Assemblies, in  0,532 seconds
-Refreshing native plugins compatible for Editor in 2,16 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2,21 ms, found 0 plugins.
 Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,591 seconds
-Domain Reload Profiling: 1121ms
-	BeginReloadAssembly (104ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (27ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (369ms)
-		LoadAssemblies (176ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (229ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (215ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (591ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (317ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (181ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4709.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 2,965172 ms (FindLiveObjects: 0,253863 ms CreateObjectMapping: 0,150155 ms MarkObjects: 2,498420 ms  DeleteObjects: 0,061549 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,533 seconds
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,588 seconds
-Domain Reload Profiling: 1120ms
-	BeginReloadAssembly (114ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (39ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (25ms)
-	LoadAllAssembliesAndSetupDomain (356ms)
-		LoadAssemblies (168ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (227ms)
-			TypeCache.Refresh (221ms)
-				TypeCache.ScanAssembly (212ms)
-			ScanForSourceGeneratedMonoScriptInfo (3ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (589ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (319ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (184ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2,19 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4712.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 3,050696 ms (FindLiveObjects: 0,243402 ms CreateObjectMapping: 0,150955 ms MarkObjects: 2,594355 ms  DeleteObjects: 0,061076 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,528 seconds
-Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,596 seconds
-Domain Reload Profiling: 1122ms
-	BeginReloadAssembly (105ms)
+- Finished resetting the current domain, in  0,605 seconds
+Domain Reload Profiling: 1135ms
+	BeginReloadAssembly (106ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
@@ -551,20 +288,20 @@ Domain Reload Profiling: 1122ms
 	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (7ms)
 	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (362ms)
-		LoadAssemblies (168ms)
+	LoadAllAssembliesAndSetupDomain (365ms)
+		LoadAssemblies (169ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (231ms)
-			TypeCache.Refresh (227ms)
-				TypeCache.ScanAssembly (217ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (229ms)
+				TypeCache.ScanAssembly (219ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (596ms)
+	FinalizeReload (606ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (324ms)
+		SetupLoadedEditorAssemblies (332ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (23ms)
+			InitializePlatformSupportModulesInManaged (31ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (51ms)
@@ -576,10 +313,10 @@ Domain Reload Profiling: 1122ms
 		AwakeInstancesAfterBackupRestoration (4ms)
 Refreshing native plugins compatible for Editor in 2,22 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4715.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 3,027756 ms (FindLiveObjects: 0,260260 ms CreateObjectMapping: 0,168652 ms MarkObjects: 2,535499 ms  DeleteObjects: 0,062591 ms)
+Unloading 4177 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (354,9 KB). Loaded Objects now: 4703.
+Memory consumption went from 152,8 MB to 152,5 MB.
+Total: 3,192770 ms (FindLiveObjects: 0,303260 ms CreateObjectMapping: 0,238947 ms MarkObjects: 2,533928 ms  DeleteObjects: 0,115862 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -598,114 +335,52 @@ Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,536 seconds
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
+- Loaded All Assemblies, in  0,539 seconds
+Refreshing native plugins compatible for Editor in 2,26 ms, found 0 plugins.
 Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,588 seconds
-Domain Reload Profiling: 1123ms
-	BeginReloadAssembly (110ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (365ms)
-		LoadAssemblies (168ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (233ms)
-			TypeCache.Refresh (226ms)
-				TypeCache.ScanAssembly (217ms)
-			ScanForSourceGeneratedMonoScriptInfo (3ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (589ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (316ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (181ms)
-			ProcessInitializeOnLoadMethodAttributes (53ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
-Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4718.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 2,942654 ms (FindLiveObjects: 0,240746 ms CreateObjectMapping: 0,139905 ms MarkObjects: 2,505798 ms  DeleteObjects: 0,054935 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,527 seconds
-Refreshing native plugins compatible for Editor in 2,16 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,596 seconds
-Domain Reload Profiling: 1122ms
-	BeginReloadAssembly (104ms)
+- Finished resetting the current domain, in  0,606 seconds
+Domain Reload Profiling: 1143ms
+	BeginReloadAssembly (108ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (27ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (7ms)
 	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (363ms)
-		LoadAssemblies (166ms)
+	LoadAllAssembliesAndSetupDomain (370ms)
+		LoadAssemblies (172ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (232ms)
-			TypeCache.Refresh (228ms)
-				TypeCache.ScanAssembly (219ms)
+		AnalyzeDomain (236ms)
+			TypeCache.Refresh (231ms)
+				TypeCache.ScanAssembly (220ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (597ms)
+	FinalizeReload (607ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (327ms)
+		SetupLoadedEditorAssemblies (332ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
+			InitializePlatformSupportModulesInManaged (31ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (189ms)
+			ProcessInitializeOnLoadAttributes (187ms)
 			ProcessInitializeOnLoadMethodAttributes (55ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2,19 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2,24 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,7 KB). Loaded Objects now: 4721.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 9,103975 ms (FindLiveObjects: 0,260998 ms CreateObjectMapping: 0,153352 ms MarkObjects: 8,622124 ms  DeleteObjects: 0,066346 ms)
+Unloading 4177 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (354,8 KB). Loaded Objects now: 4706.
+Memory consumption went from 152,8 MB to 152,5 MB.
+Total: 3,182690 ms (FindLiveObjects: 0,284977 ms CreateObjectMapping: 0,224791 ms MarkObjects: 2,551678 ms  DeleteObjects: 0,120316 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -724,114 +399,52 @@ Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,533 seconds
+- Loaded All Assemblies, in  0,556 seconds
 Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
 Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,584 seconds
-Domain Reload Profiling: 1116ms
-	BeginReloadAssembly (109ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (23ms)
-	LoadAllAssembliesAndSetupDomain (365ms)
-		LoadAssemblies (172ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (230ms)
-			TypeCache.Refresh (223ms)
-				TypeCache.ScanAssembly (214ms)
-			ScanForSourceGeneratedMonoScriptInfo (3ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (584ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (315ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (181ms)
-			ProcessInitializeOnLoadMethodAttributes (52ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4724.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 3,031375 ms (FindLiveObjects: 0,239440 ms CreateObjectMapping: 0,126198 ms MarkObjects: 2,610275 ms  DeleteObjects: 0,054437 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,538 seconds
-Refreshing native plugins compatible for Editor in 2,28 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,657 seconds
-Domain Reload Profiling: 1194ms
-	BeginReloadAssembly (107ms)
+- Finished resetting the current domain, in  0,647 seconds
+Domain Reload Profiling: 1201ms
+	BeginReloadAssembly (110ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (28ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (27ms)
 	RebuildNativeTypeToScriptingClass (7ms)
 	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (371ms)
-		LoadAssemblies (169ms)
+	LoadAllAssembliesAndSetupDomain (386ms)
+		LoadAssemblies (176ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (239ms)
-			TypeCache.Refresh (234ms)
-				TypeCache.ScanAssembly (225ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (248ms)
+			TypeCache.Refresh (241ms)
+				TypeCache.ScanAssembly (231ms)
+			ScanForSourceGeneratedMonoScriptInfo (3ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (658ms)
+	FinalizeReload (647ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (375ms)
+		SetupLoadedEditorAssemblies (340ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
+			InitializePlatformSupportModulesInManaged (36ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (57ms)
-			ProcessInitializeOnLoadAttributes (222ms)
-			ProcessInitializeOnLoadMethodAttributes (62ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (188ms)
+			ProcessInitializeOnLoadMethodAttributes (53ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
 Refreshing native plugins compatible for Editor in 2,26 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,6 KB). Loaded Objects now: 4727.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 2,999456 ms (FindLiveObjects: 0,249815 ms CreateObjectMapping: 0,156000 ms MarkObjects: 2,533638 ms  DeleteObjects: 0,058998 ms)
+Unloading 4177 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (354,9 KB). Loaded Objects now: 4709.
+Memory consumption went from 152,8 MB to 152,5 MB.
+Total: 3,065568 ms (FindLiveObjects: 0,268777 ms CreateObjectMapping: 0,190270 ms MarkObjects: 2,499585 ms  DeleteObjects: 0,106230 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -850,240 +463,52 @@ Received Prepare
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,530 seconds
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
+- Loaded All Assemblies, in  0,545 seconds
+Refreshing native plugins compatible for Editor in 2,52 ms, found 0 plugins.
 Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,595 seconds
-Domain Reload Profiling: 1123ms
-	BeginReloadAssembly (107ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (36ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (363ms)
-		LoadAssemblies (167ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (232ms)
-			TypeCache.Refresh (228ms)
-				TypeCache.ScanAssembly (219ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (595ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (320ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (183ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2,23 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4730.
-Memory consumption went from 153,2 MB to 153,2 MB.
-Total: 3,193706 ms (FindLiveObjects: 0,257591 ms CreateObjectMapping: 0,164730 ms MarkObjects: 2,706528 ms  DeleteObjects: 0,063920 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,522 seconds
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,582 seconds
-Domain Reload Profiling: 1102ms
-	BeginReloadAssembly (104ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (35ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (358ms)
-		LoadAssemblies (162ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (231ms)
-			TypeCache.Refresh (224ms)
-				TypeCache.ScanAssembly (215ms)
-			ScanForSourceGeneratedMonoScriptInfo (3ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (582ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (314ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (24ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (180ms)
-			ProcessInitializeOnLoadMethodAttributes (52ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (3ms)
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4733.
-Memory consumption went from 153,3 MB to 153,2 MB.
-Total: 3,013994 ms (FindLiveObjects: 0,236829 ms CreateObjectMapping: 0,128690 ms MarkObjects: 2,589626 ms  DeleteObjects: 0,057856 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,530 seconds
-Refreshing native plugins compatible for Editor in 2,20 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,608 seconds
-Domain Reload Profiling: 1136ms
-	BeginReloadAssembly (107ms)
+- Finished resetting the current domain, in  0,616 seconds
+Domain Reload Profiling: 1159ms
+	BeginReloadAssembly (108ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (28ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (29ms)
 	RebuildNativeTypeToScriptingClass (7ms)
 	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (363ms)
-		LoadAssemblies (166ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (232ms)
-			TypeCache.Refresh (228ms)
-				TypeCache.ScanAssembly (219ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (608ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (330ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (26ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (189ms)
-			ProcessInitializeOnLoadMethodAttributes (55ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2,22 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4736.
-Memory consumption went from 153,3 MB to 153,2 MB.
-Total: 2,994338 ms (FindLiveObjects: 0,241317 ms CreateObjectMapping: 0,149847 ms MarkObjects: 2,541545 ms  DeleteObjects: 0,060740 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:CustomObjectIndexerAttribute: 306bfa6df2d96854e1ebb52f3ddacab7 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/YamlDotNet/Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator/Bacteria-Simulator-Unity/Library/PackageCache/com.unity.visualscripting@1.8.0/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.dll
-- Loaded All Assemblies, in  0,542 seconds
-Refreshing native plugins compatible for Editor in 2,18 ms, found 0 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0,601 seconds
-Domain Reload Profiling: 1141ms
-	BeginReloadAssembly (106ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (37ms)
-	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (7ms)
-	initialDomainReloadingComplete (23ms)
 	LoadAllAssembliesAndSetupDomain (376ms)
-		LoadAssemblies (181ms)
+		LoadAssemblies (174ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (229ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (217ms)
+		AnalyzeDomain (240ms)
+			TypeCache.Refresh (236ms)
+				TypeCache.ScanAssembly (226ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (4ms)
-	FinalizeReload (602ms)
+	FinalizeReload (616ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (328ms)
+		SetupLoadedEditorAssemblies (333ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (25ms)
+			InitializePlatformSupportModulesInManaged (32ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (189ms)
+			BeforeProcessingInitializeOnLoad (51ms)
+			ProcessInitializeOnLoadAttributes (188ms)
 			ProcessInitializeOnLoadMethodAttributes (55ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2,16 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 2,30 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0,00 ms.
-Unloading 4175 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 30 unused Assets / (31,8 KB). Loaded Objects now: 4739.
-Memory consumption went from 153,3 MB to 153,2 MB.
-Total: 3,050239 ms (FindLiveObjects: 0,251170 ms CreateObjectMapping: 0,149798 ms MarkObjects: 2,582901 ms  DeleteObjects: 0,065651 ms)
+Unloading 4177 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 30 unused Assets / (354,8 KB). Loaded Objects now: 4712.
+Memory consumption went from 152,8 MB to 152,5 MB.
+Total: 3,021552 ms (FindLiveObjects: 0,268919 ms CreateObjectMapping: 0,232143 ms MarkObjects: 2,403436 ms  DeleteObjects: 0,115959 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):

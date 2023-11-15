@@ -31,7 +31,7 @@ public class MainCameraController : MonoBehaviour
     void Update()
     {
 
-        if(simulationSceneManager.IsSimulationRunning() == false) return;
+        if(simulationSceneManager == null || simulationSceneManager.IsSimulationRunning() == false) return;
 
         target = simulationSceneManager.aquarium;
 
@@ -46,10 +46,10 @@ public class MainCameraController : MonoBehaviour
         }
 
         // Handle horisontal input
-        transform.RotateAround(target.transform.position, Vector3.up, Time.deltaTime * rotationSpeed * horizontalInput);
+        transform.RotateAround(target.transform.position, Vector3.up, Time.unscaledDeltaTime * rotationSpeed * horizontalInput); // Time.deltaTime * 
 
         // Handle vertical input
-        transform.Translate(0, verticalInput * Time.deltaTime * verticalSpeed, 0);
+        transform.Translate(0, Time.unscaledDeltaTime * verticalInput * verticalSpeed, 0); // Time.deltaTime *
 
         ProcessMouseInput();
 
@@ -63,7 +63,7 @@ public class MainCameraController : MonoBehaviour
 
         if (distance > 5.0f) {
             // Handle zoom
-            transform.Translate(0, 0, Time.deltaTime * depthSpeed * depthInput);
+            transform.Translate(0, 0, Time.unscaledDeltaTime * depthSpeed * depthInput); // Time.deltaTime * 
 
             if (distance > 15.0f) {
                 var step =  0.1f; // calculate distance to move
@@ -100,10 +100,10 @@ public class MainCameraController : MonoBehaviour
 
             // Rotate
             // Handle horisontal input
-            transform.RotateAround(target.transform.position, Vector3.up, Time.deltaTime * rotationSpeed * 5 * Input.GetAxis("Mouse X"));
+            transform.RotateAround(target.transform.position, Vector3.up, Time.unscaledDeltaTime * rotationSpeed * 5 * Input.GetAxis("Mouse X")); // Time.deltaTime * 
 
             // Handle vertical input
-            transform.Translate(0, Time.deltaTime * verticalSpeed * 5 * Input.GetAxis("Mouse Y"), 0);
+            transform.Translate(0, Time.unscaledDeltaTime * verticalSpeed * 5 * Input.GetAxis("Mouse Y"), 0); // Time.deltaTime * 
 
 
         }

@@ -82,7 +82,16 @@ public class Bacteria : MonoBehaviour
     // Use this method in derived classes for overriding stuff in Start() method
     protected virtual void BacteriaStart(){}
 
-    // Update is called once per frame
+    // FixedUpdate is called
+    void FixedUpdate() {
+
+        // FSM
+        if (currentState != null) {
+            currentState = currentState.ProcessFixed();
+        }
+    }
+
+    // Update is called
     void Update() {
 
         // FSM
@@ -102,6 +111,11 @@ public class Bacteria : MonoBehaviour
             bacteriaRigidbody.useGravity = true;
             gameObject.name = deadName;
 
+            // Add toxic stuff to environment because of decay
+            // Change this later to size of bacteria
+            float randomToxicityFactor = 100 + UnityEngine.Random.Range(-5, 5);
+            simulationSceneManager.simulationController.AddToxicity((int)randomToxicityFactor);
+
             // Disolve bacteria after some time
             StartCoroutine(DisolveBacteria());
 
@@ -112,11 +126,6 @@ public class Bacteria : MonoBehaviour
         // Create dying particlesystem effect
         ParticleSystem particles = Instantiate(simulationSceneManager.dyingBacteriaParticles, transform.position, simulationSceneManager.dyingBacteriaParticles.transform.rotation);
 
-        // Add toxic stuff to environment because of decay
-        // Change this later to size of bacteria
-        float randomToxicityFactor = 100 + UnityEngine.Random.Range(-5, 5);
-
-        simulationSceneManager.simulationController.toxicity += (int)randomToxicityFactor;
 
         // Wait a bit because it looks nice
         float waitPeriod = UnityEngine.Random.Range(10f, 20f);
@@ -128,7 +137,6 @@ public class Bacteria : MonoBehaviour
         }
 
         // Destroy partcles and bacteria
-        Destroy(particles.gameObject);
         Destroy(gameObject);
 
     }
@@ -150,11 +158,11 @@ public class Bacteria : MonoBehaviour
 
         switch(_state) {
             case BacteriaState.STATE.INIT:
-                    currentState = new BacteriaInitializingState(this);
+                    currentState = new BacteriaStateInitializing(this);
                 break;
 
             case BacteriaState.STATE.ALIVE:
-                    currentState = new BacteriaRunningState(this);
+                    currentState = new BacteriaStateRunning(this);
                 break;
         }
 

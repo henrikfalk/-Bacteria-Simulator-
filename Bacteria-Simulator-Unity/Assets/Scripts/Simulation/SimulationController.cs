@@ -3,9 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using JetBrains.Annotations;
 
 public class SimulationController : MonoBehaviour
 {
+
+    public enum SIMULATION_MESSAGE {
+        ENDEDNORMAL,
+        ENDEDBYQUIT,
+        OVERPOPULATION,
+        UNDERPOPULATION
+    };
+
+    private SIMULATION_MESSAGE simulationMessage;
 
     // SimulationSceneManager
     public SimulationSceneManager simulationSceneManager;
@@ -22,7 +33,9 @@ public class SimulationController : MonoBehaviour
     private float middleTemperature;
 
     // The toxicity of the environment    
-    public int toxicity;
+    private int toxicity;
+    Queue<int> toxicityQueue = new Queue<int>();
+//    private int toxicitySum;
     
     // Current laboratory settings - Use standard is we are running the SimulationScene directly from Unity editor
     LaboratoryInfo currentLaboratoryInfo = new LaboratoryInfo {
@@ -63,8 +76,7 @@ public class SimulationController : MonoBehaviour
         toxicity = currentLaboratoryInfo.toxicityInfo;
 
         // Initialize FSM
-        currentState = new EmptyAquariumState(this);
-
+        currentState = new AquariumStateEmpty(this);
 
     }
 
@@ -80,18 +92,62 @@ public class SimulationController : MonoBehaviour
         // Bacteria thrive between 5 - 55 degrees celcius
 
         // Make a Random temperature around the calculated temperature
-        float app = UnityEngine.Random.Range(1f,1.02f);
+        float app = 1.0f;
+        if (currentState.stateName != AquariumState.STATE.PAUSED) {
+            // Hack: Properly not the rigth way to do it
+            app = UnityEngine.Random.Range(0.98f,1.02f);
+        }
+
         float temperature = middleTemperature + (position.y * 5 * app); // The tank is 5 units around the middletemperature
 
         return temperature;
     }
 
     public float GetMiddleTemperature() {
+
         return middleTemperature;
     }
 
     public int GetToxicity() {
+
         return toxicity;
+    }
+
+    public void AddToxicity(int _toxicity) {
+
+        toxicityQueue.Enqueue(_toxicity);
+        if (currentState.stateName == AquariumState.STATE.RUNNING) {
+            StartCoroutine(UpdateToxicityCoroutine());
+        }
+    }
+
+    public void FlushToxicity() {
+
+        StartCoroutine(UpdateToxicityCoroutine());
+    }
+
+    public void ResetToxicity() {
+
+        toxicityQueue.Clear();
+        toxicity = 0;
+    }
+
+    private IEnumerator UpdateToxicityCoroutine() {
+
+            while (toxicityQueue.Count != 0) {
+                int tox = toxicityQueue.Dequeue();
+
+                for (int i = 0; i < tox; i++) {
+
+                    // Wait a bit because it looks nice
+                    float waitPeriod = UnityEngine.Random.Range(0.01f, 0.05f);
+                    yield return new WaitForSecondsRealtime(waitPeriod);
+
+                    if (currentState.stateName == AquariumState.STATE.RUNNING) {
+                        toxicity++;
+                    }
+                }
+            }
     }
 
     public GameObject[] GetBacteriaList() {
@@ -132,7 +188,12 @@ public class SimulationController : MonoBehaviour
 
         return elapsedTimeString;
     }
-    
+
+    public DateTime GetSimulationStartTime() {
+
+        return simulationStartTime;
+    }
+
     public void SetSimulationStartTime(DateTime dateTime) {
 
         simulationStartTime = dateTime;
@@ -145,6 +206,8 @@ public class SimulationController : MonoBehaviour
     }
 
     private IEnumerator InstantiateNewSimulation() {
+
+         Guid UniqueId = Guid.NewGuid();
 
         ArrayList sourceList = new ArrayList();
         float posX;
@@ -168,8 +231,9 @@ public class SimulationController : MonoBehaviour
             GameObject obj = Instantiate(simulationSceneManager.greenBacteriaPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
             obj.GetComponent<Bacteria>().StartFSM(BacteriaState.STATE.INIT);
 
-            obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
-            obj.name = "Green" + (i+1).ToString();
+            obj.transform.Rotate(Time.deltaTime * new Vector3(rotX,rotY,rotZ));
+//            obj.name = "Green" + Time.frameCount;
+            obj.name = "Green " + Guid.NewGuid().ToString();
             obj.SetActive(false);
 
             sourceList.Add(obj);
@@ -189,8 +253,9 @@ public class SimulationController : MonoBehaviour
             GameObject obj = Instantiate(simulationSceneManager.redBacteriaPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
             obj.GetComponent<Bacteria>().StartFSM(BacteriaState.STATE.INIT);
 
-            obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
-            obj.name = "Red" + (i+1).ToString();
+            obj.transform.Rotate(Time.deltaTime * new Vector3(rotX,rotY,rotZ));
+//            obj.name = "Red" + Time.frameCount;
+            obj.name = "Red " + Guid.NewGuid().ToString();
             obj.SetActive(false);
 
             sourceList.Add(obj);
@@ -224,12 +289,12 @@ public class SimulationController : MonoBehaviour
 
         return sortedList;
     }
-
+/*
     public void QuitSimulation() {
 
         simulationSceneManager.ResetCamera();
 
-        // Empty fishtank for bacteria
+        // Empty aquarium for bacteria
         GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
         
         // remove bacteria if any
@@ -258,7 +323,7 @@ public class SimulationController : MonoBehaviour
 
         simulationSceneManager.ResetCamera();
 
-        // Empty fishtank for bacteria
+        // Empty aquarium for bacteria
         GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
         
         // remove bacteria if any
@@ -268,5 +333,110 @@ public class SimulationController : MonoBehaviour
         // Show SimulationEndedPopup
         simulationSceneManager.simulationFailedPopup.SetActive(true);
     }
+*/
+    public void SimulationEnded(SIMULATION_MESSAGE _simulationMessage) {
+
+        // Reset camera
+        simulationSceneManager.ResetCamera();
+
+        // Empty aquarium for bacteria. Find any bacteria
+        GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
+/*
+        var livingBacteria = new List<GameObject>();
+        for (int i = 0; i < bacteria.Length; i++) {
+            if (bacteria[i].GetComponent<Bacteria>() != null && bacteria[i].GetComponent<Bacteria>().IsDead() == false) {
+
+                livingBacteria.Add(bacteria[i]);
+            }
+        }
+*/
+        // Remove living bacteria if any
+        for (int i = 0; i < bacteria.Length; i++) {
+            Destroy(bacteria[i]);
+        }
+
+
+        // Show SimulationMessagePopup
+        simulationSceneManager.simulationMessagePopup.SetActive(true);
+
+        GameObject objTitle = GameObject.Find("SimulationMessageTitleText");
+        TextMeshProUGUI simulationMessageTitleText = objTitle.GetComponent<TextMeshProUGUI>();
+        GameObject objMessage = GameObject.Find("SimulationMessageText");
+        TextMeshProUGUI simulationMessageText = objMessage.GetComponent<TextMeshProUGUI>();
+
+        // Quitting the running simulation
+        if (_simulationMessage == SIMULATION_MESSAGE.ENDEDBYQUIT) {
+
+            // Show title
+            simulationMessageTitleText.text = "Quitting Simulation";
+
+            // Show message
+            simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
+        }
+
+        // The running simulation ended normally
+        if (_simulationMessage == SIMULATION_MESSAGE.ENDEDNORMAL) {
+
+            // Show title
+            simulationMessageTitleText.text = "Simulation Ended";
+
+            // Show message
+            simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
+        }
+
+        // Simulation ran into overpopulation
+        if (_simulationMessage == SIMULATION_MESSAGE.OVERPOPULATION) {
+
+            // Show title
+            simulationMessageTitleText.text = "Simulation Ended In Overpopulation";
+
+            // Show message
+            simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
+        }
+
+        // Simulation ran into underpopulation
+        if (_simulationMessage == SIMULATION_MESSAGE.UNDERPOPULATION) {
+
+            // Show title
+            simulationMessageTitleText.text = "Simulation Ended In Underpopulation";
+
+            // Show message
+            simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
+        }
+    }
+
+    public void AddDetoxToSimulation() {
+
+        int numDetox = Int32.Parse(GameObject.Find("DetoxicateNumberText").GetComponent<TextMeshProUGUI>().text);
+
+        simulationSceneManager.addDetoxPopup.SetActive(false);
+
+        // Add detox coroutine
+        StartCoroutine(InstantiateAddDetoxToSimulation(numDetox));
+
+    }
+
+    private IEnumerator InstantiateAddDetoxToSimulation(int _numDetox) {
+
+        // Instantiate detox
+        for (int i = 0; i < _numDetox; i++) {
+
+            // Generate random spawnposition and rotation above aquarium
+            float posX = UnityEngine.Random.Range(-3f, 3f);
+            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
+//            float rotX = UnityEngine.Random.Range(-90f, 90f);
+//            float rotY = UnityEngine.Random.Range(-90f, 90f);
+//            float rotZ = UnityEngine.Random.Range(-90f, 90f);
+
+            GameObject obj = Instantiate(simulationSceneManager.detoxPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
+//            obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
+            obj.name = "Detox " + Time.frameCount;
+
+            // Wait a bit because it looks nice
+            float waitPeriod = UnityEngine.Random.Range(0.07f, 0.14f);
+            yield return new WaitForSeconds(waitPeriod);
+        }
+    }    
 
 }

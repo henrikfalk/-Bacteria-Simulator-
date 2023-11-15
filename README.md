@@ -24,7 +24,7 @@ The game explores different Unity features and concepts.
 
 ## Unity concepts
 - Mouse selection using RaycastHit and child gameobject
-- Two cameras (One following GameObject and the other with zoom, rotate and pan function=
+- Two cameras (One following GameObject and the other with zoom, rotate and pan function)
 - "Glass" material
 - GameObject highligt when mouseover
 - Switching scenes with (memory) datapersistence (Singleton)
@@ -35,21 +35,23 @@ The game explores different Unity features and concepts.
 - FSM (Finite State Machine) for the simulation with UI interactions
 - Particlesystems
 - Custom HDRI Skybox
+- Pause and unpause game (Scaled and unscaled time)
 
 ## Controls in the "SimulationScene"
 Keys actions:
 
-- Press 'n' for new simulation
+- 'n': New simulation
 - Toggle 'l' for follow a selected bacteria or not (Switching camera)
-- Press 'q' to stop current simulation. If no simulation is in progress then the game will return to the MainSimulationScene
-- Press 'Escape' to reset cameras
-- Press 'h' for help
-- Press WASD to move camera
+- Toggle 'p' or 'spacebar' : Pause or resume running simulation
+- 'q': Stop current simulation. If no simulation is in progress then the game will return to the MainSimulationScene
+- 'Esc' : Quit Follow
+- Toggle 'h': Help
+- 'WASD' or arrow keys: Pan vertical and rotate horisontal
 
 Mouse actions:
 
 - Left Button : Select bacteria
-- Right Button: Kill a selected bateria
+- Right Button: Kill selected bateria
 - Scroll Wheel: Zoom in and out
 - Scroll Wheel Button: Pan vertical and rotate horisontal
 
@@ -58,53 +60,56 @@ Mouse actions:
 - Operating system: Manjaro Linux
 - Developer IDE: Unity Editor v2022.3.5f1
 - Editor: Visual Studio Code
-- Version control: <a href="https://github.com">GitHub</a> using <a href="https://www.gitkraken.com/">GitKraken</a>
-- Documentation: <a href="https://obsidian.md/">Obsidian</a>
+- Version control: <a href="https://github.com" target="_blank">GitHub</a> using <a href="https://www.gitkraken.com/" target="_blank">GitKraken</a>
+- Documentation: <a href="https://obsidian.md/" target="_blank">Obsidian</a>
 
 ## Tools and resources
-- For the aquarium and bacteria models: <a href="https://www.blender.org/">Blender 3.6.4</a>
-- The background image for the panels: Image by <a href="https://pixabay.com/users/insaneartist-2792766/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1487216">InsaneArtist</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1487216">Pixabay</a>
-- The HDRI Skybox: <a href="https://polyhaven.com/hdris">Poly Haven</a>
+- For the aquarium and bacteria models: <a href="https://www.blender.org/" target="_blank">Blender 3.6.4</a>
+- The background image for the panels: Image by <a href="https://pixabay.com/users/insaneartist-2792766/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1487216" target="_blank">InsaneArtist</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1487216" target="_blank">Pixabay</a>
+- The HDRI Skybox: <a href="https://polyhaven.com/hdris" target="_blank">Poly Haven</a>
 
 ## Development status
 Current version:
-- Added a finite state machine to the bacteria
-- Added particle system to dying bacteria
-- Added elapsed simulationtime to "SimulationEndedPopup"
-- Added total number of bacteria to the statuspanel
-- Added toxicity to environment when a bacteria dies (no effect yet)
-- Removed some obsolete C# classes and Prefabs
-- Added toolbar panel and interactions with simulation statemachine
-- Added custom HDRI skybox
-- Help panel can now be toggled from the toolbar and is initially invisible
-- Added "Exit" game button to toolbar
-- Added "Pause", "Laboratory" and "Settings" buttons til toolbar but have no implementations yet
-- Rewrote "Main Camera" controller for better zoom, drag and pan functions
+- Updates to README.md
+- Added status icon to the statuspanel showing the simulation state (red, yellow, green)
+- Added the toxicity counting to the statuspanel
+- Added status icon for the toxicity level in the statuspanel
+- Added "Pause" feature when the simulation runs
+- Updated the help panel
+- Enhanced the bacteria statemachine to handle both FixedUpdate() and Update()
+- Rewrote the end of simulation code. Not optimized yet!
+- Fixed: Total living bacteria should exclude dead bacteria not yet dissolved
+- Fixed: Simulation start time now correctly starts when the simulation actually runs
+- Added project build version text to MainMenuScene
+- Updated the LockCameraController for better visual perspective
 
 General:
 - Each scene is runnable from the Unity Editor
 - The bacteria are reproducing but the simulation is not balanced yet!
 - Purple bacteria are killing the green and red bacteria
 - The population limit is set to 500 bacteria
-- The bacteria have a approximate lifespan. When they die, they turn black and falls to the bottom of the fishtank. After a period they dissolves in the water
+- The bacteria have a approximate lifespan. When they die, they turn black and falls to the bottom of the aquarium. After a period they dissolves in the water
 
 ## In development
+- Solve the problem with the fertility percent
 - Implementation of the toxicity feature
-- Pause the simulation
 - Better light. Maybe user interactive.
-- Update the help panel
 - Update the LaboratoryScene
 
 ## Roadmap
+- More efficient way to track and handle bacteria in the simulation
+- View simulation report
+- Move hardcoded values for balancing the simulation to one place
 - Adding multiple simulation configurations which can be saved and retrieved
 - Add watershader
 - Add shader for food and medicine
 - Internationalization
-- Keyboard navigation the the dialogs
+- Keyboard navigation in the dialogs
 - Food (Doing something positive!)
-- Medicine (Removing toxic water!)
+- Detox (Removing toxic stuff in water!)
 - Gamification of simulation
 - Core game settings like display resolution etc.
+- Port to the gamengine Godot for comparison
 
 ## Userguide
 

@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
-public class BacteriaInfoPanelManager : MonoBehaviour
+public class BacteriaInfoPanelController : MonoBehaviour
 {
 
     public TextMeshProUGUI typeBNameText;
@@ -54,7 +55,8 @@ public class BacteriaInfoPanelManager : MonoBehaviour
         typeBNameText.text = type;
 
         // Update name
-        nameBNameText.text = bacteria.name;
+        String name = bacteria.name;
+        nameBNameText.text = name.Substring(0,15).TrimEnd('-');
 
         // Update fertility
         fertilityBNumberText.text = bacteria.GetComponent<Bacteria>().fertilityPercent.ToString("0.00");

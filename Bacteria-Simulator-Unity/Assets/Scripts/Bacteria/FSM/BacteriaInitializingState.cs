@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BacteriaInitializingState : BacteriaState {
+public class BacteriaStateInitializing : BacteriaState {
 
-    public BacteriaInitializingState(Bacteria _bacteria) : base(_bacteria) {
+    public BacteriaStateInitializing(Bacteria _bacteria) : base(_bacteria) {
         stateName = STATE.INIT;
     }
 
@@ -13,7 +13,7 @@ public class BacteriaInitializingState : BacteriaState {
         base.Enter();
     }
 
-    public override void Update() {
+    public override void UpdateFixed() {
 
         // We are in the air
         move();
@@ -26,7 +26,7 @@ public class BacteriaInitializingState : BacteriaState {
             bacteria.bacteriaRigidbody.useGravity = false;
 //            bacteria.bacteriaRigidbody.AddForce(Vector3.zero, ForceMode.VelocityChange);
 
-            nextState = new BacteriaRunningState(bacteria);
+            nextState = new BacteriaStateRunning(bacteria);
             stage = EVENT.EXIT;
         }
 

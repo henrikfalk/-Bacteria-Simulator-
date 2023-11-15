@@ -11079,7 +11079,7 @@ GameObject:
   - component: {fileID: 1951555999}
   - component: {fileID: 1951555998}
   m_Layer: 0
-  m_Name: LaboratoryController
+  m_Name: LaboratorySceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

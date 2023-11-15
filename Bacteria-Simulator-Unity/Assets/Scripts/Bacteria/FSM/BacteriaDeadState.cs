@@ -8,11 +8,11 @@ using TMPro;
     using UnityEditor;
 #endif
 
-public class BacteriaDeadState : BacteriaState {
+public class BacteriaStateDead : BacteriaState {
 
     public GameObject newSimulationPopup;
 
-    public BacteriaDeadState(Bacteria _bacteria) : base(_bacteria) {
+    public BacteriaStateDead(Bacteria _bacteria) : base(_bacteria) {
         stateName = STATE.DEAD;
     }
 

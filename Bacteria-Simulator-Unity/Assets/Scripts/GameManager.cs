@@ -59,11 +59,11 @@ public class GameManager : MonoBehaviour
     public void GotoScene(string sceneName) {
 
         // Load specified scene
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
-    // Quit game from native Linux build
-    public void QuitGame() {
+    // Exit game
+    public void ExitGame() {
 
          // original code to quit Unity player
         #if UNITY_EDITOR

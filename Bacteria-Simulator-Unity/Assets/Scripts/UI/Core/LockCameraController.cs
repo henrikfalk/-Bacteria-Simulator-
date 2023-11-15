@@ -13,7 +13,7 @@ public class LockCameraController : MonoBehaviour
     void Update()
     {
         if (selectedObject != null) {
-            transform.position = selectedObject.transform.position + new Vector3(0, 0, -6);
+            transform.position = selectedObject.transform.position + new Vector3(0, 2f, -5);
         }
     }
     
