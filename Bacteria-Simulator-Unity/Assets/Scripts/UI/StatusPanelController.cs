@@ -42,12 +42,6 @@ public class StatusPanelController : MonoBehaviour
     private int dead;
 
     public void Start() {
-
-        // Get a handle to the SimulationSceneManager
-//        GameObject obj = GameObject.Find("SimulationSceneManager");
-//        simulationSceneManager = obj.GetComponent<SimulationSceneManager>();
-        
-
     }
 
     void Update()
@@ -82,9 +76,9 @@ public class StatusPanelController : MonoBehaviour
                     simulationTimeText.text = simulationController.GetElapsedSimulationTimeAsString();
 
                     // update toxicityStateImage
-                    if (simulationController.GetToxicity() < 500) {
+                    if (simulationController.GetToxicity() < simulationController.GetYellowWarningToxicityInfo()) {
                         toxicityStateImage.transform.GetComponent<Image>().sprite = greenStatusButton;
-                    } else if (simulationController.GetToxicity() < 1000) {
+                    } else if (simulationController.GetToxicity() < simulationController.GetRedWarningToxicityInfo()) {
                         toxicityStateImage.transform.GetComponent<Image>().sprite = yellowStatusButton;
                     } else {
                         toxicityStateImage.transform.GetComponent<Image>().sprite = redStatusButton;

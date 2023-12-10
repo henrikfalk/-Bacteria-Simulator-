@@ -13,7 +13,8 @@ public class SimulationController : MonoBehaviour
         ENDEDNORMAL,
         ENDEDBYQUIT,
         OVERPOPULATION,
-        UNDERPOPULATION
+        UNDERPOPULATION,
+        MAXTOXICIYREACHED
     };
 
     private SIMULATION_MESSAGE simulationMessage;
@@ -35,9 +36,9 @@ public class SimulationController : MonoBehaviour
     // The toxicity of the environment    
     private int toxicity;
     Queue<int> toxicityQueue = new Queue<int>();
-//    private int toxicitySum;
     
     // Current laboratory settings - Use standard is we are running the SimulationScene directly from Unity editor
+/*    
     LaboratoryInfo currentLaboratoryInfo = new LaboratoryInfo {
         middleTemperatureInfo = 30,
         toxicityInfo = 0,
@@ -53,6 +54,36 @@ public class SimulationController : MonoBehaviour
         fertilityPercentBacteriaRed = 50
 
     };
+*/
+
+   // Default simulation configuration if runing scene inside Unity
+    private SimulationConfiguration defaultSimulationConfiguration = new SimulationConfiguration {
+        simulationName = "Default simulation",
+        simulationDescription = "This is the default simulation.",
+        middleTemperatureInfo = 30,
+        toxicityInfo = 0,
+        yellowWarningToxicityInfo = 500,
+        redWarningToxicityInfo = 1000,
+        maxLimitToxicityInfo = 2000,
+        maxVelocityGreen = "1",
+        temperatureOptimalBacteriaGreen = 20,
+        temperatureRangeBacteriaGreen = 11,
+        maxAgeMinutesBacteriaGreen = 2,
+        fertilityPercentBacteriaGreen = 75,
+        maxVelocityRed = "2",
+        temperatureOptimalBacteriaRed = 40,
+        temperatureRangeBacteriaRed = 10,
+        maxAgeMinutesBacteriaRed = 3,
+        fertilityPercentBacteriaRed = 50,
+        maxVelocityPurple = "3",
+        temperatureOptimalBacteriaPurple = 40,
+        temperatureRangeBacteriaPurple = 10,
+        maxAgeMinutesBacteriaPurple = 3,
+        fertilityPercentBacteriaPurple = 50
+    };
+    // Current simulation configuration
+    private SimulationConfiguration currentSimulationConfiguration;
+
 
     // Elapsed simulation time
     // How long has this simulation been running?
@@ -69,11 +100,15 @@ public class SimulationController : MonoBehaviour
 
         // Initialize environment
         if (GameManager.Instance != null) {
-            currentLaboratoryInfo = GameManager.Instance.GetCurrentLaboratoryInfo();
+            currentSimulationConfiguration = GameManager.Instance.GetCurrentSimulationConfiguration();
+        } else {
+            currentSimulationConfiguration = (SimulationConfiguration)defaultSimulationConfiguration.Clone();
         }
 
-        middleTemperature = currentLaboratoryInfo.middleTemperatureInfo;
-        toxicity = currentLaboratoryInfo.toxicityInfo;
+        middleTemperature = currentSimulationConfiguration.middleTemperatureInfo;
+        toxicity = currentSimulationConfiguration.toxicityInfo;
+
+        simulationSceneManager.simulationNameText.text = "\"" + currentSimulationConfiguration.simulationName + "\"";
 
         // Initialize FSM
         currentState = new AquariumStateEmpty(this);
@@ -121,6 +156,13 @@ public class SimulationController : MonoBehaviour
         }
     }
 
+    public void RemoveToxicity(int _toxicity) {
+        toxicity -= _toxicity;
+        if (toxicity < 0) {
+            toxicity = 0;
+        }
+    }
+
     public void FlushToxicity() {
 
         StartCoroutine(UpdateToxicityCoroutine());
@@ -129,7 +171,7 @@ public class SimulationController : MonoBehaviour
     public void ResetToxicity() {
 
         toxicityQueue.Clear();
-        toxicity = 0;
+        toxicity = currentSimulationConfiguration.toxicityInfo;
     }
 
     private IEnumerator UpdateToxicityCoroutine() {
@@ -206,8 +248,6 @@ public class SimulationController : MonoBehaviour
     }
 
     private IEnumerator InstantiateNewSimulation() {
-
-         Guid UniqueId = Guid.NewGuid();
 
         ArrayList sourceList = new ArrayList();
         float posX;
@@ -341,20 +381,17 @@ public class SimulationController : MonoBehaviour
 
         // Empty aquarium for bacteria. Find any bacteria
         GameObject[] bacteria = GameObject.FindGameObjectsWithTag("Bacteria");
-/*
-        var livingBacteria = new List<GameObject>();
-        for (int i = 0; i < bacteria.Length; i++) {
-            if (bacteria[i].GetComponent<Bacteria>() != null && bacteria[i].GetComponent<Bacteria>().IsDead() == false) {
 
-                livingBacteria.Add(bacteria[i]);
-            }
-        }
-*/
         // Remove living bacteria if any
         for (int i = 0; i < bacteria.Length; i++) {
             Destroy(bacteria[i]);
         }
 
+        // Destroy any detox objects
+        GameObject[] detox = GameObject.FindGameObjectsWithTag("Detox");
+        for (int i = 0; i < detox.Length; i++) {
+            Destroy(detox[i]);
+        }
 
         // Show SimulationMessagePopup
         simulationSceneManager.simulationMessagePopup.SetActive(true);
@@ -368,7 +405,7 @@ public class SimulationController : MonoBehaviour
         if (_simulationMessage == SIMULATION_MESSAGE.ENDEDBYQUIT) {
 
             // Show title
-            simulationMessageTitleText.text = "Quitting Simulation";
+            simulationMessageTitleText.text = "Quitting simulation";
 
             // Show message
             simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
@@ -378,7 +415,7 @@ public class SimulationController : MonoBehaviour
         if (_simulationMessage == SIMULATION_MESSAGE.ENDEDNORMAL) {
 
             // Show title
-            simulationMessageTitleText.text = "Simulation Ended";
+            simulationMessageTitleText.text = "Simulation ended";
 
             // Show message
             simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
@@ -388,7 +425,7 @@ public class SimulationController : MonoBehaviour
         if (_simulationMessage == SIMULATION_MESSAGE.OVERPOPULATION) {
 
             // Show title
-            simulationMessageTitleText.text = "Simulation Ended In Overpopulation";
+            simulationMessageTitleText.text = "Simulation failed -  Overpopulation";
 
             // Show message
             simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
@@ -398,7 +435,17 @@ public class SimulationController : MonoBehaviour
         if (_simulationMessage == SIMULATION_MESSAGE.UNDERPOPULATION) {
 
             // Show title
-            simulationMessageTitleText.text = "Simulation Ended In Underpopulation";
+            simulationMessageTitleText.text = "Simulation failed - Underpopulation";
+
+            // Show message
+            simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
+        }
+
+        // Simulation ran into to much toxicity in the water
+        if (_simulationMessage == SIMULATION_MESSAGE.MAXTOXICIYREACHED) {
+
+            // Show title
+            simulationMessageTitleText.text = "Simulation Failed - Too much toxicity in the water";
 
             // Show message
             simulationMessageText.text = "Elapsed time: " + GetElapsedSimulationTimeAsString();
@@ -423,7 +470,7 @@ public class SimulationController : MonoBehaviour
 
             // Generate random spawnposition and rotation above aquarium
             float posX = UnityEngine.Random.Range(-3f, 3f);
-            float posY = UnityEngine.Random.Range(10.5f, 12.5f);
+            float posY = UnityEngine.Random.Range(8.5f, 10.5f);
             float posZ = UnityEngine.Random.Range(-1.5f, -0.5f);
 //            float rotX = UnityEngine.Random.Range(-90f, 90f);
 //            float rotY = UnityEngine.Random.Range(-90f, 90f);
@@ -431,12 +478,25 @@ public class SimulationController : MonoBehaviour
 
             GameObject obj = Instantiate(simulationSceneManager.detoxPrefab, new Vector3(posX,posY,posZ), Quaternion.identity);
 //            obj.transform.Rotate(new Vector3(rotX,rotY,rotZ));
-            obj.name = "Detox " + Time.frameCount;
+            obj.name = "Detox " + Guid.NewGuid().ToString();
 
             // Wait a bit because it looks nice
             float waitPeriod = UnityEngine.Random.Range(0.07f, 0.14f);
             yield return new WaitForSeconds(waitPeriod);
         }
-    }    
+    }
+
+    public int GetYellowWarningToxicityInfo() {
+        return currentSimulationConfiguration.yellowWarningToxicityInfo;
+    }
+
+    public int GetRedWarningToxicityInfo() {
+        return currentSimulationConfiguration.redWarningToxicityInfo;
+    }
+
+
+    public int GetMaxLimitToxicityInfo() {
+        return currentSimulationConfiguration.maxLimitToxicityInfo;
+    }
 
 }

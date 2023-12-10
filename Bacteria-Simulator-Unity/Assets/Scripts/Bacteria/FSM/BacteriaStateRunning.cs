@@ -56,7 +56,7 @@ public class BacteriaStateRunning : BacteriaState {
 
     }
 
-    public override void UpdateFixed() {
+    public override void FixedUpdate() {
         move();
     }
 

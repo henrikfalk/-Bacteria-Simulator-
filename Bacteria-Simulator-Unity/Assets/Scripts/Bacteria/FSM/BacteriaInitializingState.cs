@@ -13,18 +13,23 @@ public class BacteriaStateInitializing : BacteriaState {
         base.Enter();
     }
 
-    public override void UpdateFixed() {
+    public override void FixedUpdate() {
 
         // We are in the air
         move();
 
         // If we enter the water then disable gravity and change to BacteriaRunningState
-        if (bacteria.transform.position.y < 4.9) {
+        if (bacteria.transform.position.y < 4.95) {
 
             // Make random rotation when hitting water and remove gravity
             bacteria.transform.Rotate(UnityEngine.Random.Range(-90f, 90f), UnityEngine.Random.Range(-90f, 90f), UnityEngine.Random.Range(-90f, 90f));
             bacteria.bacteriaRigidbody.useGravity = false;
 //            bacteria.bacteriaRigidbody.AddForce(Vector3.zero, ForceMode.VelocityChange);
+
+        // Create water splash particlesystem effect
+            Vector3 _position = bacteria.transform.position;
+            _position.y = _position.y + 0.05f;
+            bacteria.simulationSceneManager.ShowParticleSystem(_position, bacteria.simulationSceneManager.waterSplashParticleSystem);
 
             nextState = new BacteriaStateRunning(bacteria);
             stage = EVENT.EXIT;

@@ -5,6 +5,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2968345192267920175, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
@@ -18,6 +19,18 @@ PrefabInstance:
     - target: {fileID: 5086145506441078348, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086145506441078348, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086145506441078348, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086145506441078348, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5086145506441078348, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65,6 +78,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 12dc0dcc37e7b51a48fee8078749b021, type: 2}
     m_RemovedComponents:
     - {fileID: -7262622546406566094, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2968345192267920175, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3510285285943907366}
   m_SourcePrefab: {fileID: 100100000, guid: a44a0b7175f25af319f6f866a704180c, type: 3}
 --- !u!1 &2103032295401495912 stripped
 GameObject:
@@ -83,7 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8a2b6fa5aef35b79b308c741cfb073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishTankSceneManager: {fileID: 0}
-  environment: {fileID: 0}
+  simulationSceneManager: {fileID: 0}
   maxVelocity: 1
   energy: 1

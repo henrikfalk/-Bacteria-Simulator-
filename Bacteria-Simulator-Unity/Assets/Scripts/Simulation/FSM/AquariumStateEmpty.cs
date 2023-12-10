@@ -51,7 +51,7 @@ public class AquariumStateEmpty : AquariumState {
         }
 
         // If we gets a EXIT_GAME signal then exit game
-        if (signal == SIGNAL.EXIT_GAME) {
+        if (signal == SIGNAL.EXIT_SIMULATION) {
 
             signal = SIGNAL.NONE;
             QuitSimulation();

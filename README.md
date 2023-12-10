@@ -2,14 +2,14 @@
 
 A bacteria simulation minigame - C# OOP in Unity
 
-<img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/SimulationScene.png" width="600" >
+<img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/SimulationScene.png" width="600">
 
 
 This is my Unity project for the tutorial "Submission: Programming theory in action" from the mission "Apply object-oriented principles" from the "Junior Programmer " pathway at "Unity Learn".
 
 The goal for this tutorial is to demonstrate knowledge of OOP (Object oriented programming) using abstraction, inheritance, polymorphism and encapsulation.
 
-Link to tutorial: https://learn.unity.com/tutorial/submission-programming-theory-in-action
+Link to tutorial: <a href="https://learn.unity.com/tutorial/submission-programming-theory-in-action" target="_blank">Submission: Programming theory in action</a>
 
 Enjoy!
 
@@ -64,59 +64,66 @@ Mouse actions:
 - Documentation: <a href="https://obsidian.md/" target="_blank">Obsidian</a>
 
 ## Tools and resources
+- Some ressorurces from the Unity <a href="https://assetstore.unity.com/packages/vfx/particles/particle-pack-127325" target="_blank">Particle Pack</a> from the Unity Asset Store
 - For the aquarium and bacteria models: <a href="https://www.blender.org/" target="_blank">Blender 3.6.4</a>
 - The background image for the panels: Image by <a href="https://pixabay.com/users/insaneartist-2792766/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1487216" target="_blank">InsaneArtist</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1487216" target="_blank">Pixabay</a>
 - The HDRI Skybox: <a href="https://polyhaven.com/hdris" target="_blank">Poly Haven</a>
 
 ## Development status
 Current version:
-- Updates to README.md
-- Added status icon to the statuspanel showing the simulation state (red, yellow, green)
-- Added the toxicity counting to the statuspanel
-- Added status icon for the toxicity level in the statuspanel
-- Added "Pause" feature when the simulation runs
-- Updated the help panel
-- Enhanced the bacteria statemachine to handle both FixedUpdate() and Update()
-- Rewrote the end of simulation code. Not optimized yet!
-- Fixed: Total living bacteria should exclude dead bacteria not yet dissolved
-- Fixed: Simulation start time now correctly starts when the simulation actually runs
-- Added project build version text to MainMenuScene
-- Updated the LockCameraController for better visual perspective
+- Added "AddDetoxPopup" UI functionality
+- Fixed rotated camera after quitting simulation
+- Added water splash particle system when bacteria hits the water
+- Added detox items (Including custom shader and particlesystem)
+- Detox items removes toxicity (25 ppm for each "pill")
+- Toxicity feature: If the toxicity level reaches 2000 ppm all bacteria dies
+- Implemented detox UI feature
+- Added purple bacteria to the laboratory scene
+- Added various new toxicity settings to the laboratory scene
+- You can now visit the laboratory from the simulation scene
+- Finished the laboratory scene. You can load/save/rename/delete etc. different simulation configurations
+- Added current simulation configuration name to the simulation scene
+- Workaround for JSON float issue in svaed configurations. 4.5f is not 4.5 in JSON!!!
 
 General:
 - Each scene is runnable from the Unity Editor
 - The bacteria are reproducing but the simulation is not balanced yet!
 - Purple bacteria are killing the green and red bacteria
 - The population limit is set to 500 bacteria
+- One detox "pill" removes 25 ppm toxicity
 - The bacteria have a approximate lifespan. When they die, they turn black and falls to the bottom of the aquarium. After a period they dissolves in the water
 
 ## In development
-- Solve the problem with the fertility percent
-- Implementation of the toxicity feature
+- The add food feature
+- Cleanup old inactive configuration code
 - Better light. Maybe user interactive.
-- Update the LaboratoryScene
+- Solve the problem with the fertility percent
+- Porting to Godot gameengine
 
 ## Roadmap
 - More efficient way to track and handle bacteria in the simulation
+- Custom event handling to decouple UI elements better
 - View simulation report
 - Move hardcoded values for balancing the simulation to one place
-- Adding multiple simulation configurations which can be saved and retrieved
 - Add watershader
-- Add shader for food and medicine
+- Add shader for food
 - Internationalization
 - Keyboard navigation in the dialogs
 - Food (Doing something positive!)
-- Detox (Removing toxic stuff in water!)
 - Gamification of simulation
 - Core game settings like display resolution etc.
-- Port to the gamengine Godot for comparison
+- Port to the gameengine Godot for comparison
+- Create a beautiful UI
 
 ## Userguide
 
 This userguide is work in progress. At the moment just screenshots.
 
+### Main scene
+<img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/MainMenuScene.png" width="600" >
+
 ### Laboratory
-<img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/BacteriaLaboratory.png" width="600" >
+<img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/LaboratoryScene.png" width="600" >
 
 ### New simulation
 <img src="https://raw.githubusercontent.com/henrikfalk/Bacteria-Simulator/main/Images/NewSimulation.png" width="600" >

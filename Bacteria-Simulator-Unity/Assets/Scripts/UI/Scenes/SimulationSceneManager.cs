@@ -26,10 +26,6 @@ public class SimulationSceneManager : MonoBehaviour
 
     public GameObject simulationMessagePopup;
 
-//    public GameObject simulationEndedPopup;
-
-//    public GameObject simulationFailedPopup;
-
     public GameObject statusPanel;
 
     public GameObject helpPanel;
@@ -41,6 +37,8 @@ public class SimulationSceneManager : MonoBehaviour
 
     // Particle Systems
     public ParticleSystem dyingBacteriaParticles;
+    public ParticleSystem itemDetoxParticleSystem;
+    public ParticleSystem waterSplashParticleSystem;
 
     private StatusPanelController statusPanelController;
 
@@ -56,9 +54,6 @@ public class SimulationSceneManager : MonoBehaviour
 
     public GameObject detoxPrefab;
 
-//    private int initialNumberGreenBacteria;
-//    private int initialNumberRedBacteria;
-
     // How long has this simulation been running?
 //    public DateTime simulationStartTime;
 //    private TimeSpan elapsedSimulationTime;
@@ -70,6 +65,7 @@ public class SimulationSceneManager : MonoBehaviour
     private Ray ray;
     private RaycastHit hitData;
 
+    public TextMeshProUGUI simulationNameText;
 
     void Start() {
         
@@ -297,10 +293,12 @@ public class SimulationSceneManager : MonoBehaviour
                 // Reset camera
             // show mainCamera
             lockCamera.gameObject.SetActive(false);
-            defaultCamera.gameObject.SetActive(true);
 
             // Reset 
-            defaultCamera.transform.position = new Vector3(0, 1, -15);
+            defaultCamera.gameObject.transform.position = new Vector3(0, 1.5f, -15f);
+//            defaultCamera.transform.Rotate(new Vector3(0, 0, 0), Space.World);
+            defaultCamera.gameObject.transform.Rotate(new Vector3(0, 0, 0));
+            defaultCamera.gameObject.transform.rotation = Quaternion.identity;
     }
 
     public void ToggleLookAtSelected() {
@@ -327,4 +325,7 @@ public class SimulationSceneManager : MonoBehaviour
         simulationController.AddDetoxToSimulation();
     }
 
+    public void ShowParticleSystem(Vector3 _position,  ParticleSystem _particleSystem) {
+        Instantiate(_particleSystem, _position, transform.rotation);
+    }
 }

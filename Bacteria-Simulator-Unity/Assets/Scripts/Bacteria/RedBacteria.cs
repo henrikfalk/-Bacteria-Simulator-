@@ -15,9 +15,10 @@ public class RedBacteria : Bacteria
     protected override void BacteriaStart()
     {
         if (GameManager.Instance != null) {
-            LaboratoryInfo info = GameManager.Instance.GetCurrentLaboratoryInfo();
+//            LaboratoryInfo info = GameManager.Instance.GetCurrentLaboratoryInfo();
+            SimulationConfiguration info = GameManager.Instance.GetCurrentSimulationConfiguration();
 
-            maxVelocity = info.maxVelocityGreen;
+            maxVelocity = float.Parse(info.maxVelocityRed);
             temperatureOptimal = info.temperatureOptimalBacteriaRed;
             temperatureRange = info.temperatureRangeBacteriaRed;
             maxAgeMinutes = info.maxAgeMinutesBacteriaRed;

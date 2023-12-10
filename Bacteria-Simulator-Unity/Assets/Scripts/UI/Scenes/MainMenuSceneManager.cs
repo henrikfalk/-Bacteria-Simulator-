@@ -13,7 +13,7 @@ public class MainMenuSceneManager : MonoBehaviour
     }
 
 
-    public void NewGame() {
+    public void GotoSimulator() {
         GameManager.Instance.GotoScene("SimulationScene");
     }
 

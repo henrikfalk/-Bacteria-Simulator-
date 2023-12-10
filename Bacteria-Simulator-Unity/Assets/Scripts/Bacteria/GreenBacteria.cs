@@ -10,7 +10,6 @@ public class GreenBacteria : Bacteria
     //public int pregnacyTimeBacteria;
 
     private int greenCollisions;
-    private int purpleCollisions;
 
     private Ray ray;
     private RaycastHit hitData;
@@ -19,9 +18,10 @@ public class GreenBacteria : Bacteria
     protected override void BacteriaStart() {
 
         if (GameManager.Instance != null) {
-            LaboratoryInfo info = GameManager.Instance.GetCurrentLaboratoryInfo();
+//            LaboratoryInfo info = GameManager.Instance.GetCurrentLaboratoryInfo();
+            SimulationConfiguration info = GameManager.Instance.GetCurrentSimulationConfiguration();
 
-            maxVelocity = info.maxVelocityGreen;
+            maxVelocity = float.Parse(info.maxVelocityGreen);
             temperatureOptimal = info.temperatureOptimalBacteriaGreen;
             temperatureRange = info.temperatureRangeBacteriaGreen;
             maxAgeMinutes = info.maxAgeMinutesBacteriaGreen;

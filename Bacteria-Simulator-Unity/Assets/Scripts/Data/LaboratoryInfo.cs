@@ -14,8 +14,11 @@ public class LaboratoryInfo : ICloneable
     // the middletemperature of the water optimal 25 degrees +/- maximum 20
     public float middleTemperatureInfo;
 
-    // The toxicity of the environment (0 - 100)
-    public int toxicityInfo;
+    // The toxicity of the environment (0 - 1000)
+    public int toxicityInfo; // initial toxicity of a simulation
+    public int yellowWarningToxicityInfo;
+    public int redWarningToxicityInfo;
+    public int maxLimitToxicityInfo;
 
     /*
     * Green bacteria
@@ -52,6 +55,24 @@ public class LaboratoryInfo : ICloneable
 
     // The fertility percent
     public float fertilityPercentBacteriaRed;
+
+    /*
+    * Purple bacteria
+    */
+
+    public float maxVelocityPurple;
+
+    // Most optimal temperature for this bacteria
+    public float temperatureOptimalBacteriaPurple;
+
+    // The temperature range +/- that the bacteria can live within
+    public float temperatureRangeBacteriaPurple;
+
+    // The max age of the bacteria in minutes
+    public int maxAgeMinutesBacteriaPurple;
+
+    // The fertility percent
+    public float fertilityPercentBacteriaPurple;
 
     // Implement ICloneable interface
     public System.Object Clone() {

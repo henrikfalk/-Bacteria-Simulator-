@@ -59,14 +59,22 @@ public class AquariumStateRunning : AquariumState {
         // If we press the 'm' key then show "AddDetoxPopup"
         if (Input.GetKeyDown(KeyCode.M) == true) {
 
-            // If the aquarium is empty the do nothing
+            // If the aquarium is empty the do nothing HFALK: Implement better handling!
             GameObject[] bac = GameObject.FindGameObjectsWithTag("Bacteria");
             if (bac.Length == 0) {
                 return;
             } else {
-//                AddDetoxToSimulation();
+                AddDetoxToSimulation();
             }
 
+        }
+
+        // If we gets a ADD_DETOX signal then add detox to simulation
+        if (signal == SIGNAL.ADD_DETOX) {
+
+            signal = SIGNAL.NONE;
+            AddDetoxToSimulation();
+            return;
         }
 
         // If 'l' pressed then lock Camera on selected bacteria
@@ -112,6 +120,15 @@ public class AquariumStateRunning : AquariumState {
 
         // **** Test for maximun allowed population
 
+        // If the toxicity level exceeds 2000 the 
+        if (simulationController.GetToxicity() > simulationController.GetMaxLimitToxicityInfo()) {
+            // Show "Simulation message" dialog because the toxicity is too high
+            simulationController.SimulationEnded(SimulationController.SIMULATION_MESSAGE.MAXTOXICIYREACHED);
+
+            return true;
+
+        }
+
         // If we are more than 500 bacteria then the simulation has failed. HFALK This should maybe be donfigurable in the future.
         if (bacteria.Length > 500) {
 
@@ -140,52 +157,6 @@ public class AquariumStateRunning : AquariumState {
             return false;
         }
 
-/*
-    purple + purple ok!
-    green + red ok!
-    red + green ok!
-    green + green ok!
-    red + red ok!
-    purple + green NOT ok!
-    purple + red NOT ok!
-
-*/
-/*
-        if (livingBacteria.Count == 2) {
-
-            Debug.Log("2 bacteria left: " + livingBacteria[0].gameObject.name.Substring(0,3) + " " + livingBacteria[1].gameObject.name.Substring(0,3));
-
-            if (livingBacteria[0].gameObject.name.Substring(0,3) != livingBacteria[1].gameObject.name.Substring(0,3)) {
-
-                if (livingBacteria[0].gameObject.name.Substring(0,3) != "Pur" && livingBacteria[1].gameObject.name.Substring(0,3) != "Pur") {
-                    // two purple bacteria is ok!
-                    return false;
-                }
-
-                simulationController.SimulationEnded(SimulationController.SIMULATION_MESSAGE.UNDERPOPULATION);
-                return true;
-            } else {
-                // two identical bacteria
-
-            }
-        }
-*/
-        // There one or zero bacteria left in the aquarium
-/*
-        if (livingBacteria.Count == 1) {
-            // one left
-            simulationController.SimulationEnded(SimulationController.SIMULATION_MESSAGE.UNDERPOPULATION);
-            return true;
-        }
-        */
-/*        
-        for (int i = 0; i < bacteria.Length; i++) {
-            if (bacteria[i].GetComponent<Bacteria>() != null && bacteria[i].GetComponent<Bacteria>().IsDead() == false) {
-
-                return false;
-            }
-        }
-*/
         // Show "Simulation ended" dialog because there no more bacteria in the simulation that can breed
         simulationController.SimulationEnded(SimulationController.SIMULATION_MESSAGE.ENDEDNORMAL);
 

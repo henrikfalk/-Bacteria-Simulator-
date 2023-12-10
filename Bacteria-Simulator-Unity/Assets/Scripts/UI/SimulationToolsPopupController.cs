@@ -28,10 +28,20 @@ public class SimulationToolsPopupController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (simulationSceneManager != null && simulationSceneManager.selectedBacteria != null) {
+        if (simulationSceneManager == null) {
+            return;
+        }
+
+        if (simulationSceneManager.selectedBacteria != null) {
             lookButton.interactable = true;
         } else {
             lookButton.interactable = false;
+        }
+
+        if (simulationSceneManager.simulationController.GetToxicity() > 0) {
+            addDetoxButton.interactable = true;
+        } else {
+            addDetoxButton.interactable = false;
         }
     }
 
@@ -41,7 +51,7 @@ public class SimulationToolsPopupController : MonoBehaviour
     }
 
     public void AddDetoxToSimulation() {
-        simulationSceneManager.AddDetoxToSimulation();
+        simulationSceneManager.simulationController.currentState.Signal(AquariumState.SIGNAL.ADD_DETOX);
     }
 
 }

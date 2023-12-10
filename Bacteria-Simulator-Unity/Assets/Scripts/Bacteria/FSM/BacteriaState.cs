@@ -32,13 +32,13 @@ public class BacteriaState
 
     public virtual void Enter() { stage = EVENT.UPDATE; }
     public virtual void Update() { stage = EVENT.UPDATE; }
-    public virtual void UpdateFixed() { stage = EVENT.UPDATE; }
+    public virtual void FixedUpdate() { stage = EVENT.UPDATE; }
     public virtual void Exit() { stage = EVENT.EXIT; }
 
     public BacteriaState ProcessFixed() {
 
         if (stage == EVENT.ENTER) Enter();
-        if (stage == EVENT.UPDATE) UpdateFixed();
+        if (stage == EVENT.UPDATE) FixedUpdate();
         if (stage == EVENT.EXIT) {
 
             Exit();

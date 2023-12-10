@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PurpleBacteria : Bacteria
 {
-    private int greenCollisions;
+    private int purpleCollisions;
 
     private Ray ray;
     private RaycastHit hitData;
@@ -13,13 +13,14 @@ public class PurpleBacteria : Bacteria
     protected override void BacteriaStart() {
 
         if (GameManager.Instance != null) {
-            LaboratoryInfo info = GameManager.Instance.GetCurrentLaboratoryInfo();
+//            LaboratoryInfo info = GameManager.Instance.GetCurrentLaboratoryInfo();
+            SimulationConfiguration info = GameManager.Instance.GetCurrentSimulationConfiguration();
 
-            maxVelocity = info.maxVelocityGreen;
-            temperatureOptimal = info.temperatureOptimalBacteriaGreen;
-            temperatureRange = info.temperatureRangeBacteriaGreen;
-            maxAgeMinutes = info.maxAgeMinutesBacteriaGreen;
-            fertilityPercent = info.fertilityPercentBacteriaGreen;
+            maxVelocity = float.Parse(info.maxVelocityPurple);
+            temperatureOptimal = info.temperatureOptimalBacteriaPurple;
+            temperatureRange = info.temperatureRangeBacteriaPurple;
+            maxAgeMinutes = info.maxAgeMinutesBacteriaPurple;
+            fertilityPercent = info.fertilityPercentBacteriaPurple;
         } else {
             // We run from "SimulationScene"
             maxVelocity = 2;
@@ -66,11 +67,11 @@ public class PurpleBacteria : Bacteria
         }
 
         // We need 5 collisions with other green bacteria
-        if (greenCollisions < 6) {
-            greenCollisions++;
+        if (purpleCollisions < 6) {
+            purpleCollisions++;
             yield return null;
         } else {
-            greenCollisions = 0;
+            purpleCollisions = 0;
         }
 
         // Wait a bit. Pregancy time

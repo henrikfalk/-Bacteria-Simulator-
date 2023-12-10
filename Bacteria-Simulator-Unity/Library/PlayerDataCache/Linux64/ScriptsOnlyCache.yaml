@@ -3,7 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BacteriaInfoPanelController
     - BacteriaSelectionHandler
-    - BaseItem
+    - DetoxItem
     - GameManager
     - GreenBacteria
     - LaboratorySceneManager
@@ -53,8 +53,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.UI.UIFoldout
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.ShaderGraph.Editor.dll:
-    - UnityEditor.ShaderGraph.ShaderGraphProjectSettings
     Unity.TextMeshPro:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -62,6 +60,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
@@ -90,9 +89,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
@@ -108,6 +113,11 @@ ScriptsOnlyBuild:
     - TMPro.TMP_GlyphAdjustmentRecord
     - TMPro.TMP_GlyphPairAdjustmentRecord
     - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_InputField/OnChangeEvent
+    - TMPro.TMP_InputField/SelectionEvent
+    - TMPro.TMP_InputField/SubmitEvent
+    - TMPro.TMP_InputField/TextSelectionEvent
+    - TMPro.TMP_InputField/TouchScreenKeyboardEvent
     - TMPro.TMP_Sprite
     - TMPro.TMP_SpriteCharacter
     - TMPro.TMP_SpriteGlyph
@@ -140,7 +150,7 @@ ScriptsOnlyBuild:
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: MainMenuSceneManager
-    methodName: NewGame
+    methodName: GotoSimulator
   - assembly: Assembly-CSharp
     fullTypeName: MainMenuSceneManager
     methodName: ExitGame
@@ -186,12 +196,6 @@ ScriptsOnlyBuild:
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: ToolbarPanelController
     methodName: PauseSimulation
@@ -209,13 +213,10 @@ ScriptsOnlyBuild:
     methodName: LookAtSelected
   - assembly: Assembly-CSharp
     fullTypeName: ToolbarPanelController
-    methodName: ExitGame
+    methodName: GotoLaboratory
   - assembly: Assembly-CSharp
     fullTypeName: SimulationToolsPopupController
     methodName: AddDetoxToSimulation
-  - assembly: Assembly-CSharp
-    fullTypeName: ToolbarPanelController
-    methodName: ExitGame
   - assembly: Assembly-CSharp
     fullTypeName: SimulationSceneManager
     methodName: AddDetoxToSimulation
@@ -227,7 +228,7 @@ ScriptsOnlyBuild:
     methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: ToolbarPanelController
-    methodName: ExitGame
+    methodName: ExitSimulation
   - assembly: Assembly-CSharp
     fullTypeName: SimulationSceneManager
     methodName: NewSimulation
@@ -239,13 +240,13 @@ ScriptsOnlyBuild:
     methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: LaboratorySceneManager
-    methodName: SaveLaboratory
-  - assembly: Assembly-CSharp
-    fullTypeName: LaboratorySceneManager
-    methodName: RestoreDefaultSettings
+    methodName: LoadSimulationConfiguration
   - assembly: Assembly-CSharp
     fullTypeName: LaboratorySceneManager
     methodName: QuitLaboratory
+  - assembly: Assembly-CSharp
+    fullTypeName: LaboratorySceneManager
+    methodName: UpdateUI
   sceneClasses:
     Assets/Scenes/LaboratoryScene.unity:
     - Class: 1
@@ -269,31 +270,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1578}
+    - Class: 114
       Script: {instanceID: 1582}
     - Class: 114
       Script: {instanceID: 1584}
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
+      Script: {instanceID: 1588}
+    - Class: 114
       Script: {instanceID: 1646}
+    - Class: 114
+      Script: {instanceID: 1808}
     - Class: 114
       Script: {instanceID: 2286}
     - Class: 114
       Script: {instanceID: 2986}
     - Class: 114
-      Script: {instanceID: 3258}
+      Script: {instanceID: 3260}
+    - Class: 114
+      Script: {instanceID: 4656}
+    - Class: 114
+      Script: {instanceID: 4946}
     - Class: 114
       Script: {instanceID: 5022}
     - Class: 114
-      Script: {instanceID: 6168}
+      Script: {instanceID: 6008}
     - Class: 114
-      Script: {instanceID: 6260}
+      Script: {instanceID: 6166}
+    - Class: 114
+      Script: {instanceID: 6258}
     - Class: 114
       Script: {instanceID: 7132}
     - Class: 114
       Script: {instanceID: 7214}
     - Class: 114
       Script: {instanceID: 7632}
+    - Class: 114
+      Script: {instanceID: 7648}
     - Class: 114
       Script: {instanceID: 8160}
     - Class: 115
@@ -366,19 +381,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2986}
     - Class: 114
-      Script: {instanceID: 3126}
+      Script: {instanceID: 3128}
     - Class: 114
-      Script: {instanceID: 3258}
+      Script: {instanceID: 3260}
     - Class: 114
-      Script: {instanceID: 3848}
+      Script: {instanceID: 3850}
     - Class: 114
-      Script: {instanceID: 3944}
+      Script: {instanceID: 3946}
     - Class: 114
-      Script: {instanceID: 4132}
+      Script: {instanceID: 4134}
     - Class: 114
-      Script: {instanceID: 4184}
+      Script: {instanceID: 4186}
     - Class: 114
-      Script: {instanceID: 4272}
+      Script: {instanceID: 4274}
     - Class: 114
       Script: {instanceID: 4656}
     - Class: 114
@@ -394,19 +409,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6032}
     - Class: 114
-      Script: {instanceID: 6094}
+      Script: {instanceID: 6092}
     - Class: 114
-      Script: {instanceID: 6194}
+      Script: {instanceID: 6192}
     - Class: 114
-      Script: {instanceID: 6260}
+      Script: {instanceID: 6258}
     - Class: 114
-      Script: {instanceID: 6268}
+      Script: {instanceID: 6266}
     - Class: 114
-      Script: {instanceID: 6526}
+      Script: {instanceID: 6524}
     - Class: 114
-      Script: {instanceID: 6530}
+      Script: {instanceID: 6528}
     - Class: 114
-      Script: {instanceID: 6550}
+      Script: {instanceID: 6548}
     - Class: 114
       Script: {instanceID: 6866}
     - Class: 114
@@ -505,9 +520,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2986}
     - Class: 114
-      Script: {instanceID: 3178}
+      Script: {instanceID: 3180}
     - Class: 114
-      Script: {instanceID: 3258}
+      Script: {instanceID: 3260}
+    - Class: 114
+      Script: {instanceID: 4662}
     - Class: 114
       Script: {instanceID: 4750}
     - Class: 114
@@ -515,11 +532,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5146}
     - Class: 114
-      Script: {instanceID: 6168}
+      Script: {instanceID: 6166}
     - Class: 114
-      Script: {instanceID: 6260}
-    - Class: 114
-      Script: {instanceID: 6354}
+      Script: {instanceID: 6258}
     - Class: 114
       Script: {instanceID: 7132}
     - Class: 114
@@ -679,7 +694,7 @@ ScriptsOnlyBuild:
     className: MainCameraController2
   - hash:
       serializedVersion: 2
-      Hash: 0916140b400cf4bc58fbbe081f9ea5cb
+      Hash: 1b21034d3599a787be09313b9e6d6c9b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LaboratorySceneManager
@@ -823,7 +838,7 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerWidget
   - hash:
       serializedVersion: 2
-      Hash: 88c5cf5d3b0631eecda5de5b72d76347
+      Hash: 7b62c029261411b81512f479894f54d1
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ToolbarPanelController
@@ -1015,12 +1030,6 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerToggleHistory
   - hash:
       serializedVersion: 2
-      Hash: 8620b9080993206cbdb99db9aeb72f07
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: GreenbacteriaInfo
-  - hash:
-      serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
@@ -1045,10 +1054,10 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
+      Hash: a859b03cd4664db6a240b5c5d46fc68c
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: Medicine
+    className: DetoxItem
   - hash:
       serializedVersion: 2
       Hash: 520b79de97edaf8dab10b16707d3e68f
@@ -1141,7 +1150,7 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: 8f7498ece10b4cea41f9178718ec288f
+      Hash: d866734ed3607c0c096850d475f08c62
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SimulationSceneManager
@@ -1271,12 +1280,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
     className: DebugUIHandlerObject
-  - hash:
-      serializedVersion: 2
-      Hash: 8620b9080993206cbdb99db9aeb72f07
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: RedBacteriaInfo
   - hash:
       serializedVersion: 2
       Hash: fa7c62595553866a25a1f687b1914fd2
@@ -1834,4 +1837,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/MainMenuScene.unity
   - Assets/Scenes/SimulationScene.unity
   - Assets/Scenes/LaboratoryScene.unity
-  playerPath: /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Linux/BacSim-Linux-v0.4.1/BacteriaSimulator.x86_64
+  playerPath: /home/henrik/Dokumenter/hfalk/prog/Unity Learn/Projekter/Bacteria-Simulator-Out/Linux/BacSim-Linux-v0.5/BacteriaSimulator.x86_64

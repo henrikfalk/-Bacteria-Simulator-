@@ -24,7 +24,9 @@ public class AquariumState
         NEW_SIMULATION,
         QUIT_SIMULATION,
         PAUSE_SIMULATION,
-        EXIT_GAME
+        ADD_DETOX,
+        ADD_FOOD,
+        EXIT_SIMULATION
     };
 
     public STATE stateName;

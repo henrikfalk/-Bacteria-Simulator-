@@ -15,6 +15,7 @@ public class ToolbarPanelController : MonoBehaviour
     public Button quitSimulationButton;
     public Button helpSimulationButton;
     public Button exitGameButton;
+    public Button laboratoryButton;
 
     public GameObject helpPanel;
 
@@ -51,9 +52,11 @@ public class ToolbarPanelController : MonoBehaviour
             pauseSimulationButton.interactable = false;
             quitSimulationButton.interactable = false;
             exitGameButton.interactable = true;
+            laboratoryButton.interactable = true;
         } else {
             newSimulationButton.interactable = false;
             exitGameButton.interactable = false;
+            laboratoryButton.interactable = false;
         }
 
         // If we are initializing
@@ -86,9 +89,16 @@ public class ToolbarPanelController : MonoBehaviour
         simulationController.currentState.Signal(AquariumState.SIGNAL.QUIT_SIMULATION);
     }
 
-    public void ExitGame() {
+    public void ExitSimulation() {
         
-        simulationController.currentState.Signal(AquariumState.SIGNAL.EXIT_GAME);
+        simulationController.currentState.Signal(AquariumState.SIGNAL.EXIT_SIMULATION);
+    }
+
+    public void GotoLaboratory() {
+
+        if (GameManager.Instance != null) {
+            GameManager.Instance.GotoScene("LaboratoryScene");
+        }
     }
 
     public void ToggleHelp() {

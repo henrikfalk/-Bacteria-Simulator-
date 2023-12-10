@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8589344953007722453}
   - component: {fileID: 8258421771288606880}
   - component: {fileID: 9187404582854615176}
-  - component: {fileID: -7262622546406566094}
+  - component: {fileID: 9013410788649099664}
   m_Layer: 0
   m_Name: DetoxItemPrefab
   m_TagString: Detox
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-7262622546406566094
+--- !u!114 &9013410788649099664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2968345192267920175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29558bb00df0263be807dc5fa2197700, type: 3}
+  m_Script: {fileID: 11500000, guid: 8df91f939aaeda39c83de87f5001818e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   simulationSceneManager: {fileID: 0}
-  maxVelocity: 0
+  maxVelocity: 1
   energy: 0

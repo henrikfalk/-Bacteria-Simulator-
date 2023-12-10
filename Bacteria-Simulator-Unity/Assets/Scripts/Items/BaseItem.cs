@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +10,11 @@ public class BaseItem : MonoBehaviour
 
     protected Rigidbody healthItemRigidbody;
 
-    public float maxVelocity;
+    public float maxVelocity = 1f;
 
     public float energy; // not used yet
+
+    private Boolean haveGravity = true;
 
     protected void Start()
     {
@@ -20,10 +23,26 @@ public class BaseItem : MonoBehaviour
         GameObject obj1 = GameObject.Find("SimulationSceneManager");
         simulationSceneManager = obj1.GetComponent<SimulationSceneManager>();
 
+        // Use this method in derived classes for overriding stuff
+        ItemStart();
+
     }
 
-    void Update()
+    // Use this method in derived classes for overriding stuff in Start() method
+    protected virtual void ItemStart(){}
+
+    void FixedUpdate()
     {
+        // We are in the air
+        if (transform.position.y < 4.9f) {
+
+            if (haveGravity == true) {
+
+                healthItemRigidbody.useGravity = false;
+                haveGravity = false;
+            }
+        }
+
         move();
     }
 /*
@@ -44,7 +63,7 @@ public class BaseItem : MonoBehaviour
         if (velocity.magnitude > maxVelocity) {
         
             //we deaccelerate
-            velocity -= velocity.normalized * 0.5f;
+            velocity -= velocity.normalized * 0.4f;
             
             healthItemRigidbody.velocity = velocity;
         }
@@ -59,23 +78,23 @@ public class BaseItem : MonoBehaviour
         float randomDirectionZ;
         Vector3 forceDir;
 
-        if (transform.position.y > 4.95) {
+        if (gameObject.transform.position.y >= 4.95) {
             // we are not in the water so go downwards
-            randomDirectionX = UnityEngine.Random.Range(-1.0f, 1.0f);
+            randomDirectionX = UnityEngine.Random.Range(-1f, 1f);
             randomDirectionZ = UnityEngine.Random.Range(-1.0f, 1.0f);
             forceDir = new Vector3(randomDirectionX, -1,randomDirectionZ);
             forceDir.Normalize();
-            healthItemRigidbody.AddForce(forceDir * 0.09f, ForceMode.Impulse);
+            healthItemRigidbody.AddForce(forceDir * 0.18f, ForceMode.Impulse);
 
         }
 
-        if (transform.position.y < -4.95) {
+        if (gameObject.transform.position.y < -4.95) {
             // It is getting to cold - move upwards
             randomDirectionX = UnityEngine.Random.Range(-1.0f, 1.0f);
             randomDirectionZ = UnityEngine.Random.Range(-1.0f, 1.0f);
             forceDir = new Vector3(randomDirectionX, 1,randomDirectionZ);
             forceDir.Normalize();
-            healthItemRigidbody.AddForce(forceDir * 0.09f, ForceMode.Impulse);
+            healthItemRigidbody.AddForce(forceDir * 0.18f, ForceMode.Impulse);
             return;
         }
 

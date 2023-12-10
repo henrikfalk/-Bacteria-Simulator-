@@ -136,7 +136,7 @@ public class Bacteria : MonoBehaviour
             simulationSceneManager.ResetCamera();
         }
 
-        // Destroy partcles and bacteria
+        // Destroy bacteria
         Destroy(gameObject);
 
     }
