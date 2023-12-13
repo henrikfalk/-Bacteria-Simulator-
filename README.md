@@ -36,7 +36,7 @@ The game explores different Unity features and concepts.
 - Particlesystems
 - Custom HDRI Skybox
 - Pause and unpause game (Scaled and unscaled time)
-. Modal windows
+- Modal windows
 
 ## Controls in the "SimulationScene"
 Keys actions:

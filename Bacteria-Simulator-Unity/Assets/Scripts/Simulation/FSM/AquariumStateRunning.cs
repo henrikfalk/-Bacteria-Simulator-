@@ -101,6 +101,8 @@ public class AquariumStateRunning : AquariumState {
 
     private void QuitSimulation() {
 
+        simulationController.simulationSceneManager.ResetCamera();
+
         simulationController.SimulationEnded(SimulationController.SIMULATION_MESSAGE.ENDEDBYQUIT);
 
         nextState = new AquariumStateEmpty(simulationController);

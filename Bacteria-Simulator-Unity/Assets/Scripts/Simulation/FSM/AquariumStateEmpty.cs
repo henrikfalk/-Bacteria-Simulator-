@@ -47,14 +47,14 @@ public class AquariumStateEmpty : AquariumState {
 
         // If we press the 'q' key and no simulation is running then quit the simulation
         if (Input.GetKeyDown(KeyCode.Q) == true) {
-            QuitSimulation();
+            ExitSimulation();
         }
 
         // If we gets a EXIT_GAME signal then exit game
         if (signal == SIGNAL.EXIT_SIMULATION) {
 
             signal = SIGNAL.NONE;
-            QuitSimulation();
+            ExitSimulation();
         }
 
         // If the user Press 'Ok' in "NewSimulationPopup" goto initializing state
@@ -84,7 +84,7 @@ public class AquariumStateEmpty : AquariumState {
         newSimulationPopup.SetActive(true);
     }
 
-    private void QuitSimulation() {
+    private void ExitSimulation() {
 
         if (GameManager.Instance != null) {
             GameManager.Instance.GotoScene("MainMenuScene");
