@@ -71,9 +71,8 @@ Mouse actions:
 - The HDRI Skybox: <a href="https://polyhaven.com/hdris" target="_blank">Poly Haven</a>
 
 ## Development status
-Current version v0.5.1:
-- Fix: Placement of aquarium
-- Fix: Changed popup windows to modal windows
+Current version v0.5.2:
+- Fix: No camera found when quitting simulation if looking at a bacteria
 
 General:
 - Each scene is runnable from the Unity Editor
