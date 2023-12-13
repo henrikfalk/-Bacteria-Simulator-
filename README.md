@@ -28,7 +28,7 @@ The game explores different Unity features and concepts.
 - "Glass" material
 - GameObject highligt when mouseover
 - Switching scenes with (memory) datapersistence (Singleton)
-- Datapersistence between gamesessions (Laboratory settings)
+- Datapersistence between gamesessions (JSON)
 - Use of StartCoroutine()
 - TMPro package (TextMeshPro)
 - Imported models and materials (UV mapped) from Blender
@@ -36,6 +36,7 @@ The game explores different Unity features and concepts.
 - Particlesystems
 - Custom HDRI Skybox
 - Pause and unpause game (Scaled and unscaled time)
+. Modal windows
 
 ## Controls in the "SimulationScene"
 Keys actions:
@@ -70,20 +71,9 @@ Mouse actions:
 - The HDRI Skybox: <a href="https://polyhaven.com/hdris" target="_blank">Poly Haven</a>
 
 ## Development status
-Current version:
-- Added "AddDetoxPopup" UI functionality
-- Fixed rotated camera after quitting simulation
-- Added water splash particle system when bacteria hits the water
-- Added detox items (Including custom shader and particlesystem)
-- Detox items removes toxicity (25 ppm for each "pill")
-- Toxicity feature: If the toxicity level reaches 2000 ppm all bacteria dies
-- Implemented detox UI feature
-- Added purple bacteria to the laboratory scene
-- Added various new toxicity settings to the laboratory scene
-- You can now visit the laboratory from the simulation scene
-- Finished the laboratory scene. You can load/save/rename/delete etc. different simulation configurations
-- Added current simulation configuration name to the simulation scene
-- Workaround for JSON float issue in svaed configurations. 4.5f is not 4.5 in JSON!!!
+Current version v0.5.1:
+- Fix: Placement of aquarium
+- Fix: Changed popup windows to modal windows
 
 General:
 - Each scene is runnable from the Unity Editor
